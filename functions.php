@@ -82,6 +82,106 @@ function vuzix_fallback_static_page() {
 	$request = isset( $wp->request ) ? trim( $wp->request, '/' ) : '';
 	$slug    = $request !== '' ? basename( $request ) : '';
 
+	// Giả lập Cart API (Shopify AJAX Cart) để phần giỏ hàng tĩnh hoạt động trên WordPress
+	if ( $request === 'cart' || $request === 'cart.js' || strpos( $request, 'cart/' ) === 0 ) {
+		header( 'Content-Type: application/json' );
+		if ( ! session_id() ) {
+			session_start();
+		}
+		if ( ! isset( $_SESSION['vuzix_cart'] ) ) {
+			$_SESSION['vuzix_cart'] = array(
+				'token'                 => 'mock_cart_token',
+				'note'                  => '',
+				'attributes'            => (object) array(),
+				'original_total_price'  => 0,
+				'total_price'           => 0,
+				'total_discount'        => 0,
+				'total_weight'          => 0,
+				'item_count'            => 0,
+				'items'                 => array(),
+				'requires_shipping'     => false,
+				'currency'              => 'USD',
+			);
+		}
+
+		$action = basename( $request );
+		$action = str_replace( '.js', '', $action );
+
+		if ( $action === 'add' ) {
+			// Thêm sản phẩm
+			$raw_body = file_get_contents( 'php://input' );
+			$data     = json_decode( $raw_body, true );
+
+			$id  = isset( $data['id'] ) ? $data['id'] : ( isset( $_REQUEST['id'] ) ? $_REQUEST['id'] : '' );
+			$qty = isset( $data['quantity'] ) ? intval( $data['quantity'] ) : ( isset( $_REQUEST['quantity'] ) ? intval( $_REQUEST['quantity'] ) : 1 );
+
+			// Tìm thông tin sản phẩm từ tiêu đề file
+			$title = 'Vuzix Product (Demo)';
+			$price = 29900; // $299.00 mặc định
+
+			// Thử tìm file sản phẩm để lấy tên cho đẹp
+			foreach ( glob( get_theme_file_path( 'original-products/*.html' ) ) as $file ) {
+				$html_content = file_get_contents( $file );
+				if ( strpos( $html_content, 'value="' . $id . '"' ) !== false ) {
+					$filename = pathinfo( $file, PATHINFO_FILENAME );
+					$title    = ucwords( str_replace( '-', ' ', $filename ) );
+					break;
+				}
+			}
+
+			$item = array(
+				'id'           => $id,
+				'title'        => $title,
+				'price'        => $price,
+				'line_price'   => $price * $qty,
+				'quantity'     => $qty,
+				'image'        => get_template_directory_uri() . '/cdn/shop/files/favicon.png',
+				'url'          => '#',
+				'variant_id'   => $id,
+				'handle'       => 'mock-product',
+			);
+
+			$found = false;
+			foreach ( $_SESSION['vuzix_cart']['items'] as &$cart_item ) {
+				if ( $cart_item['id'] == $id ) {
+					$cart_item['quantity'] += $qty;
+					$cart_item['line_price'] = $cart_item['price'] * $cart_item['quantity'];
+					$found                   = true;
+					$item                    = $cart_item;
+					break;
+				}
+			}
+			if ( ! $found ) {
+				$_SESSION['vuzix_cart']['items'][] = $item;
+			}
+
+			// Tính lại tổng tiền
+			$total = 0;
+			$count = 0;
+			foreach ( $_SESSION['vuzix_cart']['items'] as $cart_item ) {
+				$total += $cart_item['line_price'];
+				$count += $cart_item['quantity'];
+			}
+			$_SESSION['vuzix_cart']['total_price']          = $total;
+			$_SESSION['vuzix_cart']['original_total_price'] = $total;
+			$_SESSION['vuzix_cart']['item_count']           = $count;
+
+			echo json_encode( $item );
+			exit;
+		} elseif ( $action === 'clear' ) {
+			$_SESSION['vuzix_cart']['items']                = array();
+			$_SESSION['vuzix_cart']['total_price']          = 0;
+			$_SESSION['vuzix_cart']['original_total_price'] = 0;
+			$_SESSION['vuzix_cart']['item_count']           = 0;
+			echo json_encode( $_SESSION['vuzix_cart'] );
+			exit;
+		} else {
+			// Trả về giỏ hàng hiện tại cho /cart.js hoặc các request khác
+			echo json_encode( $_SESSION['vuzix_cart'] );
+			exit;
+		}
+	}
+
 	$original_file = vuzix_find_original_file( $slug );
 	if ( empty( $original_file ) ) {
 		return;
