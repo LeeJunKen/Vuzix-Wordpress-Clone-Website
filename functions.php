@@ -88,6 +88,8 @@ function vuzix_fallback_static_page() {
 		if ( ! session_id() ) {
 			session_start();
 		}
+
+		// Đảm bảo session có cấu trúc giỏ hàng cơ bản
 		if ( ! isset( $_SESSION['vuzix_cart'] ) ) {
 			$_SESSION['vuzix_cart'] = array(
 				'token'                 => 'mock_cart_token',
@@ -118,6 +120,8 @@ function vuzix_fallback_static_page() {
 			// Tìm thông tin sản phẩm từ tiêu đề file
 			$title = 'Vuzix Product (Demo)';
 			$price = 29900; // $299.00 mặc định
+			$sku = '';
+			$filename = '';
 
 			// Thử tìm file sản phẩm để lấy tên cho đẹp
 			foreach ( glob( get_theme_file_path( 'original-products/*.html' ) ) as $file ) {
@@ -125,7 +129,34 @@ function vuzix_fallback_static_page() {
 				if ( strpos( $html_content, 'value="' . $id . '"' ) !== false ) {
 					$filename = pathinfo( $file, PATHINFO_FILENAME );
 					$title    = ucwords( str_replace( '-', ' ', $filename ) );
+
+					// Trích xuất SKU từ file
+					if ( preg_match( '/"sku"\s*:\s*"(.*?)"/i', $html_content, $sku_matches ) ) {
+						$sku = $sku_matches[1];
+					}
 					break;
+				}
+			}
+
+			// NẾU WOOCOMMERCE ĐANG HOẠT ĐỘNG, THÊM SẢN PHẨM VÀO GIỎ HÀNG WOOCOMMERCE THẬT
+			if ( function_exists( 'WC' ) && WC()->cart ) {
+				$product_id = 0;
+				if ( ! empty( $sku ) ) {
+					$product_id = wc_get_product_id_by_sku( $sku );
+				}
+				if ( ! $product_id && ! empty( $filename ) ) {
+					$post = get_page_by_path( $filename, OBJECT, 'product' );
+					if ( $post ) {
+						$product_id = $post->ID;
+					}
+				}
+
+				if ( $product_id ) {
+					WC()->cart->add_to_cart( $product_id, $qty );
+					$product = wc_get_product( $product_id );
+					
+					$title = $product->get_name();
+					$price = floatval( $product->get_price() ) * 100;
 				}
 			}
 
@@ -154,32 +185,67 @@ function vuzix_fallback_static_page() {
 			if ( ! $found ) {
 				$_SESSION['vuzix_cart']['items'][] = $item;
 			}
-
-			// Tính lại tổng tiền
-			$total = 0;
-			$count = 0;
-			foreach ( $_SESSION['vuzix_cart']['items'] as $cart_item ) {
-				$total += $cart_item['line_price'];
-				$count += $cart_item['quantity'];
-			}
-			$_SESSION['vuzix_cart']['total_price']          = $total;
-			$_SESSION['vuzix_cart']['original_total_price'] = $total;
-			$_SESSION['vuzix_cart']['item_count']           = $count;
-
-			echo json_encode( $item );
-			exit;
 		} elseif ( $action === 'clear' ) {
+			// Xóa giỏ hàng WooCommerce nếu có
+			if ( function_exists( 'WC' ) && WC()->cart ) {
+				WC()->cart->empty_cart();
+			}
 			$_SESSION['vuzix_cart']['items']                = array();
 			$_SESSION['vuzix_cart']['total_price']          = 0;
 			$_SESSION['vuzix_cart']['original_total_price'] = 0;
 			$_SESSION['vuzix_cart']['item_count']           = 0;
-			echo json_encode( $_SESSION['vuzix_cart'] );
-			exit;
-		} else {
-			// Trả về giỏ hàng hiện tại cho /cart.js hoặc các request khác
-			echo json_encode( $_SESSION['vuzix_cart'] );
-			exit;
 		}
+
+		// NẾU WOOCOMMERCE ĐANG HOẠT ĐỘNG, TỰ ĐỘNG ĐỒNG BỘ GIỎ HÀNG SANG FRONTEND JSON
+		if ( function_exists( 'WC' ) && WC()->cart ) {
+			$items = array();
+			$count = 0;
+			$total = 0;
+
+			foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
+				$product_id = $cart_item['product_id'];
+				$product    = wc_get_product( $product_id );
+				$qty        = $cart_item['quantity'];
+				$item_price = floatval( $product->get_price() ) * 100;
+				$line_price = $item_price * $qty;
+
+				$items[] = array(
+					'id'         => $product_id,
+					'title'      => $product->get_name(),
+					'price'      => $item_price,
+					'line_price' => $line_price,
+					'quantity'   => $qty,
+					'image'      => wp_get_attachment_url( $product->get_image_id() ) ?: get_template_directory_uri() . '/cdn/shop/files/favicon.png',
+					'url'        => get_permalink( $product_id ),
+					'variant_id' => $product_id,
+					'handle'     => $product->get_slug(),
+				);
+
+				$count += $qty;
+				$total += $line_price;
+			}
+
+			$_SESSION['vuzix_cart'] = array(
+				'token'                 => 'mock_cart_token',
+				'note'                  => '',
+				'attributes'            => (object) array(),
+				'original_total_price'  => $total,
+				'total_price'           => $total,
+				'total_discount'        => 0,
+				'total_weight'          => 0,
+				'item_count'            => $count,
+				'items'                 => $items,
+				'requires_shipping'     => false,
+				'currency'              => 'USD',
+			);
+		}
+
+		if ( $action === 'add' ) {
+			echo json_encode( isset( $item ) ? $item : $_SESSION['vuzix_cart'] );
+		} else {
+			echo json_encode( $_SESSION['vuzix_cart'] );
+		}
+		exit;
 	}
 
 	$original_file = vuzix_find_original_file( $slug );
