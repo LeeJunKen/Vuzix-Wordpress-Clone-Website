@@ -6,14 +6,21 @@
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 get_header();
-?>
-<main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
-	<div style="max-width: 1200px; margin: 40px auto; padding: 0 20px;">
-		<?php 
-		// Hàm này tự động gọi nội dung của WooCommerce (Trang Cửa hàng, Chi tiết sản phẩm...)
-		woocommerce_content(); 
-		?>
-	</div>
-</main>
-<?php
+
+if ( is_shop() || is_product_taxonomy() ) :
+	wc_get_template( 'archive-product.php' );
+elseif ( is_cart() ) :
+	wc_get_template( 'cart/cart.php' );
+else :
+	?>
+	<main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+		<div style="max-width: 1200px; margin: 40px auto; padding: 0 20px;">
+			<?php 
+			woocommerce_content(); 
+			?>
+		</div>
+	</main>
+	<?php
+endif;
+
 get_footer();
