@@ -16,9 +16,99 @@ function vuzix_theme_setup() {
 add_action( 'after_setup_theme', 'vuzix_theme_setup' );
 
 /**
+ * Danh sách các thư mục chứa file HTML mẫu để tìm kiếm (dùng chung cho page.php
+ * và cơ chế fallback 404 bên dưới).
+ */
+function vuzix_get_search_dirs() {
+	return array(
+		'original-pages/',
+		'original-products/',
+		'original-policies/',
+		'original-blogs/',
+		'original-blogs/release-notes/',
+		'original-blogs/vuzix-white-papers-and-case-studies-across-industries/',
+		'original-blogs/white-papers/',
+		'original-tools/',
+		'original-tools/perfect-product-finder/',
+	);
+}
+
+/**
+ * Tìm file HTML mẫu khớp với 1 slug trong các thư mục original-*.
+ * Thử khớp trực tiếp trước ("$slug.html"); nếu không thấy, thử khớp lại bằng
+ * sanitize_title() để chịu được các file có tên bị lỗi encode (vd chứa %XX
+ * do quá trình export/scan trước đó để lại) mà slug thật của WP không có.
+ */
+function vuzix_find_original_file( $slug ) {
+	if ( empty( $slug ) ) {
+		return '';
+	}
+
+	foreach ( vuzix_get_search_dirs() as $dir ) {
+		$candidate = $dir . $slug . '.html';
+		if ( file_exists( get_theme_file_path( $candidate ) ) ) {
+			return $candidate;
+		}
+	}
+
+	foreach ( vuzix_get_search_dirs() as $dir ) {
+		$dir_path = get_theme_file_path( $dir );
+		if ( ! is_dir( $dir_path ) ) {
+			continue;
+		}
+		foreach ( glob( $dir_path . '*.html' ) as $file ) {
+			if ( sanitize_title( pathinfo( $file, PATHINFO_FILENAME ) ) === $slug ) {
+				return $dir . basename( $file );
+			}
+		}
+	}
+
+	return '';
+}
+
+/**
+ * Nhiều trang tĩnh (sản phẩm, blog, tool, policy...) chưa được tạo thành
+ * Page/Post thật trong WordPress nên WordPress trả về 404 trước khi
+ * page.php kịp chạy. Hook này bắt các 404 đó, kiểm tra xem slug được yêu
+ * cầu có khớp 1 file HTML mẫu không, nếu có thì render nội dung trực tiếp
+ * thay vì hiển thị "Không tìm thấy nội dung".
+ */
+function vuzix_fallback_static_page() {
+	if ( ! is_404() ) {
+		return;
+	}
+
+	global $wp;
+	$request = isset( $wp->request ) ? trim( $wp->request, '/' ) : '';
+	$slug    = $request !== '' ? basename( $request ) : '';
+
+	$original_file = vuzix_find_original_file( $slug );
+	if ( empty( $original_file ) ) {
+		return;
+	}
+
+	global $wp_query;
+	$wp_query->is_404 = false;
+	status_header( 200 );
+
+	get_header();
+	echo "\n<!-- === VUZIX STATIC FALLBACK (chưa có Page thật trong WP) === -->\n";
+	echo "<!-- Slug: " . esc_html( $slug ) . " -->\n";
+	echo "<!-- Matched Original File: " . esc_html( $original_file ) . " -->\n";
+	echo vuzix_get_main_content( $original_file );
+	get_footer();
+	exit;
+}
+add_action( 'template_redirect', 'vuzix_fallback_static_page' );
+
+/**
  * Thay thế đường dẫn tương đối (cdn/, apps/) thành đường dẫn tuyệt đối của theme.
  */
 function vuzix_replace_asset_paths( $content, $theme_uri ) {
+	// Chuẩn hóa các đường dẫn tương đối dạng ../cdn/ hoặc ../../cdn/ thành cdn/
+	$content = preg_replace( '/(\.\.\/)+cdn\//', 'cdn/', $content );
+	$content = preg_replace( '/(\.\.\/)+apps\//', 'apps/', $content );
+
 	$content = str_replace( '="cdn/', '="' . $theme_uri . '/cdn/', $content );
 	$content = str_replace( "='cdn/", "='" . $theme_uri . '/cdn/', $content );
 	$content = str_replace( 'srcset="cdn/', 'srcset="' . $theme_uri . '/cdn/', $content );

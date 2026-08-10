@@ -9,27 +9,20 @@ get_header();
 // Lấy slug của trang hiện tại
 $slug = get_post_field( 'post_name', get_post() );
 
-// Danh sách các thư mục chứa file HTML mẫu để tìm kiếm
-$search_dirs = array(
-	'original-pages/',
-	'original-products/',
-	'original-policies/',
-	'original-blogs/',
-	'original-blogs/release-notes/',
-	'original-blogs/vuzix-white-papers-and-case-studies-across-industries/',
-	'original-blogs/white-papers/',
-	'original-tools/',
-	'original-tools/perfect-product-finder/'
-);
+// Tìm file HTML mẫu khớp slug (dùng chung logic với functions.php)
+$original_file = vuzix_find_original_file( $slug );
 
-$original_file = '';
-foreach ( $search_dirs as $dir ) {
+// In thông tin Debug dưới dạng comment HTML để kiểm tra trong Source Code của trình duyệt
+echo "\n<!-- === VUZIX THEME DEBUG === -->\n";
+echo "<!-- Current Page Slug: " . esc_html( $slug ) . " -->\n";
+echo "<!-- Matched Original File: " . esc_html( $original_file ) . " -->\n";
+echo "<!-- Checked Paths: -->\n";
+foreach ( vuzix_get_search_dirs() as $dir ) {
 	$temp_file = $dir . $slug . '.html';
-	if ( file_exists( get_theme_file_path( $temp_file ) ) ) {
-		$original_file = $temp_file;
-		break;
-	}
+	$exists = file_exists( get_theme_file_path( $temp_file ) ) ? 'EXISTS' : 'NOT FOUND';
+	echo "<!-- - " . esc_html( $temp_file ) . " : " . $exists . " (Path: " . esc_html( get_theme_file_path( $temp_file ) ) . ") -->\n";
 }
+echo "<!-- ========================= -->\n\n";
 
 // Nếu tìm thấy file mẫu tĩnh, hiển thị nội dung của nó
 if ( ! empty( $original_file ) ) {
