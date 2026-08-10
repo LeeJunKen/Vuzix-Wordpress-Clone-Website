@@ -1,0 +1,1631 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xml:lang="en" xmlns="http://www.w3.org/2005/Atom" xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:s="http://jadedpixel.com/-/spec/shopify">
+  <id>https://www.vuzix.com/blogs/vuzix-blog.atom</id>
+  <link rel="alternate" type="text/html" href="https://www.vuzix.com/blogs/vuzix-blog"/>
+  <link rel="self" type="application/atom+xml" href="https://www.vuzix.com/blogs/vuzix-blog.atom"/>
+  <title>Vuzix Corporation - Vuzix Blog</title>
+  <updated>2026-07-14T14:37:26-05:00</updated>
+  <author>
+    <name>Vuzix Corporation</name>
+  </author>
+  <entry>
+    <id>https://www.vuzix.com/blogs/vuzix-blog/why-visual-displays-are-becoming-the-most-effective-tool-for-picking-in-smart-warehouses</id>
+    <published>2026-07-14T14:37:26-05:00</published>
+    <updated>2026-07-14T14:41:04-05:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.vuzix.com/blogs/vuzix-blog/why-visual-displays-are-becoming-the-most-effective-tool-for-picking-in-smart-warehouses"/>
+    <title>Why Visual Displays Are Becoming the Most Effective Tool for Picking in Smart Warehouses</title>
+    <author>
+      <name>Christian Powell-Byars</name>
+    </author>
+    <content type="html">
+      <![CDATA[<style>
+  /* ==========================================
+     VISUAL PICKING ARTICLE INTRO
+  ========================================== */
+  .vzx-article-intro {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto 70px;
+    color: #111;
+    font-family: "Inter", Arial, sans-serif;
+  }
+  .vzx-article-intro,
+  .vzx-article-intro * {
+    box-sizing: border-box;
+  }
+  .vzx-article-intro h1,
+  .vzx-article-intro h2,
+  .vzx-article-intro h3,
+  .vzx-article-intro p,
+  .vzx-article-intro ul {
+    margin-top: 0;
+  }
+  .vzx-article-intro__title {
+    max-width: 1250px;
+    margin: 0 0 42px;
+    color: #050505;
+    font-size: clamp(42px, 4.8vw, 72px);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.045em;
+  }
+  .vzx-article-intro__lead {
+    max-width: 1230px;
+    margin: 0 0 30px;
+    font-size: 1.2em;
+    font-weight: 400;
+    line-height: 1.35;
+    letter-spacing: -0.015em;
+  }
+  .vzx-article-intro__questions {
+    max-width: 1250px;
+    margin: 0 0 48px;
+    padding-left: 44px;
+    font-size: 1.2em;
+    line-height: 1.35;
+  }
+  .vzx-article-intro__questions li {
+    margin-bottom: 2px;
+    padding-left: 9px;
+  }
+  .vzx-article-intro__questions li::marker {
+    font-size: 0.8em;
+  }
+  .vzx-article-intro__split {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+    gap: 44px;
+    align-items: center;
+    margin-bottom: 46px;
+  }
+  .vzx-article-intro__split--secondary {
+    grid-template-columns: minmax(280px, 0.75fr) minmax(0, 1.5fr);
+    align-items: start;
+  }
+  .vzx-article-intro__copy {
+    min-width: 0;
+  }
+  .vzx-article-intro__copy p {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: 400;
+    line-height: 1.35;
+    letter-spacing: -0.015em;
+  }
+  .vzx-article-intro__graphic {
+    min-width: 0;
+  }
+  .vzx-article-intro__graphic img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+  .vzx-article-intro__graphic--turnover {
+    max-width: 560px;
+    justify-self: end;
+  }
+  .vzx-article-intro__graphic--productivity {
+    max-width: 430px;
+    justify-self: start;
+  }
+  .vzx-article-intro__table-copy {
+    padding-top: 6px;
+  }
+  .vzx-article-intro__table-copy p {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: 400;
+    line-height: 1.35;
+    letter-spacing: -0.015em;
+  }
+  .vzx-article-intro__question-heading {
+    max-width: 1260px;
+    margin: 0;
+    font-size: clamp(22px, 2.2vw, 31px);
+    font-weight: 400;
+    line-height: 1.3;
+    letter-spacing: -0.018em;
+  }
+  /* ==========================================
+     TABLET
+  ========================================== */
+  @media screen and (max-width: 1000px) {
+    .vzx-article-intro__split {
+      grid-template-columns: minmax(0, 1.1fr) minmax(270px, 0.9fr);
+      gap: 28px;
+    }
+    .vzx-article-intro__split--secondary {
+      grid-template-columns: minmax(240px, 0.8fr) minmax(0, 1.4fr);
+    }
+  }
+  /* ==========================================
+     MOBILE
+  ========================================== */
+  @media screen and (max-width: 767px) {
+    .vzx-article-intro {
+      margin-bottom: 50px;
+    }
+    .vzx-article-intro__title {
+      margin-bottom: 28px;
+      font-size: clamp(36px, 10.5vw, 52px);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+    }
+    .vzx-article-intro__lead {
+      margin-bottom: 24px;
+      font-size: 20px;
+      line-height: 1.45;
+    }
+    .vzx-article-intro__questions {
+      margin-bottom: 36px;
+      padding-left: 28px;
+      font-size: 18px;
+      line-height: 1.45;
+    }
+    .vzx-article-intro__questions li {
+      margin-bottom: 8px;
+      padding-left: 4px;
+    }
+    .vzx-article-intro__split,
+    .vzx-article-intro__split--secondary {
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+      margin-bottom: 38px;
+    }
+    .vzx-article-intro__copy p,
+    .vzx-article-intro__table-copy p {
+      font-size: 18px;
+      line-height: 1.55;
+    }
+    .vzx-article-intro__graphic--turnover,
+    .vzx-article-intro__graphic--productivity {
+      width: 100%;
+      max-width: 100%;
+      justify-self: auto;
+    }
+    .vzx-article-intro__split--secondary
+      .vzx-article-intro__graphic {
+      order: 2;
+    }
+    .vzx-article-intro__split--secondary
+      .vzx-article-intro__table-copy {
+      order: 1;
+    }
+    .vzx-article-intro__question-heading {
+      font-size: 23px;
+      line-height: 1.4;
+    }
+  }
+</style>
+<p class="vzx-article-intro__lead">Operations managers overseeing warehousing services, transportation logistics and omni-channel fulfillment share a common set of challenges.</p>
+<ul>
+<li>How can I solve mispicks and make my warehouse workers more efficient while picking?</li>
+<li>What's the best mobile picking solution that integrates into my WMS?</li>
+<li>How can I reduce employee turnover in my warehouse and improve operational efficiency?</li>
+</ul>
+<h2 class="vzx-article-intro"><!-- INTRO COPY + TURNOVER STAT --></h2>
+<div class="vzx-article-intro__split">
+<div class="vzx-article-intro__copy">
+<p>Modern warehouse operations are often defined by the efficiency of the tools used on the floor. Companies looking to enhance warehouse productivity, efficiency and worker safety are in a constant cycle of refining fulfillment processes and integrating automation into their operations. In recent years, voice picking systems provided an excellent hands-free approach, but as robotic picking comes to the fore, companies are needing more interactive levels of human-centric integration across their systems, augmenting their workforce to adapt in real time to operational challenges.</p>
+</div>
+<div class="vzx-article-intro__graphic vzx-article-intro__graphic--turnover"><img src="https://cdn.shopify.com/s/files/1/0581/1208/2086/files/Screenshot_2026-07-14_at_2.28.31_PM.png?v=1784057351" loading="lazy" alt="45 percent of companies say managing workforce turnover is a significant fulfillment challenge"></div>
+</div>
+<h2 class="vzx-article-intro"><!-- PRODUCTIVITY STAT + TABLE INTRO --></h2>
+<div class="vzx-article-intro__split vzx-article-intro__split--secondary">
+<div class="vzx-article-intro__graphic vzx-article-intro__graphic--productivity"><img src="https://cdn.shopify.com/s/files/1/0581/1208/2086/files/Screenshot_2026-07-14_at_2.28.47_PM.png?v=1784057351" loading="lazy" alt="59 percent of companies expect a productivity increase greater than 15 percent through AR wearable technology"></div>
+<div class="vzx-article-intro__table-copy">
+<p>The table below presents key pros and cons across factors like usability, speed, comfort, and operational efficiency between common voice picking systems and headworn visual displays, specifically Vuzix M400 smart glasses. Both aim to streamline order picking by enabling hands-free workflows, but they differ significantly in how they integrate with inventory systems, how they deliver information, and the array of options—including onboarding, upskilling, mapping and scanning—they present to operators.</p>
+</div>
+</div>
+<h2 class="vzx-article-intro">What are the main differences between smart glasses / visual displays and voice picking solutions?</h2>
+<style>
+  /* ==========================================
+     VOICE PICKING VS. SMART GLASSES TABLES
+  ========================================== */
+  .vzx-comparison {
+    --vzx-green: #00ad55;
+    --vzx-yellow: #ffbd00;
+    --vzx-red: #df0000;
+    --vzx-text: #171717;
+    --vzx-border: #d4d4d4;
+    width: 100%;
+    max-width: 1500px;
+    margin: 70px auto;
+    color: var(--vzx-text);
+    font-family: "Inter", Arial, sans-serif;
+  }
+  .vzx-comparison,
+  .vzx-comparison * {
+    box-sizing: border-box;
+  }
+  .vzx-comparison__section {
+    margin: 0 0 90px;
+  }
+  .vzx-comparison__section:last-child {
+    margin-bottom: 0;
+  }
+  .vzx-comparison__heading {
+    margin: 0 0 45px;
+    color: #111;
+    font-size: clamp(48px, 5.5vw, 82px);
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.055em;
+  }
+  .vzx-comparison__desktop {
+    display: block;
+  }
+  .vzx-comparison__mobile {
+    display: none;
+  }
+  .vzx-comparison__table {
+    width: 100%;
+  }
+  .vzx-comparison__header,
+  .vzx-comparison__row {
+    display: grid;
+    grid-template-columns:
+      minmax(190px, 0.65fr)
+      minmax(360px, 1.55fr)
+      minmax(480px, 2.25fr);
+  }
+  .vzx-comparison__header {
+    border-bottom: 1px solid var(--vzx-border);
+  }
+  .vzx-comparison__header-cell {
+    padding: 20px 12px 28px;
+    color: #2b2b2b;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.3;
+  }
+  .vzx-comparison__row {
+    min-height: 112px;
+    border-bottom: 1px solid var(--vzx-border);
+  }
+  .vzx-comparison__feature {
+    display: flex;
+    align-items: center;
+    padding: 27px 14px 27px 12px;
+    color: #171717;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.35;
+  }
+  .vzx-comparison__cell {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-width: 0;
+    padding: 27px 25px 27px 38px;
+    color: #2a2a2a;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+  .vzx-comparison__status {
+    position: absolute;
+    top: 25%;
+    bottom: 25%;
+    left: 13px;
+    width: 5px;
+    min-height: 45px;
+    border-radius: 99px;
+  }
+  .vzx-comparison__status--positive {
+    background: var(--vzx-green);
+  }
+  .vzx-comparison__status--warning {
+    background: var(--vzx-yellow);
+  }
+  .vzx-comparison__status--negative {
+    background: var(--vzx-red);
+  }
+  /* ==========================================
+     MOBILE IMAGE VERSION
+  ========================================== */
+  .vzx-comparison__image-link {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border: 1px solid #dedede;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.07);
+    text-decoration: none;
+  }
+  .vzx-comparison__image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .vzx-comparison__image-action {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 16px;
+    border-top: 1px solid #e0e0e0;
+    background: #fff;
+    color: #111;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .vzx-comparison__image-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #111;
+    color: #fff;
+    font-size: 16px;
+    line-height: 1;
+  }
+  @media screen and (max-width: 1100px) and (min-width: 768px) {
+    .vzx-comparison__header,
+    .vzx-comparison__row {
+      grid-template-columns:
+        minmax(160px, 0.65fr)
+        minmax(280px, 1.35fr)
+        minmax(350px, 1.75fr);
+    }
+    .vzx-comparison__feature {
+      font-size: 16px;
+    }
+    .vzx-comparison__cell {
+      padding-right: 18px;
+      font-size: 15px;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .vzx-comparison {
+      margin: 45px auto;
+    }
+    .vzx-comparison__section {
+      margin-bottom: 55px;
+    }
+    .vzx-comparison__heading {
+      margin-bottom: 22px;
+      font-size: clamp(38px, 12vw, 52px);
+      line-height: 1.03;
+      letter-spacing: -0.045em;
+    }
+    .vzx-comparison__desktop {
+      display: none;
+    }
+    .vzx-comparison__mobile {
+      display: block;
+    }
+  }
+</style>
+<div class="vzx-comparison">
+<!-- ======================================
+       TABLE 1: USER EXPERIENCE
+  ======================================= -->
+<section class="vzx-comparison__section">
+<h2 class="vzx-comparison__heading">User Experience</h2>
+<div class="vzx-comparison__desktop">
+<div class="vzx-comparison__table" role="table" aria-label="User Experience comparison">
+<div class="vzx-comparison__header" role="row">
+<div class="vzx-comparison__header-cell" role="columnheader">Feature / Factor</div>
+<div class="vzx-comparison__header-cell" role="columnheader">Voice Picking</div>
+<div class="vzx-comparison__header-cell" role="columnheader">Smart Glasses</div>
+</div>
+<div class="vzx-comparison__row" role="row">
+<div class="vzx-comparison__feature" role="rowheader">Hands-free Operation</div>
+<div class="vzx-comparison__cell" role="cell">
+<span class="vzx-comparison__status vzx-comparison__status--positive"></span> Workers keep hands free for picking</div>
+<div class="vzx-comparison__cell" role="cell">
+<span class="vzx-comparison__status vzx-comparison__status--positive"></span> Workers keep hands free for picking</div>
+</div>
+<div class="vzx-comparison__row" role="row">
+<div class="vzx-comparison__feature" role="rowheader">Eyes-up Operation</div>
+<div class="vzx-comparison__cell" role="cell">
+<span class="vzx-comparison__status vzx-comparison__status--positive"></span> Allows full visual focus on the task and environment</div>
+<div class="vzx-comparison__cell" role="cell">
+<span class="vzx-comparison__status vzx-comparison__status--positive"></span> See-beyond HUD keeps peripheral vision free; OSHA spotter guidelines met</div>
+</div>
+<div class="vzx-comparison__row" role="row">
+<div class="vzx-comparison__feature" role="rowheader">Learning Curve</div>
+<div class="vzx-comparison__cell" role="cell">
+<span class="vzx-comparison__status vzx-comparison__status--warning"></span> 4–6 hour voice template and training dialogues</div>
+<div class="vzx-comparison__cell" role="cell">
+<span class="vzx-comparison__status vzx-comparison__status--positive"></span> 90 min average to proficiency; on-device videos and AR arrows cut ramp-up</div>
+</div>
+<div class="vzx-comparison__row" role="row">
+<div class="vzx-comparison__feature" role="rowheader">Error Reduction</div>
+<div class="vzx-comparison__cell" role="cell">
+<span class="vzx-comparison__status vzx-comparison__status--warning"></span> Dependent on voice recognition accuracy and pronunciation</div>
+<div class="vzx-comparison__cell" role="cell">
+<span class="vzx-comparison__status vzx-comparison__status--positive"></span> Visual confirmation reduces mispicks</div>
+</div>
+<div class="vzx-comparison__row" role="row">
+<div class="vzx-comparison__feature" role="rowheader">Noise Interference</div>
+<div class="vzx-comparison__cell" role="cell">
+<span class="vzx-comparison__status vzx-comparison__status--negative"></span> Prone to errors in noisy environments due to voice misrecognition</div>
+<div class="vzx-comparison__cell" role="cell">
+<span class="vzx-comparison__status vzx-comparison__status--positive"></span> Relies on visuals in noisy environments yet still supports optional voice snippets even at a 95dB forklift aisle</div>
+</div>
+<div class="vzx-comparison__row" role="row">
+<div class="vzx-comparison__feature" role="rowheader">Physical Comfort</div>
+<div class="vzx-comparison__cell" role="cell">
+<span class="vzx-comparison__status vzx-comparison__status--positive"></span> Lightweight headsets, generally comfortable</div>
+<div class="vzx-comparison__cell" role="cell">
+<span class="vzx-comparison__status vzx-comparison__status--positive"></span> Lightweight headsets, battery weight offset by mounting options to avoid end-of-shift fatigue</div>
+</div>
+<div class="vzx-comparison__row" role="row">
+<div class="vzx-comparison__feature" role="rowheader">Data Presentation</div>
+<div class="vzx-comparison__cell" role="cell">
+<span class="vzx-comparison__status vzx-comparison__status--negative"></span> Only auditory feedback</div>
+<div class="vzx-comparison__cell" role="cell">
+<span class="vzx-comparison__status vzx-comparison__status--positive"></span> Can show item images, arrows, text, or even maps</div>
+</div>
+<div class="vzx-comparison__row" role="row">
+<div class="vzx-comparison__feature" role="rowheader">Data Inputs</div>
+<div class="vzx-comparison__cell" role="cell">
+<span class="vzx-comparison__status vzx-comparison__status--warning"></span> Voice only, with auxiliary tools for photo and data input</div>
+<div class="vzx-comparison__cell" role="cell">
+<span class="vzx-comparison__status vzx-comparison__status--positive"></span> Provides voice, photo, and video sharing</div>
+</div>
+</div>
+</div>
+<!-- Replace both URLs with the User Experience image URL -->
+<div class="vzx-comparison__mobile"><a class="vzx-comparison__image-link" href="https://cdn.shopify.com/s/files/1/0581/1208/2086/files/Screenshot_2026-07-14_at_2.15.13_PM.png?v=1784057619" rel="noopener" aria-label="Open the full User Experience comparison table" target="_blank"> <img class="vzx-comparison__image" alt="User Experience comparison between voice picking and smart glasses" loading="lazy" src="https://cdn.shopify.com/s/files/1/0581/1208/2086/files/Screenshot_2026-07-14_at_2.15.13_PM.png?v=1784057619"> <span class="vzx-comparison__image-action"> Tap to view the full table <span class="vzx-comparison__image-icon" aria-hidden="true">↗</span> </span> </a></div>
+</section>
+<!-- ======================================
+       TABLE 2: BACK-END MANAGEMENT
+  ======================================= -->
+<section class="vzx-comparison__section">
+<h2 class="vzx-comparison__heading">Back-end Management</h2>
+<div class="vzx-comparison__desktop">
+<div class="vzx-comparison__table" role="table" aria-label="Back-end Management comparison">
+<div class="vzx-comparison__header" role="row">
+<div class="vzx-comparison__header-cell" role="columnheader">Feature / Factor</div>
+<div class="vzx-comparison__header-cell" role="columnheader">Voice Picking</div>
+<div class="vzx-comparison__header-cell" role="columnheader">Smart Glasses</div>
+</div>
+<div class="vzx-comparison__row" role="row">
+<div class="vzx-comparison__feature" role="rowheader">Multi-Language Support</div>
+<div class="vzx-comparison__cell" role="cell">
+<span class="vzx-comparison__status vzx-comparison__status--warning"></span> Possible but requires robust speech models per language and accents</div>
+<div class="vzx-comparison__cell" role="cell">
+<span class="vzx-comparison__status vzx-comparison__status--positive"></span> Easier to display visual instructions in any language</div>
+</div>
+<div class="vzx-comparison__row" role="row">
+<div class="vzx-comparison__feature" role="rowheader">Barcode/Vision Scanning</div>
+<div class="vzx-comparison__cell" role="cell">
+<span class="vzx-comparison__status vzx-comparison__status--negative"></span> Needs handheld scanner or check digits</div>
+<div class="vzx-comparison__cell" role="cell">
+<span class="vzx-comparison__status vzx-comparison__status--positive"></span> Reads multiple barcodes in FOV; AI assists count and expiry detection</div>
+</div>
+<div class="vzx-comparison__row" role="row">
+<div class="vzx-comparison__feature" role="rowheader">On-device AI &amp; Offline Modes</div>
+<div class="vzx-comparison__cell" role="cell">
+<span class="vzx-comparison__status vzx-comparison__status--negative"></span> Server speech engine; network loss means dead air</div>
+<div class="vzx-comparison__cell" role="cell">
+<span class="vzx-comparison__status vzx-comparison__status--positive"></span> Snapdragon XR1 runs CV and LLM models locally; workflows cache when Wi-Fi drops. Visual pattern recognition, scanning, and more using on-device AI</div>
+</div>
+<div class="vzx-comparison__row" role="row">
+<div class="vzx-comparison__feature" role="rowheader">Data &amp; Analytics Loop</div>
+<div class="vzx-comparison__cell" role="cell">
+<span class="vzx-comparison__status vzx-comparison__status--negative"></span> Only start/stop time via telnet</div>
+<div class="vzx-comparison__cell" role="cell">
+<span class="vzx-comparison__status vzx-comparison__status--positive"></span> Edge logs per-step timestamps, Insights dashboards, and heat maps of pick zones</div>
+</div>
+<div class="vzx-comparison__row" role="row">
+<div class="vzx-comparison__feature" role="rowheader">Typical Install Time</div>
+<div class="vzx-comparison__cell" role="cell">
+<span class="vzx-comparison__status vzx-comparison__status--warning"></span> Significant, requiring installation of new servers and infrastructure</div>
+<div class="vzx-comparison__cell" role="cell">
+<span class="vzx-comparison__status vzx-comparison__status--positive"></span> Less than a two-week pilot, scaling in 60–90 days</div>
+</div>
+<div class="vzx-comparison__row" role="row">
+<div class="vzx-comparison__feature" role="rowheader">Maintenance</div>
+<div class="vzx-comparison__cell" role="cell">
+<span class="vzx-comparison__status vzx-comparison__status--negative"></span> Very difficult to update workflows and content because of middleware systems</div>
+<div class="vzx-comparison__cell" role="cell">
+<span class="vzx-comparison__status vzx-comparison__status--positive"></span> OTA firmware updates managed through all major MDMs</div>
+</div>
+<div class="vzx-comparison__row" role="row">
+<div class="vzx-comparison__feature" role="rowheader">Real-Time</div>
+<div class="vzx-comparison__cell" role="cell">
+<span class="vzx-comparison__status vzx-comparison__status--negative"></span> Lacks real-time visibility into warehouse tasks</div>
+<div class="vzx-comparison__cell" role="cell">
+<span class="vzx-comparison__status vzx-comparison__status--positive"></span> Real-time tracking of tasks for all staff fully integrated with the solution. Requires no custom development</div>
+</div>
+</div>
+</div>
+<!-- Replace both URLs with the Back-end Management image URL -->
+<div class="vzx-comparison__mobile"><a class="vzx-comparison__image-link" href="https://cdn.shopify.com/s/files/1/0581/1208/2086/files/Screenshot_2026-07-14_at_2.22.30_PM.png?v=1784057774" rel="noopener" aria-label="Open the full Back-end Management comparison table" target="_blank"> <img class="vzx-comparison__image" alt="Back-end Management comparison between voice picking and smart glasses" loading="lazy" src="https://cdn.shopify.com/s/files/1/0581/1208/2086/files/Screenshot_2026-07-14_at_2.22.30_PM.png?v=1784057774"> <span class="vzx-comparison__image-action"> Tap to view the full table <span class="vzx-comparison__image-icon" aria-hidden="true">↗</span> </span> </a></div>
+</section>
+<!-- ======================================
+       TABLE 3: HARDWARE / SOFTWARE
+  ======================================= -->
+<section class="vzx-comparison__section">
+<h2 class="vzx-comparison__heading">Hardware/Software</h2>
+<div class="vzx-comparison__desktop">
+<div class="vzx-comparison__table" role="table" aria-label="Hardware and Software comparison">
+<div class="vzx-comparison__header" role="row">
+<div class="vzx-comparison__header-cell" role="columnheader">Feature / Factor</div>
+<div class="vzx-comparison__header-cell" role="columnheader">Voice Picking</div>
+<div class="vzx-comparison__header-cell" role="columnheader">Smart Glasses</div>
+</div>
+<div class="vzx-comparison__row" role="row">
+<div class="vzx-comparison__feature" role="rowheader">Battery Life</div>
+<div class="vzx-comparison__cell" role="cell">
+<span class="vzx-comparison__status vzx-comparison__status--positive"></span> Typically long, 8–12+ hours</div>
+<div class="vzx-comparison__cell" role="cell">
+<span class="vzx-comparison__status vzx-comparison__status--positive"></span> Typically long, 8–12+ hours with swappable batteries</div>
+</div>
+<div class="vzx-comparison__row" role="row">
+<div class="vzx-comparison__feature" role="rowheader">Remote Collaboration</div>
+<div class="vzx-comparison__cell" role="cell">
+<span class="vzx-comparison__status vzx-comparison__status--negative"></span> No way to share view or make calls</div>
+<div class="vzx-comparison__cell" role="cell">
+<span class="vzx-comparison__status vzx-comparison__status--positive"></span> Picker can share live video to remotely share view with a supervisor</div>
+</div>
+<div class="vzx-comparison__row" role="row">
+<div class="vzx-comparison__feature" role="rowheader">Durability in Harsh Conditions</div>
+<div class="vzx-comparison__cell" role="cell">
+<span class="vzx-comparison__status vzx-comparison__status--positive"></span> Designed for rugged use</div>
+<div class="vzx-comparison__cell" role="cell">
+<span class="vzx-comparison__status vzx-comparison__status--positive"></span> Designed for rugged use; freezer rated at -20°C / -4°F</div>
+</div>
+<div class="vzx-comparison__row" role="row">
+<div class="vzx-comparison__feature" role="rowheader">Integrations</div>
+<div class="vzx-comparison__cell" role="cell">
+<span class="vzx-comparison__status vzx-comparison__status--negative"></span> Requires custom software development to run batch extracts from ERP platforms to middleware servers</div>
+<div class="vzx-comparison__cell" role="cell">
+<span class="vzx-comparison__status vzx-comparison__status--positive"></span> Works with REST/JSON + MQ and integrates with Manhattan, Blue Yonder, SAP EWM, and Oracle</div>
+</div>
+</div>
+</div>
+<!-- Replace both URLs with the Hardware/Software image URL -->
+<div class="vzx-comparison__mobile"><a class="vzx-comparison__image-link" href="https://cdn.shopify.com/s/files/1/0581/1208/2086/files/Screenshot_2026-07-14_at_2.15.33_PM.png?v=1784057616" rel="noopener" aria-label="Open the full Hardware and Software comparison table" target="_blank"> <img class="vzx-comparison__image" alt="Hardware and Software comparison between voice picking and smart glasses" loading="lazy" src="https://cdn.shopify.com/s/files/1/0581/1208/2086/files/Screenshot_2026-07-14_at_2.15.33_PM.png?v=1784057616"> <span class="vzx-comparison__image-action"> Tap to view the full table <span class="vzx-comparison__image-icon" aria-hidden="true">↗</span> </span> </a></div>
+</section>
+</div>
+<p dir="ltr"> </p>
+<p dir="ltr"><span>While voice picking remains a proven and reliable method, especially in environments where simplicity and auditory instructions suffice, smart glasses offer more dynamic system feedback and visually rich interface that can significantly enhance accuracy, reduce cognitive load, and improve performance in complex picking scenarios. Their ability to display images, text, and navigation cues directly in the user's line of sight makes them particularly valuable for training, high-variation tasks, and multilingual environments. As visual technology continues to evolve, smart glasses have become a compelling upgrade to traditional voice-based systems for warehouses aiming to maximize efficiency and adaptability.</span><span><b></b></span></p>
+<p dir="ltr"><span>Contact us to learn more about how visual displays can increase efficiency in your distribution center.</span></p>
+<p> </p>]]>
+    </content>
+  </entry>
+  <entry>
+    <id>https://www.vuzix.com/blogs/vuzix-blog/in-the-race-to-make-affordable-display-smartglasses-a-100-part-may-win-it</id>
+    <published>2026-06-28T10:56:00-05:00</published>
+    <updated>2026-07-08T10:58:53-05:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.vuzix.com/blogs/vuzix-blog/in-the-race-to-make-affordable-display-smartglasses-a-100-part-may-win-it"/>
+    <title>In the race to make affordable display smartglasses, a $100 part may win it</title>
+    <author>
+      <name>Christian Powell-Byars</name>
+    </author>
+    <content type="html">
+      <![CDATA[<p><a href="https://www.androidpolice.com/race-to-make-affordable-display-smartglasses-vuzix-matt-margolis-interview/" target="_blank" rel="noopener">Read the Article</a></p>]]>
+    </content>
+  </entry>
+  <entry>
+    <id>https://www.vuzix.com/blogs/vuzix-blog/q-a-vuzix-ceo-paul-travers-on-smart-glasses-frontline-work-and-enterprise-rollouts</id>
+    <published>2026-06-09T10:57:00-05:00</published>
+    <updated>2026-07-08T10:58:41-05:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.vuzix.com/blogs/vuzix-blog/q-a-vuzix-ceo-paul-travers-on-smart-glasses-frontline-work-and-enterprise-rollouts"/>
+    <title>Q&amp;A: Vuzix CEO Paul Travers On Smart Glasses, Frontline Work And Enterprise Rollouts</title>
+    <author>
+      <name>Christian Powell-Byars</name>
+    </author>
+    <content type="html">
+      <![CDATA[<p><a href="https://thexrbeat.com/qa-vuzix-ceo-paul-travers-on-smart-glasses-frontline-work-and-enterprise-rollouts/" target="_blank" rel="noopener">Read the Article</a></p>]]>
+    </content>
+  </entry>
+  <entry>
+    <id>https://www.vuzix.com/blogs/vuzix-blog/the-choice-between-enterprise-and-consumer-smart-glasses</id>
+    <published>2026-05-01T10:36:00-05:00</published>
+    <updated>2026-07-01T10:39:41-05:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.vuzix.com/blogs/vuzix-blog/the-choice-between-enterprise-and-consumer-smart-glasses"/>
+    <title>The Choice Between Enterprise and Consumer Smart Glasses</title>
+    <author>
+      <name>Christian Powell-Byars</name>
+    </author>
+    <content type="html">
+      <![CDATA[<p dir="ltr"><span>The augmented reality market is evolving rapidly. Devices like the stylish Ray-Ban Meta smart glasses, developed by Meta Platforms, are bringing AI-powered glasses into the mainstream. This is a necessary development, ushing in a new AR era for consumers but also for the workplace. As AR becomes more visible in everyday life, it’s natural for enterprise buyers to ask:</span></p>
+<p dir="ltr"><span>“If employees are excited about consumer smart glasses, why not just deploy those?”</span></p>
+<p dir="ltr"><span>At Vuzix, we welcome the consumerization of AR. It validates the category and accelerates awareness. But when it comes to industrial, medical, and mission-critical environments, the line between consumer and enterprise smart glasses is clear. Here are 8 considerations when making the choice between enterprise and consumer smart glasses rollouts.</span><b></b></p>
+<h3 dir="ltr"><strong>1. Consumer Platforms Are Closed Ecosystems</strong></h3>
+<p dir="ltr"><span>Consumer devices are typically locked into proprietary ecosystems. With products like Ray-Ban Meta smart glasses, the operating environment, application layer, AI services, and data flow are tightly controlled by the manufacturer.</span></p>
+<p dir="ltr"><span>In enterprise environments, flexibility is not optional, it’s essential. Vuzix smart glasses are built on an open, configurable platform with developer kits and support resources. This allows organizations to:</span></p>
+<ul>
+<li dir="ltr" role="presentation">
+<span>Deploy custom applications</span><span><br></span>
+</li>
+<li dir="ltr" role="presentation">
+<span>Integrate with existing enterprise systems (ERP, WMS, EHR, telemedicine platforms)</span><span><br></span>
+</li>
+<li dir="ltr" role="presentation">
+<span>Control firmware updates and software lifecycles</span><span><br></span>
+</li>
+<li dir="ltr" role="presentation">
+<span>Securely manage data within corporate IT frameworks</span><span><br><br></span>
+</li>
+</ul>
+<p dir="ltr"><span>You decide how the device works — not a consumer social media roadmap.</span><b></b></p>
+<h3 dir="ltr"><span>2. Enterprise Security and Data Governance</span></h3>
+<p dir="ltr"><span>In consumer wearables, data often flows through cloud infrastructures optimized for engagement and personalization. That model may work for social sharing — but it creates serious concerns in enterprise and healthcare settings.</span></p>
+<p dir="ltr"><span>Industrial and medical customers require:</span></p>
+<ul>
+<li dir="ltr" role="presentation">
+<span>End-to-end encryption</span><span><br></span>
+</li>
+<li dir="ltr" role="presentation">
+<span>Device management and MDM compatibility</span><span><br></span>
+</li>
+<li dir="ltr" role="presentation">
+<span>On-premise or private cloud deployment options</span><span><br></span>
+</li>
+<li dir="ltr" role="presentation">
+<span>Compliance with regulatory frameworks (HIPAA, GDPR, ITAR, SOC 2, etc.)</span><span><br></span>
+</li>
+<li dir="ltr" role="presentation">
+<span>Audit trails and role-based access controls</span><span><br></span>
+</li>
+</ul>
+<p dir="ltr"><span>Enterprise AR must align with corporate cybersecurity policies. Consumer devices are rarely architected with those requirements in mind.</span><b></b></p>
+<h3 dir="ltr"><span>3. Built for the Job — Not Just the Look</span></h3>
+<p dir="ltr"><span>Consumer smart glasses prioritize aesthetics, comfort, and lifestyle integration, and these are important considerations. While still taking ergonomics into account, enterprise smart glasses prioritize durability, performance, and task optimization. This design is not only to withstand the harshness of the workplace, but also to keep their wearers safe and productive for long shifts.</span></p>
+<p dir="ltr"><span>Industrial environments require:</span></p>
+<ul>
+<li dir="ltr" role="presentation">
+<span>Safety-rated designs</span><span><br></span>
+</li>
+<li dir="ltr" role="presentation">
+<span>Hard-hat compatibility</span><span><br></span>
+</li>
+<li dir="ltr" role="presentation">
+<span>Ruggedization for dust, debris, temperature, and impact</span><span><br></span>
+</li>
+<li dir="ltr" role="presentation">
+<span>Swappable batteries for full-shift operation</span><span><br></span>
+</li>
+<li dir="ltr" role="presentation">
+<span>Hands-free usability with gloves and PPE</span><span></span>
+</li>
+</ul>
+<p><span>In healthcare, devices must support sterile protocols and extended use in demanding clinical workflows.</span></p>
+<p dir="ltr"><span>Looking like everyday eyewear may reduce hesitation — but performance and safety drive ROI.</span><b></b></p>
+<h3 dir="ltr"><span>4. Structured, Managed Deployments</span></h3>
+<p dir="ltr"><span>Consumer wearables are typically purchased individually and managed at the user level. Enterprises require centralized control.</span></p>
+<p dir="ltr"><span>With Vuzix smart glasses, organizations can:</span></p>
+<ul>
+<li dir="ltr" role="presentation">
+<span>Provision devices at scale</span><span><br></span>
+</li>
+<li dir="ltr" role="presentation">
+<span>Remotely manage fleets</span><span><br></span>
+</li>
+<li dir="ltr" role="presentation">
+<span>Push application updates</span><span><br></span>
+</li>
+<li dir="ltr" role="presentation">
+<span>Monitor performance and usage</span><span><br></span>
+</li>
+<li dir="ltr" role="presentation">
+<span>Lock down functionality based on role</span><span><br></span>
+</li>
+</ul>
+<p dir="ltr"><span>This structured deployment model ensures operational continuity — something consumer devices are not built to support at scale.</span><b></b></p>
+<h3 dir="ltr"><span>5. AI That Works for the Enterprise</span></h3>
+<p dir="ltr"><span>AI is becoming the headline feature of consumer smart glasses. We view smart glasses as the essential bridge between AI and human users, but enterprise AI use cases are fundamentally different.</span></p>
+<p dir="ltr"><span>Enterprises need AI software that:</span></p>
+<ul>
+<li dir="ltr" role="presentation">
+<span>Integrates with proprietary knowledge bases</span><span><br></span>
+</li>
+<li dir="ltr" role="presentation">
+<span>Accesses internal documentation securely</span><span><br></span>
+</li>
+<li dir="ltr" role="presentation">
+<span>Supports guided workflows</span><span><br></span>
+</li>
+<li dir="ltr" role="presentation">
+<span>Assists with inspection, remote support, and quality assurance</span><span><br></span>
+</li>
+<li dir="ltr" role="presentation">
+<span>Operates within corporate data boundaries</span><span><br></span>
+</li>
+</ul>
+<p dir="ltr"><span>Consumer AI assistants are optimized for general queries and social interaction — not for referencing a manufacturer’s service manual or a hospital’s clinical protocol.</span><b></b></p>
+<h3 dir="ltr"><span>6. Lifecycle Stability and Roadmap Predictability</span></h3>
+<p dir="ltr"><span>Consumer hardware follows rapid upgrade cycles driven by fashion trends and retail demand. Enterprise deployments require stability.</span></p>
+<p dir="ltr"><span>Organizations investing in smart glasses expect:</span></p>
+<ul>
+<li dir="ltr" role="presentation">
+<span>Multi-year product availability</span><span><br></span>
+</li>
+<li dir="ltr" role="presentation">
+<span>Long-term software support</span><span><br></span>
+</li>
+<li dir="ltr" role="presentation">
+<span>Predictable update cycles</span><span><br></span>
+</li>
+<li dir="ltr" role="presentation">
+<span>Backward compatibility</span><span><br></span>
+</li>
+</ul>
+<p dir="ltr"><span>When a consumer product is discontinued or repositioned, enterprise workflows cannot simply pivot overnight.</span></p>
+<p><b><br></b></p>
+<h3 dir="ltr"><span>7. Total Cost of Ownership vs. Purchase Price</span></h3>
+<p dir="ltr"><span>At first glance, consumer smart glasses may appear less expensive. However, enterprise buyers must evaluate total cost of ownership when making buying decisions.</span></p>
+<ul>
+<li dir="ltr" role="presentation">
+<span>Integration costs</span><span><br></span>
+</li>
+<li dir="ltr" role="presentation">
+<span>Security remediation</span><span><br></span>
+</li>
+<li dir="ltr" role="presentation">
+<span>Accessory compatibility</span><span><br></span>
+</li>
+<li dir="ltr" role="presentation">
+<span>Downtime risk</span><span><br></span>
+</li>
+<li dir="ltr" role="presentation">
+<span>Limited enterprise support</span><span><br></span>
+</li>
+</ul>
+<p dir="ltr"><span>Enterprise-designed smart glasses reduce hidden costs by aligning with operational requirements from day one.</span></p>
+<p><b><br></b></p>
+<h3 dir="ltr"><span>8. Professional Perception and Trust</span></h3>
+<p dir="ltr"><span>In medical and industrial environments, perception matters. Patients, technicians, and partners must trust that devices are purpose-built for the task — not adapted from consumer entertainment technology. Enterprise-grade smart glasses signal professionalism, reliability, and compliance. In addition, keeping a stark line between a worker’s enterprise smart glasses, and the consumer pair he or she wears at home means sensitive information captured on the glasses stays secure. This reduces the IT security burden and reduces risk at all levels. When a worker accidentally leaves their smart glasses in the Uber, it’s a personal problem, not a corporate debacle.</span></p>
+<p dir="ltr"> </p>
+<hr>
+<p> </p>
+<h3 dir="ltr"><span>The Consumerization Effect: A Positive Signal With Clear Boundaries</span></h3>
+<p dir="ltr"><span>The popularity of devices like Ray-Ban Meta smart glasses demonstrates that wearables are becoming socially accepted. That’s a good thing for the industry. Familiarity reduces cultural resistance.</span></p>
+<p dir="ltr"><span>But consumer acceptance does not equal enterprise readiness.</span></p>
+<p dir="ltr"><span>At Vuzix, we design smart glasses specifically for the workplace — engineered for structured deployment, secure integration, rugged performance, and AI-driven productivity.</span></p>
+<p dir="ltr"><span>As organizations evaluate their next phase of digital transformation, the key question is not:</span></p>
+<p dir="ltr"><span>“Do employees like the way it looks?”</span></p>
+<p dir="ltr"><span>It’s:</span></p>
+<p dir="ltr"><span>“Does it meet the operational, security, compliance, and scalability requirements of our business?”</span></p>
+<p dir="ltr"><span>That’s where enterprise-grade smart glasses make the difference.</span></p>]]>
+    </content>
+  </entry>
+  <entry>
+    <id>https://www.vuzix.com/blogs/vuzix-blog/waveguide-technology-a-critical-component-for-ar</id>
+    <published>2025-12-08T09:53:00-06:00</published>
+    <updated>2026-07-01T09:54:26-05:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.vuzix.com/blogs/vuzix-blog/waveguide-technology-a-critical-component-for-ar"/>
+    <title>Waveguide Technology: A Critical Component for AR</title>
+    <author>
+      <name>Christian Powell-Byars</name>
+    </author>
+    <content type="html">
+      <![CDATA[<main class="main-content relative" id="MainContent" role="main">
+<div id="shopify-section-template--18647908155558__main-article" class="shopify-section">
+<div class="section section--padding section--rounded relative">
+<article class="article page-width page-width--narrow relative" itemscope="" itemtype="http://schema.org/BlogPosting">
+<div class="rte text-base md:text-lg" itemprop="articleBody">
+<p dir="ltr"><span>Waveguide technology is a crucial component for wearable AR devices, enabling the seamless display of digital information onto the real world. It acts as a transparent medium that guides light to the eye from a micro-projector, allowing for a compact and lightweight device. For wearable AR systems, this “see-through” technology is optimal for maintaining situational awareness, or for offering blended or mixed reality (XR) creating experiences through increasingly lightweight, ergonomic, and in a word, invisible form factors. As the market for AR (and the features it enables, specifically AI assistants) grows across industries like healthcare, manufacturing, and entertainment, the demand for waveguide technology that can be integrated into a design that looks and feels like an ordinary pair of prescription eyewear is the primary challenge to widespread adoption. Building this technology across a wide range of styles that cater to end user sensibilities is yet another big milestone towards mainstreaming this technology.</span></p>
+<h2 dir="ltr"><span>Vuzix' Differentiated Approach to Waveguide Development</span></h2>
+<p dir="ltr"><span>Vuzix has emerged as a leader in the waveguide space by delivering innovative, high-performance optics that power AR devices like smart glasses. Unlike other players in the market, our approach combines social acceptability, display performance, prescription integration, and style across a matrix of options all in service of true product customization. </span></p>
+<p dir="ltr"><span>Vuzix is well known in the industry for our proprietary waveguide technology. Our dual waveguide facilities in California and New York give us the R&amp;D and manufacturing flexibility to quickly customize across brightness ranges, color space, FOV, and image location – all with an eye towards user comfort and ergonomics. This is crucial for wearable devices that require high-quality visuals without compromising on portability or design. It’s our experience with integrating waveguide technology into lightweight, long-use wearables for the workplace that has enabled us to design AR solutions for a broad host of enterprise and consumer applications.</span></p>
+<p dir="ltr"><span>On the consumer end, it’s no secret that social acceptance is a major driver of AR and XR. As AI agents enter into every aspect of our digital lives, waveguide devices provide the optimal medium for agentic interactions. However, not everyone is comfortable being seen wearing smart glasses or using AI assistants for a variety of reasons. Our Incognito technology minimizes this concern, managing the flow of light through the waveguide in a way that makes it nearly impossible to tell that someone is wearing a waveguide. This is yet another capabilities differentiator that sets up Vuzix waveguides as a game changer for military and consumer applications.</span></p>
+<h2 dir="ltr"><span>What’s Next?</span></h2>
+<p dir="ltr"><span>The future of AR is being built on Vuzix technology. With a growing number of advancements in Vuzix waveguide features and capabilities, we’re already playing a pivotal role in the mass adoption of augmented reality. We’re pioneering the limits of optical waveguide technology, and passing those advancements on to our partners, which in turn is helping to shape how people interact with digital information in the real world.</span></p>
+<p dir="ltr"><span>The adoption of AR will progress on meter with the evolution of waveguide technology, and Vuzix OEM solutions are on the cutting edge of what will be the next great leap for the connected worker, consumer, and technology citizen. </span></p>
+</div>
+</article>
+</div>
+</div>
+<div id="shopify-section-template--18647908155558__shogun-optimizer" class="shopify-section"></div>
+<div id="shopify-section-template--18647908155558__custom_liquid_z64QKm" class="shopify-section">
+<div class="section section--padding">
+<div class="page-width page-width--narrow relative"><br></div>
+</div>
+</div>
+</main>
+<div id="shopify-section-sections--18647902716070__footer" class="shopify-section shopify-section-group-footer-group">
+<div class="section section--padding"><footer class="footer footer--no-info footer-width page-width page-width--full relative grid">
+<div class="footer__left flex flex-col md:flex-row gap-10">
+<div class="footer__logo flex flex-col gap-10">
+<p class="leading-none"> </p>
+</div>
+</div>
+</footer></div>
+</div>]]>
+    </content>
+  </entry>
+  <entry>
+    <id>https://www.vuzix.com/blogs/vuzix-blog/jason-dodunski-the-wingsuit-pioneer-taking-flight-with-smart-glasses</id>
+    <published>2025-05-28T09:59:00-05:00</published>
+    <updated>2026-07-01T09:59:59-05:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.vuzix.com/blogs/vuzix-blog/jason-dodunski-the-wingsuit-pioneer-taking-flight-with-smart-glasses"/>
+    <title>Jason Dodunski: The Wingsuit Pioneer Taking Flight with Smart Glasses</title>
+    <author>
+      <name>Christian Powell-Byars</name>
+    </author>
+    <content type="html">
+      <![CDATA[<p dir="ltr"><span>In the world of performance wingsuiting where divers reach speeds well over 100 mph and are scored against an unforgiving set of measurements, precision is everything. Jason Dodunski, a professional wingsuit flier and software developer from Gold Coast Australia, is a visionary who’s pushing the boundaries of his sport with augmented reality. Boasting over 3,600 jumps and an unmatched dedication to innovation, Jason has become a pioneer not just in the sport, but in the way technology is reshaping it. His secret weapon? Vuzix Blade 2 smart glasses.</span></p>
+<p dir="ltr"><span>With an eye towards the performance standards that matter most, Jason has developed two custom wingsuit apps that run directly on the Blade 2. These apps provide real-time data feeds, including speed, altitude, glide ratios, and live weather conditions by calling into local weather stations mid-jump. This real-time data gives Jason the critical edge he needs while navigating unpredictable skies. "Every second counts when you’re moving at high speeds and can't always see where you're going," he explains. “The glasses give me a heads up dashboard.”</span></p>
+<p dir="ltr"><span>One of the key innovations is the use of gps to track his position in his “flight lane”—an invisible corredor only 600m wide that comprises the competition’s scoring boundaries and landing point. With the software giving him heads-up feedback on his position and a virtual line of sight, Jason avoids losing precious points for drifting out of his lane. It’s this kind of integration between human performance and wearable technology that’s setting him apart on the global stage.</span></p>
+<p dir="ltr"><span><img class="blog-left-30" alt="" src="https://web.archive.org/web/20260103065857im_/https://cdn.shopify.com/s/files/1/0581/1208/2086/files/4c934c53-8aed-4bc5-8f8e-4c2309aa9375.jpg?v=1747321651"></span></p>
+<p dir="ltr"><span>Jason has used the Blade 2 as his in-air assistant for over 2,500 jumps, making him one of the most experienced tech-enabled wingsuit pilots in the world. His results speak for themselves: he recently finished 2nd at the Australian Nationals, and he’s now preparing for the 5th FAI World Cup of Wingsuit Flying in Prostejov, Czech Republic this August.</span></p>
+<p dir="ltr"><span>“I’m focused and ready to build on the momentum,” Jason says. “I’ve identified key areas for improvement and will be pushing hard to challenge for the top of the podium once again.”</span></p>
+<p dir="ltr"><span>As wingsuit flying continues to evolve, so too does the gear that supports its top athletes. In that area, Jason Dodunski isn’t just keeping up—he’s changing the game with AR.</span></p>]]>
+    </content>
+  </entry>
+  <entry>
+    <id>https://www.vuzix.com/blogs/vuzix-blog/transforming-pharmacy-hrs-wins-pfizer-award-with-vuzix-smart-glasses-and-flex4vision-technology</id>
+    <published>2024-06-17T10:03:00-05:00</published>
+    <updated>2026-07-01T10:03:39-05:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.vuzix.com/blogs/vuzix-blog/transforming-pharmacy-hrs-wins-pfizer-award-with-vuzix-smart-glasses-and-flex4vision-technology"/>
+    <title>Transforming Pharmacy: HRS Wins Pfizer Award with Vuzix Smart Glasses and Flex4vision Technology</title>
+    <author>
+      <name>Christian Powell-Byars</name>
+    </author>
+    <content type="html">
+      <![CDATA[<div class="shg-c shogun-image-container shg-align-center" id="s-60afa9a2-016a-4d95-a414-4dc93477547e"><img src="https://web.archive.org/web/20260103065858im_/https://i.shgcdn.com/d4876c84-34be-4cfd-b627-69d786f31f6b/-/format/auto/-/preview/3000x3000/-/quality/lighter/" width="" height="" alt="" class="shogun-image" decoding="async" loading="eager"></div>
+<div id="s-15f1d0af-9f5b-4fbc-ac1f-746f8f6f0bf0" class="shg-c">
+<div class="shg-rich-text shg-theme-text-content">
+<p><span><em>Marie Sevrin and Louise Tacré from HRS receive the award from Pfizer representative, Hugues Ropson</em></span></p>
+</div>
+</div>
+<div id="s-f1cc32f5-5b18-49eb-abbb-49a9bdda7076" class="shg-c">
+<div class="shg-rich-text shg-theme-text-content">
+<p><span>We're thrilled to announce that the </span><a href="https://web.archive.org/web/20260103065858/https://www.hopitauxschuman.lu/de/" target="_blank"><span>Robert Schuman Hospitals</span></a><span> (HRS) have won the prestigious </span><a href="https://web.archive.org/web/20260103065858/https://aphl.lu/prix-vaccin-pfizer-luxembourg/" target="_blank"><span>Pfizer Innovation Award</span></a><span> on June 7th, 2024, for Innovation in Hospital Pharmacy. This award, organized by the </span><a href="https://web.archive.org/web/20260103065858/https://aphl.lu/" target="_blank"><span>Association of Hospital Pharmacists of Luxembourg</span></a><span> (APHL) and funded by Pfizer, highlights groundbreaking advancements in medication logistics within hospitals. The winning project from HRS, which focused on incorporating augmented reality to enhance the production circuit for sterile preparations, is a testament to innovation and collaboration in healthcare.</span></p>
+<p><strong>Recognizing Excellence in Hospital Pharmacy</strong></p>
+<p><span>The Pfizer Innovation Award celebrates exceptional projects that revolutionize medicine logistics, clinical pharmacy, or medical devices in hospital settings. This award, valued at €10,000, seeks to acknowledge and support projects that:</span></p>
+</div>
+</div>
+<div id="s-a11ec56b-2801-4499-b8a7-36aef5afd7aa" class="shg-c">
+<div class="shg-rich-text shg-theme-text-content">
+<ul>
+<li><span>Independently design and implement improvements in medicine logistics</span></li>
+<li><span>Complete within a 36 to 48-month timeframe</span></li>
+<li><span>Involve multiple hospital departments</span></li>
+<li><span>Are coordinated by a hospital pharmacist and supported by hospital management</span></li>
+</ul>
+</div>
+</div>
+<div id="s-edc9bc35-6848-4b24-bc81-8431e7aa3a88" class="shg-c">
+<div class="shogun-heading-component">
+<p><strong>The Winning Project: Augmented Reality in Sterile Preparations</strong></p>
+<p><span>Marie Sevrin and Louise Tacré from the </span><a href="https://web.archive.org/web/20260103065858/https://www.hopitauxschuman.lu/fr/specialites-maladies-traitements/pharmacie-hospitaliere/" target="_blank"><span>HRS Pharmacy Production team</span></a><span>, under the guidance of Anne Otto, earned this accolade with their innovative approach to the production circuit of sterile preparations. This project, to improve the quality of production in Hospital Pharmacy, aims to control the process by leveraging cutting-edge technology to streamline and enhance the preparation process, ensuring greater efficiency and safety.</span></p>
+</div>
+</div>
+<div id="s-550dfb8f-f55d-493f-8d15-27758d0ecc33" class="shg-c">
+<div class="shg-rich-text shg-theme-text-content">
+<p><span>At the heart of this innovation are the </span><a href="https://web.archive.org/web/20260103065858/https://www.vuzix.com/products/m400-smart-glasses" target="_blank"><span>Vuzix M400</span></a><span> augmented reality smart glasses and the </span><a href="https://web.archive.org/web/20260103065858/https://www.flex4vision.com/" target="_blank"><span>Flex4vision</span></a><span> application developed by aixofit. These technologies collectively transform the traditional processes into a more precise and efficient system. The Vuzix smart glasses in conjunction with the Flex4vision application facilitate controlling the whole production process and provide traceability by archiving photos and videos.</span><span> </span></p>
+</div>
+</div>
+<div class="shg-c shogun-image-container shg-align-center" id="s-96d8d3fb-c53c-4db0-b4f2-15e10730aa44"><img src="https://web.archive.org/web/20260103065858im_/https://i.shgcdn.com/b940bbc1-d1bb-4c82-aa08-962227638b40/-/format/auto/-/preview/3000x3000/-/quality/lighter/" width="" height="" alt="" class="shogun-image" decoding="async" loading="lazy"></div>
+<div id="s-aae8dd41-1744-4bfa-bfab-f273f160179a" class="shg-c">
+<div class="shg-rich-text shg-theme-text-content">
+<p><span><em>The Robert Schuman Hospitals team using the Vuzix M400 to scan a label</em></span></p>
+</div>
+</div>
+<div id="s-fb966fcb-441a-4256-9b5b-e27e2b73f3de" class="shg-c">
+<div class="shogun-heading-component">
+<p><strong>Vuzix and Flex4vision Are Making a Difference</strong></p>
+<p><a href="https://web.archive.org/web/20260103065858/https://www.vuzix.com/products/m400-smart-glasses" target="_blank"><strong>Vuzix M400 smart glasses:</strong></a><span> provide a voice-enabled, hands-free workflow experience that allows hospital pharmacists to follow complex procedures with ease and accuracy. By overlaying digital information onto the real world, the M400 smart glasses guide pharmacists through each step of the sterile preparation process, from prescription handling to final reporting.</span></p>
+<p><strong><a href="https://web.archive.org/web/20260103065858/https://www.flex4vision.com/" target="_blank">Flex4vision Application</a>:</strong><span> Developed by aixofit, this application integrates seamlessly with Vuzix smart glasses. It offers ready-to-use and customizable solutions for pharmaceutical preparation, logistics tracking, 3D plan visualization, and more. Specifically for this project, Flex4vision's application ensures precise reference taking, photographic documentation of syringes or bags, and generation of detailed reports for delayed control, thus completing the batch file comprehensively.</span></p>
+</div>
+</div>
+<div id="s-ac1eb434-4e13-4a66-9518-52bbe6239772" class="shg-c">
+<div class="shg-rich-text shg-theme-text-content">
+<p><span> </span><img src="https://web.archive.org/web/20260103065858im_/https://i.shgcdn.com/647354fc-c775-438d-9774-b7c179a834e6/-/format/auto/-/preview/3000x3000/-/quality/lighter/" width="" height="" alt="" class="shogun-image" decoding="async" loading="lazy"></p>
+</div>
+</div>
+<div id="s-bccc47d0-e5ea-4a77-a56d-672af07cb5fa" class="shg-c">
+<div class="shg-rich-text shg-theme-text-content">
+<p><span><em>The Robert Schuman Hospitals team interacts with the Flex4Vision application via voice commands</em></span></p>
+</div>
+</div>
+<div id="s-ce2fcc38-4b32-4ed1-9fbd-2305e6daf5cd" class="shg-c">
+<div class="shogun-heading-component">
+<p><strong>The Impact of Innovation</strong></p>
+<p><span>This award-winning project underscores the critical role of technological innovation in healthcare. By integrating Vuzix's smart glasses and Flex4vision's application, HRS has set a new standard for sterile preparation processes. The benefits are manifold:</span></p>
+</div>
+</div>
+<div id="s-cbae008d-42b3-4cf5-9610-3ce9b261a670" class="shg-c">
+<div class="shg-rich-text shg-theme-text-content">
+<ul>
+<li>
+<strong>Enhanced Accuracy:</strong><span> Augmented reality guides ensure each step is performed correctly, reducing the risk of errors.</span>
+</li>
+<li>
+<strong>Increased Efficiency:</strong><span> Streamlined processes save time, allowing pharmacists to focus on more critical tasks.</span>
+</li>
+<li>
+<strong>Improved Safety:</strong><span> Comprehensive documentation and delayed control capabilities enhance patient safety and compliance.</span>
+</li>
+</ul>
+</div>
+</div>
+<div id="s-dd50f009-ecb1-4a40-bfc8-f0572f4c4d54" class="shg-c">
+<div class="shg-rich-text shg-theme-text-content">
+<p><span><strong><em>"Pharmaceutical care awards, such as the Pfizer Innovation Award, are pivotal in fostering innovation and driving research that empowers hospital pharmacists to overcome specific challenges and bridge technology gaps. With the integration of Vuzix smart glasses and our Flex4vision application, hospitals can optimize their human resources while ensuring that processes, such as the production circuit for sterile preparations, are executed with precision and safety."</em></strong></span></p>
+<p dir="ltr"><strong><em>-Colette Huts, </em><em>CEO, Flex4vision</em></strong></p>
+</div>
+</div>
+<div id="s-a173fc9e-ec48-4971-a27f-a1a92b8f0b24" class="shg-c">
+<div class="shogun-heading-component">
+<p><strong>Looking Ahead</strong></p>
+<p><span>As we celebrate this remarkable achievement, we also look forward to the future of hospital pharmacy. The collaboration between HRS, Vuzix, and Flex4vision exemplifies the power of innovative technologies to transform healthcare practices. We are excited to see how these advancements will continue to evolve and improve patient care worldwide.</span></p>
+</div>
+</div>
+<div id="s-ca7d5d06-12d0-40d7-9d7e-ec5da4fdab46" class="shg-c">
+<div class="shg-rich-text shg-theme-text-content">
+<p><span>Congratulations to the Robert Schuman Hospitals, and a heartfelt thank you to the dedicated teams and partners who made this project possible. Your commitment to excellence and innovation is truly inspiring!</span></p>
+</div>
+</div>]]>
+    </content>
+  </entry>
+  <entry>
+    <id>https://www.vuzix.com/blogs/vuzix-blog/using-ar-to-meet-the-challenges-of-modern-fulfillment-operations-a-deep-dive-into-retail-manufacturing-3pl-and-distribution-sectors</id>
+    <published>2024-05-31T10:05:00-05:00</published>
+    <updated>2026-07-01T10:05:20-05:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.vuzix.com/blogs/vuzix-blog/using-ar-to-meet-the-challenges-of-modern-fulfillment-operations-a-deep-dive-into-retail-manufacturing-3pl-and-distribution-sectors"/>
+    <title>Using AR to Meet the Challenges of Modern Fulfillment Operations: A Deep Dive Into Retail, Manufacturing, 3PL, and Distribution Sectors</title>
+    <author>
+      <name>Christian Powell-Byars</name>
+    </author>
+    <content type="html">
+      <![CDATA[<p><span>In today's fast-paced business environment, executives across Retail, Manufacturing, Third-party Logistics (3PL), and Distribution sectors face unprecedented challenges in fulfillment operations. As the backbone of customer satisfaction and competitive differentiation, efficient fulfillment has become a strategic priority. This blog post, based on the findings from the <a rel="noopener noreferrer" href="https://web.archive.org/web/20260103065855/https://www.vuzix.com/pages/logistics-report-2024" target="_blank">Revolutionizing Fulfillment Operations Through Augmented Reality Wearables</a> report from Incisiv, delves into the most pressing challenges these executives encounter and explores potential solutions for a more streamlined and effective operational landscape.</span></p>
+<p><strong>The Changing Face of Fulfillment Operations</strong></p>
+<p><span>The logistics landscape has undergone a seismic shift, propelled by the eCommerce boom and rising consumer expectations. Today's customers demand quick, precise, and transparent delivery services, leaving no room for error. As a result, companies are grappling with a complex mix of factors, including labor shortages, rising labor costs, and traditionally high turnover rates in warehouses.</span></p>
+<p><b>Key Challenges in Fulfillment Operations</b></p>
+<ol>
+<li>
+<b>Skyrocketing Consumer Expectations:</b><span> The age of instant gratification has led to heightened demands for quick and accurate deliveries. Any misstep in fulfillment can result in lost customers and a damaged reputation.</span>
+</li>
+<li>
+<b>Balancing Efficiency with Rising Costs:<span> </span></b><span>The eCommerce boom has expanded the scope of logistics, intensifying cost pressures. Companies must deliver top-tier service while managing costs amidst labor shortages and a technologically diverse workforce.</span>
+</li>
+<li>
+<b>Embracing Technological Transformation:<span> </span></b><span>While technological advancements offer opportunities to streamline fulfillment processes, integrating these technologies can be challenging, especially considering the workforce's varying tech literacy.</span>
+</li>
+</ol>
+<p><b>Digital Transformation in Warehouse Operations</b></p>
+<p><span>The digital revolution is reshaping warehouse operations, with barcode technology and RFID systems playing pivotal roles in optimizing processes and setting standards in operational precision.</span></p>
+<p><b>Barcodes and RFID: Current Landscape</b></p>
+<ul>
+<li>
+<b>Barcodes:</b><span> Currently, 88% of companies use barcode scanning for picking, with only 4% having no plans for future adoption.</span><span></span>
+</li>
+<li>
+<b>RFID:</b><span> 39% of companies utilize RFID systems in fulfillment operations, and an additional 25% plan to do so by 2028.</span>
+</li>
+</ul>
+<p><span>While these technologies lay the groundwork for digitizing the warehouse, they alone are insufficient in addressing all challenges. Companies must strategically adopt technologies that target specific operational hurdles, such as high labor turnover and shifting market dynamics.</span></p>
+<p><b>Robotics and Augmented Reality: Pioneering a New Era</b></p>
+<p><span>Robotics and Augmented Reality (AR) are not merely emerging technologies; they are game-changers that are reshaping warehouse functions and strategies.</span></p>
+<p><b>Robotics: Addressing Labor Shortages</b></p>
+<ul>
+<li>
+<b>Adoption Rate:<span> </span></b><span>50% of companies plan to adopt robotics in the warehouse between now and 2028.</span>
+</li>
+<li>
+<b>Augmented Workforce:</b><span> In environments where robotics are not ideal, an augmented workforce is increasingly becoming the solution.</span>
+</li>
+</ul>
+<p><b>Augmented Reality: Enhancing Efficiency and Productivity</b></p>
+<p><span>AR wearables are revolutionizing warehouse operations by providing visual cues that guide workers in locating and verifying items, thereby reducing errors and streamlining processes.</span></p>
+<ul>
+<li>
+<b>Expected Impact:<span> </span></b><span>59% of companies expect a greater than 15% increase in productivity through the implementation of AR wearable technology.</span>
+</li>
+</ul>
+<p><span>[Embedded video: </span><a href="https://web.archive.org/web/20260103065855/https://www.youtube.com/watch?v=iNoCKGGRTU0"><span>https://www.youtube.com/watch?v=iNoCKGGRTU0</span></a><span>]</span></p>
+<p><b>The Hybrid Future: Balancing Technology and Humanity</b></p>
+<p><span>In the warehouse of tomorrow, a harmonious blend of human and machine is envisioned. Robotics and AR are empowering the human workforce, not replacing it, by enhancing productivity, efficiency, and safety.</span></p>
+<ul>
+<li>
+<b>Hybrid Warehouse:<span> </span></b><span>94% of companies envision a hybrid warehouse of the future, where frontline workers play a significant role, empowered by technology.</span>
+</li>
+<li>
+<b>AR Wearables:<span> </span></b><span>69% of companies believe AR wearables will be central to operations in next-gen warehouses.</span>
+</li>
+</ul>
+<p><b>User-Centric Design: The Key to Successful AR Wearable Implementation</b></p>
+<p><span>The successful integration of AR wearables hinges on a user-centric approach, prioritizing ergonomics, comfort, ease of use, and safety.</span></p>
+<ul>
+<li>
+<b>Ergonomics and Comfort:</b><span> 57% of companies emphasize the importance of ergonomics and comfort for increased adoption.</span>
+</li>
+<li>
+<b>Ease of Use:<span> </span></b><span>52% of companies acknowledge an easy customer experience and user interface as essential drivers of increased adoption.</span>
+</li>
+</ul>
+<p><b>Conclusion: Embracing the Future of Fulfillment Operations</b></p>
+<p><span>The future of fulfillment operations lies in embracing digital innovation and fostering a synergistic relationship between technology and humanity. By strategically adopting technologies like robotics and AR wearables, while prioritizing a human-centric approach, companies can navigate the challenges of modern fulfillment operations and set the pace in logistics and supply chain management.</span></p>
+<p><span>Vuzix is helping the industry continue to evolve, guiding forward-thinking companies with solutions that leverage technology to drive efficiency, enhance productivity, and deliver unparalleled customer satisfaction.</span></p>]]>
+    </content>
+  </entry>
+  <entry>
+    <id>https://www.vuzix.com/blogs/vuzix-blog/how-ai-orchestrated-workers-are-key-to-warehouse-automation</id>
+    <published>2023-08-24T10:06:00-05:00</published>
+    <updated>2026-07-01T10:06:51-05:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.vuzix.com/blogs/vuzix-blog/how-ai-orchestrated-workers-are-key-to-warehouse-automation"/>
+    <title>How AI Orchestrated Workers are Key to Warehouse Automation</title>
+    <author>
+      <name>Christian Powell-Byars</name>
+    </author>
+    <content type="html">
+      <![CDATA[<p><span>Warehousing organizations face rising costs due to errors in stocking, order picking, and general turnover. Warehousing and logistics operations managers are tasked with finding ways to enable faster onboarding and increased pick rates, while reducing error rates. <a title="Logistics findings" href="https://web.archive.org/web/20260103065900/https://www.vuzix.com/pages/warehousing/#logistics-wearables-whitepaper" target="_blank">It's well known</a> that Vuzix augmented reality (AR) smart glasses optimize efficiencies in the warehouse and distribution center by providing an improved onboarding experience, real-time decision-making support, and instantly connecting workers to supervisors and enterprise management systems. </span></p>
+<p><span>When paired with augmented reality, AI-enabled human workers and automation are orchestrated together to work more efficiently and intelligently</span><span>. AI is continuously interpreting data to adaptively drive and revolutionize work process optimization. Vuzix’ partner, </span><a href="https://web.archive.org/web/20260103065900/https://www.logistiview.com/"><span>LogistiVIEW</span></a><span>, has created a platform utilizing AI, computer vision, machine learning, speech recognition, and object recognition, to introduce automated decision making into warehousing and logistics operations. Automated decision making is the process of using AI software to recommend that a person makes a decision or takes an action, based on a recognized pattern, and filtering complex data streams to deliver only what is most critical to aid the task at hand. </span></p>
+<p><span>“LogistiVIEW’s Automated Decision Making (ADM) predicts the next best work to do and responds in real-time as change happens. As operational complexity grows, managing uncertainty and maintaining smooth flow is an increasingly difficult task for operations leaders, creating inefficient and unpredictable outcomes. Leaders are often tied to their computers cross referencing data in multiple systems to manually plan work and watch emails for visibility to change," said Seth Patin, CEO of LogistiVIEW. “ADM unlocks the potential of people by optimizing work assignment and instruction for the workforce and empowering operations leaders to spend more time with their workforce managing performance and less time on their computers managing work.”</span></p>
+<p><span>Warehousing and logistic operations are now enhanced by using AI software to recommend things such as which orders should be released to the warehouse, the order in which tasks should get done, who work should be assigned to, the process in which an order should flow through the warehouse, among others. </span></p>
+<p><span>Over time, LogistiVIEW's work optimization engine will learn how to improve productivity on the floor by analyzing the myriad labor data captured during process execution. By using machine learning, it will provide insights into worker behavior and process integrity, give recommendations to improve performance, and automatically optimize interactions with robotics and automation. </span></p>
+<p><a href="https://web.archive.org/web/20260103065900/https://www.logistiview.com/automated-flow-control.html" title="Machine learning and artificial intelligence AI"><span>Learn more about how LogistiVIEW is driving Automated Decision Making in the warehouse using AI, machine learning pattern-recognition, and AR smart glasses.</span></a></p>]]>
+    </content>
+  </entry>
+  <entry>
+    <id>https://www.vuzix.com/blogs/vuzix-blog/how-cutting-edge-ar-technology-is-transforming-surgical-practices-across-the-unites-states</id>
+    <published>2023-06-19T10:08:00-05:00</published>
+    <updated>2026-07-01T10:09:43-05:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.vuzix.com/blogs/vuzix-blog/how-cutting-edge-ar-technology-is-transforming-surgical-practices-across-the-unites-states"/>
+    <title>How Cutting-edge AR Technology Is Transforming Surgical Practices Across the Unites States</title>
+    <author>
+      <name>Christian Powell-Byars</name>
+    </author>
+    <content type="html">
+      <![CDATA[<p><span data-contrast="none">Augmented reality (AR) smart glasses have emerged as a revolutionary tool, brimming with endless benefits and boundless opportunities within the realm of surgical settings. Vuzix has established longstanding partnerships with a multitude of medical innovators, such as<span> </span></span><a href="https://web.archive.org/web/20251204192455/https://www.pixee-medical.com/en/"><span data-contrast="none">Pixee Medical</span></a><span data-contrast="none">,<span> </span></span><a href="https://web.archive.org/web/20251204192455/https://www.medacta.com/"><span data-contrast="none">Medacta</span></a><span data-contrast="none">,<span> </span></span><a href="https://web.archive.org/web/20251204192455/https://ohanaone.one/"><span data-contrast="none">Ohana One,</span></a><a href="https://web.archive.org/web/20251204192455/https://www.rods-cones.com/"><span data-contrast="none">Rods &amp; Cones</span></a><span data-contrast="none">,<span> </span><a href="https://web.archive.org/web/20251204192455/https://www.proximie.com/?gclid=CjwKCAjwsvujBhAXEiwA_UXnAAkACPuVVM-_xyCe5HCxld6z4ok-xw8jHlz4Tpn6Jr_vgGlhhofl-BoCnJkQAvD_BwE">Proximie</a><span> </span>and many others. All of which recognize Vuzix hardware as a transformative technology that elevates surgical practices, enriching precision, efficiency, and ultimately, patient outcomes.</span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":276}'> </span></p>
+<p><span data-contrast="none">Driven by a desire to delve deeper into the realm of surgical applications across the United States, Vuzix embarked on a profound exploration, culminating in the recent release of a comprehensive report. This report delves into the growing interest among American surgeons in adopting Augmented Reality (AR) smart glasses within their practices. Drawing insights from a survey encompassing over 500 surgeons throughout the United States, the findings illuminate a strong appetite among these skilled professionals to incorporate AR smart glasses into their daily routines, underscoring their optimistic outlook on the future of AR in medicine.</span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":276}'> </span></p>
+<p><span data-contrast="none">In fact, the report unveils that a remarkable 25% of surgeons have already embraced these advanced devices, seamlessly integrating them into their surgical workflows. Additionally, an impressive 31% are actively considering the utilization of AR smart glasses, recognizing their potential value. Furthermore, a noteworthy 19% of surgeons have previously experimented with AR technology, attesting to its efficacy and the benefits it bestows upon their practice.</span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":276}'> </span></p>
+<p><span data-contrast="none">The report also sheds light on regional variations in the adoption of AR smart glasses.<span> </span></span><span data-contrast="none">Analyzing the percentages provides insights into the adoption and perceived benefits of AR technology among surgeons across the Midwest, Northeast, South, and West regions.</span><span data-ccp-props='{"201341983":0,"335559739":0,"335559740":240}'> </span></p>
+<div><img src="https://web.archive.org/web/20251204192455im_/https://cdn.shopify.com/s/files/1/0581/1208/2086/files/surgeons-AR-graph.jpg?v=1686771407" alt=""></div>
+<ul>
+<li data-leveltext="" data-font="Symbol" data-listid="25" data-list-defn-props='{"335552541":1,"335559684":-2,"335559685":720,"335559991":360,"469769226":"Symbol","469769242":[8226],"469777803":"left","469777804":"","469777815":"multilevel"}' data-aria-posinset="1" data-aria-level="1">
+<b><span data-contrast="none">South:</span></b><span data-contrast="none"><span> </span>The South region leads in the adoption of AR smart glasses among surgeons, with 27% currently utilizing them in their practice and 23% reporting past benefits from their usage.</span><span data-ccp-props='{"201341983":0,"335559739":0,"335559740":240}'> </span>
+</li>
+<li data-leveltext="" data-font="Symbol" data-listid="25" data-list-defn-props='{"335552541":1,"335559684":-2,"335559685":720,"335559991":360,"469769226":"Symbol","469769242":[8226],"469777803":"left","469777804":"","469777815":"multilevel"}' data-aria-posinset="2" data-aria-level="1">
+<b><span data-contrast="none">Midwest:</span></b><span data-contrast="none"><span> </span>In the Midwest, 26% of surgeons are currently using AR smart glasses in their practice, and 14% have found them helpful in the past.</span><span data-ccp-props='{"201341983":0,"335559739":0,"335559740":240}'> </span>
+</li>
+<li data-leveltext="" data-font="Symbol" data-listid="25" data-list-defn-props='{"335552541":1,"335559684":-2,"335559685":720,"335559991":360,"469769226":"Symbol","469769242":[8226],"469777803":"left","469777804":"","469777815":"multilevel"}' data-aria-posinset="2" data-aria-level="1">
+<b><span data-contrast="none">Northeast:</span></b><span data-contrast="none"><span> </span>Within the Northeast region, 26% of surgeons currently use AR smart glasses in their practice, while 19% have reported past benefits from their usage.</span><span data-ccp-props='{"201341983":0,"335559739":0,"335559740":240}'> </span>
+</li>
+<li data-leveltext="" data-font="Symbol" data-listid="25" data-list-defn-props='{"335552541":1,"335559684":-2,"335559685":720,"335559991":360,"469769226":"Symbol","469769242":[8226],"469777803":"left","469777804":"","469777815":"multilevel"}' data-aria-posinset="2" data-aria-level="1">
+<b><span data-contrast="none">West:</span></b><span data-contrast="none"><span> </span>The West region demonstrates a slightly lower adoption rate, with 21% of surgeons currently using AR smart glasses in their practice and 18% reporting past benefits from their usage.</span><span data-ccp-props='{"201341983":0,"335559739":0,"335559740":240}'> </span>
+</li>
+</ul>
+<p class="blogquote"><span><b><i>Just over 3 in 10 (31%) surgeons surveyed said they are considering using AR smart glasses in their practice and a quarter (25%) said they are currently using AR smart glasses in their practice.</i></b> </span></p>
+<p><b><span data-contrast="none">AR Shaping the Future of Surgical Education</span></b><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":276}'> </span></p>
+<p><span data-contrast="none">In today’s digital era, a new generation of medical students, who were born into a world immersed in technology, naturally anticipate its integration into every facet of their educational journey. The survey supports this obvious inclination, revealing that over two thirds (67%) of surgeons have received training with AR smart glasses.</span><span data-contrast="none">Furthermore, a quarter of these surgeons not only recognize AR as the future of surgical education (25%) but also acknowledge its potential benefits over traditional teaching methods (25%)</span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":276}'> </span></p>
+<p><span data-contrast="none">Examining the data further reveals intriguing trends among different age groups and specialties. Among surgeons surveyed in the age range of 25-34, nearly 2 in 5 (37%) have been trained with AR smart glasses and firmly believe in its potential as the future of surgical education. They are the future of surgical practice and they recognize that AR's immersive experiential environment can boost students' engagement and interest during practical training, ultimately enhancing efficiency in surgical education.</span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":276}'> </span></p>
+<p><span data-contrast="none">In comparison, just over a fifth (21%) of those aged 45-54 share the same sentiment. This suggests, not surprisingly, that younger surgeons, who have grown up in a more technologically advanced environment, are more likely to embrace AR as an integral part of their professional development.<span> </span></span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":276}'> </span></p>
+<p><span data-contrast="none">Within the medical education process, patient safety remains paramount, and AR wearable devices assume a crucial role in this technologically enhanced learning experience. By facilitating access to comprehensive and immersive information during medical training, these devices empower learners while fostering collaboration and upskilling through remote expert mentorship during telesurgery sessions.</span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":276}'> </span></p>
+<p><span data-contrast="none">Today, healthcare facilities are now integrating AR devices into their training programs, providing aspiring surgeons with extended opportunities to acquire essential skills. Leveraging the see-what-I-see technology, budding surgeons can now observe the operating room through the experienced surgeon’s perspective, with real-time streaming of surgical procedures, thereby providing the ideal learning viewpoint. Introducing AR into the operating room offers efficient learning opportunities that maintain patient safety while also gaining the benefits that come from hands-on experimental learning.<span> </span></span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":276}'> </span></p>
+<p><span data-contrast="none">Geographically, the data reveals regional differences in the adoption of AR smart glasses for surgical education. 3 in 10 (30%) surgeons surveyed in the West have received training with AR smart glasses and view it as the future of surgical education. In comparison, over a fifth (23%) of surgeons in the South hold the same view.</span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":276}'><span> </span></span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":276}'> </span></p>
+<p class="blogquote"><span><b><i>Almost half of surgeons surveyed agree¹ that AR smart glasses can reduce complications and deaths in operating rooms due to human error (49%) and that AR smart glasses improve a surgeon’s accuracy, speed and efficiency through remote assist and assistive software (48%)</i></b> </span><span data-ccp-props='{"201341983":0,"335551550":2,"335551620":2,"335559739":160,"335559740":259}'> </span></p>
+<p><b><span data-contrast="none">The Benefits of Smart Glasses in Surgery</span></b><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":276}'> </span></p>
+<p><span data-contrast="none">It’s clear that AR wearable devices offer many benefits in surgical settings. Almost half of the surgeons surveyed agree that AR smart glasses could have a significant impact within their practice by reducing complications and deaths in operating rooms due to human error. AR smart glasses can improve a surgeon’s accuracy, speed, and efficiency through remote assist and assistive software, ultimately lowering patient risk. Three major areas where surgeons reported are seeing benefits of smart glasses today relate to increased revenue and profitability, reduced risk, and improved patient outcomes.<span> </span></span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":276}'> </span></p>
+<p><i><span data-contrast="none">Increased revenue and profitability</span></i><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":276}'> </span></p>
+<ul>
+<li data-leveltext="" data-font="Symbol" data-listid="3" data-list-defn-props='{"335552541":1,"335559684":-2,"335559685":720,"335559991":360,"469769226":"Symbol","469769242":[8226],"469777803":"left","469777804":"","469777815":"hybridMultilevel"}' data-aria-posinset="1" data-aria-level="1">
+<span data-contrast="none">Reduce operating room time, saving as much as $100/minute</span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":276}'> </span>
+</li>
+<li data-leveltext="" data-font="Symbol" data-listid="3" data-list-defn-props='{"335552541":1,"335559684":-2,"335559685":720,"335559991":360,"469769226":"Symbol","469769242":[8226],"469777803":"left","469777804":"","469777815":"hybridMultilevel"}' data-aria-posinset="2" data-aria-level="1">
+<span data-contrast="none">Allow for remote consults, increasing billing and speed of diagnosis</span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":276}'> </span>
+</li>
+</ul>
+<p> <span data-contrast="none">3 in 10 (30%) of surgeons surveyed said they currently do, or may, benefit from reduced surgical equipment and staff costs. Just over a quarter (26%) of surgeons said they currently, or may, benefit form accelerated surgical operation prep times from AR smart glasses.<span> </span></span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":276}'> </span></p>
+<p><i><span data-contrast="none">Reduced risk</span></i><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":276}'> </span></p>
+<ul>
+<li data-leveltext="" data-font="Symbol" data-listid="2" data-list-defn-props='{"335552541":1,"335559684":-2,"335559685":720,"335559991":360,"469769226":"Symbol","469769242":[8226],"469777803":"left","469777804":"","469777815":"hybridMultilevel"}' data-aria-posinset="1" data-aria-level="1">
+<span data-contrast="none">Improved access to remote specialists </span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":276}'> </span>
+</li>
+<li data-leveltext="" data-font="Symbol" data-listid="2" data-list-defn-props='{"335552541":1,"335559684":-2,"335559685":720,"335559991":360,"469769226":"Symbol","469769242":[8226],"469777803":"left","469777804":"","469777815":"hybridMultilevel"}' data-aria-posinset="2" data-aria-level="1">
+<span data-contrast="none">Surgical checklists and other safety improvements </span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":276}'> </span>
+</li>
+<li data-leveltext="" data-font="Symbol" data-listid="2" data-list-defn-props='{"335552541":1,"335559684":-2,"335559685":720,"335559991":360,"469769226":"Symbol","469769242":[8226],"469777803":"left","469777804":"","469777815":"hybridMultilevel"}' data-aria-posinset="3" data-aria-level="1">
+<span data-contrast="none">In-line visualization for fewer errors</span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":276}'> </span>
+</li>
+</ul>
+<p><span data-contrast="none">Over 2 in 5 (44%) of surgeons surveyed believe AR smart glasses currently, or may, benefit them through accessing in-depth information in their field of view (i.e. 3D anatomical images and models, real-time medical references and patient information). This is closely followed by just over 2 in 5 (41%) who said they currently, or may, benefit from AR smart glasses providing lower-risk surgical environments by reducing the need for unnecessary entry and exit into the operation room.</span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":276}'><span> </span></span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":276}'> </span></p>
+<p><i><span data-contrast="none">Improved patient outcomes </span></i><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":276}'> </span></p>
+<ul>
+<li data-leveltext="" data-font="Symbol" data-listid="1" data-list-defn-props='{"335552541":1,"335559684":-2,"335559685":720,"335559991":360,"469769226":"Symbol","469769242":[8226],"469777803":"left","469777804":"","469777815":"hybridMultilevel"}' data-aria-posinset="1" data-aria-level="1">
+<span data-contrast="none">Ability for remote triage </span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":276}'> </span>
+</li>
+<li data-leveltext="" data-font="Symbol" data-listid="1" data-list-defn-props='{"335552541":1,"335559684":-2,"335559685":720,"335559991":360,"469769226":"Symbol","469769242":[8226],"469777803":"left","469777804":"","469777815":"hybridMultilevel"}' data-aria-posinset="2" data-aria-level="1">
+<span data-contrast="none">House calls to meet rising elder care demands</span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":276}'> </span>
+</li>
+<li data-leveltext="" data-font="Symbol" data-listid="1" data-list-defn-props='{"335552541":1,"335559684":-2,"335559685":720,"335559991":360,"469769226":"Symbol","469769242":[8226],"469777803":"left","469777804":"","469777815":"hybridMultilevel"}' data-aria-posinset="2" data-aria-level="1">
+<span data-contrast="none">Access to specialists to address rural and remote healthcare gaps<span> </span></span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":276}'> </span>
+</li>
+</ul>
+<p><span data-contrast="none">Just over a third (34%) of surgeons surveyed believe there are benefits with training prospective surgeons and caregivers with a see-what-I-see view.<span> </span></span><span data-contrast="auto">Almost 3 in 10 (28%) said they currently do, or would, benefit from collaborating with remote clinical teams and having worldwide access to surgical care.</span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":276}'><span> </span></span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":276}'> </span></p>
+<p class="blogquote"><span><b><i>Comfort of the smart glasses (33%), challenges with interface (29%) and learning curve (initial set up configuration (29%) are the top challenges cited about the adoption of AR smart glasses for surgeons surveyed </i></b> </span></p>
+<p><b><span data-contrast="auto">Addressing Surgeon Concerns: Let the Tech Talk for Itself<span> </span></span></b><span data-ccp-props='{"201341983":0,"335559738":360,"335559739":160,"335559740":259}'> </span></p>
+<p><span data-contrast="auto">Distractions in the operating room can lead to grave mistakes and injuries, underscoring the importance of minimizing any disruptions for surgeons during procedures. The Personal Protective Equipment (PPE) worn by surgeons during lengthy surgical sessions, often lasting up to 12 hours a day, is already extensive. Consequently, the prospect of introducing additional equipment can be daunting. Hence, when new technology is introduced into the operating room, wearability becomes a primary concern, as stated by a significant portion (33%) of surveyed surgeons.</span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":259}'> </span></p>
+<p><span data-contrast="auto">For a headworn display like smart glasses, the technology must be lightweight and comfortable enough to be worn for extended periods without causing any cognitive burden. 3 in 10 surgeons surveyed state that they have concerns related to<span> </span></span><span data-contrast="none">the challenges with interface (29%), the learning curve for initial setup configuration (29%), and battery life lasting through long surgeries (28%). A quarter (25%) cited sensory overload concerns.</span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":259}'> </span></p>
+<p><span data-contrast="auto">Smart glasses offer surgeons the ability to access necessary information in surgery, using augmented reality, in real-time, without having to divert their eyes from the procedure to glance at a computer screen. Dr. Cox, Orthopedic Shoulder and Elbow Surgeon and Section Chief at the Shoulder Center of Arkansas, explained the significance of this feature, stating “I don’t have to do anything differently than I would normally do in a surgery to get the information that I want. I’m not looking to a peripheral site, or a screen, or a monitor, or anything like that, which is critically important.” </span></p>
+<p><span data-contrast="auto">Vuzix smart glasses feature advanced waveguide optics for hands-free mobile computing and connectivity. The see-through waveguide optics merge digital instruction into real-world tasks, removing distractions and vision occlusion and reducing error rates. Their lightweight and durability factors are only a few of the reasons why they are one of the most wearable, powerful, and ergonomically versatile head-worn devices on the market today. The glasses allow the surgeon to simply do their job, more accurately, without negatively impacting the level of comfort or the ability to keep focus on the patient while in the OR.</span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":259}'><span> </span></span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":259}'> </span></p>
+<p><span><b>Specialty-based Variations</b></span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":259}'> </span></p>
+<p><span data-contrast="none">Among the various specialties surveyed, certain disciplines stand out for their significant adoption and consideration of AR smart glasses in surgical practices.</span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":259}'> </span></p>
+<ul>
+<li data-leveltext="" data-font="Symbol" data-listid="26" data-list-defn-props='{"335552541":1,"335559684":-2,"335559685":720,"335559991":360,"469769226":"Symbol","469769242":[8226],"469777803":"left","469777804":"","469777815":"multilevel"}' data-aria-posinset="1" data-aria-level="1">
+<span data-contrast="none">For those already utilizing AR smart glasses, Cardiovascular Surgery leads the way with an impressive 47% of surgeons incorporating this technology into their procedures. This is followed by Podiatric Surgery (34%), General Surgery (34%), Neurosurgery (34%), Oral and Maxillofacial Surgery (32%), and Cardiothoracic Surgery (30%). These findings demonstrate the diverse range of specialties that recognize the potential benefits of AR smart glasses in their daily practice.</span><span> </span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":259}'> </span>
+</li>
+<li data-leveltext="" data-font="Symbol" data-listid="26" data-list-defn-props='{"335552541":1,"335559684":-2,"335559685":720,"335559991":360,"469769226":"Symbol","469769242":[8226],"469777803":"left","469777804":"","469777815":"multilevel"}' data-aria-posinset="2" data-aria-level="1">
+<span data-contrast="none">When it comes to considering the use of AR smart glasses, Plastic Surgeons are at the forefront with 42% expressing interest, closely followed by Transplant Surgery (41%), Orthopedic Surgery (39%), Hand Surgery (37%), and Neurosurgery (34%). These specialties understand the value that AR technology can bring to their field and are open to exploring its potential applications.</span><span> </span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":259}'> </span>
+</li>
+<li data-leveltext="" data-font="Symbol" data-listid="26" data-list-defn-props='{"335552541":1,"335559684":-2,"335559685":720,"335559991":360,"469769226":"Symbol","469769242":[8226],"469777803":"left","469777804":"","469777815":"multilevel"}' data-aria-posinset="2" data-aria-level="1">
+<span data-contrast="none">Among surgeons who have used AR smart glasses in the past and found them helpful, Oral and Maxillofacial Surgery tops the list with 29% reporting positive experiences. This is followed by Ophthalmic Surgery (27%), Bariatric Surgery (27%), Obstetric and Gynecologic Surgery (25%), and Surgical Oncology (23%). These specialties recognize the tangible benefits that AR smart glasses can provide, supporting their efficacy in enhancing surgical procedures and outcomes.</span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":259}'><span> </span></span> </li>
+</ul>
+<p><b><span data-contrast="auto">AR Smart Glasses Have the Power to Revolutionize Surgery</span></b><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":276}'> </span></p>
+<p><span data-contrast="none">The ability to have a clear view of the surgical task at hand and receive immediate feedback is invaluable to surgeons. Throughout the medical field, access to real-time information has always been a top priority. Now, with the advent of augmented reality (AR) technology and hands-free smart glasses displays, this becomes a reality. AR is increasingly being utilized in surgery, virtual operating theaters, training, and education, among other applications. Consequently, surgeons are eagerly embracing this transformative technology in their own practices.<span> </span></span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":276}'> </span></p>
+<p><span data-contrast="none">“By providing surgeons with real-time information, remote assistance, and advanced visualization capabilities, AR smart glasses have the power to revolutionize the way surgeries are performed. At Vuzix, we are committed to developing cutting-edge AR solutions that empower surgeons and enhance the future of healthcare,” said Paul Travers, President and CEO of Vuzix. </span><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":276}'> </span></p>
+<p><i><span data-contrast="none">*This report was conducted by a third-party research firm,<span> </span></span></i><a href="https://web.archive.org/web/20251204192455/https://censuswide.com/"><i><span data-contrast="none">Censuswide.</span></i></a><i><span data-contrast="none">The report includes a total sample size of 506 surgical professionals. Fieldwork was undertaken between<span> </span></span></i><i><span data-contrast="none">May 3rd - May 5th,<span> </span></span></i><i><span data-contrast="none">2023, and the figures have been weighted and are representative of all US adults (aged 25+).</span></i><span data-ccp-props='{"201341983":0,"335559739":160,"335559740":276}'> </span></p>]]>
+    </content>
+  </entry>
+  <entry>
+    <id>https://www.vuzix.com/blogs/vuzix-blog/android-11-is-here-what-you-need-to-know</id>
+    <published>2023-02-21T10:10:00-06:00</published>
+    <updated>2026-07-01T10:11:00-05:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.vuzix.com/blogs/vuzix-blog/android-11-is-here-what-you-need-to-know"/>
+    <title>Android 11 is Here - What You Need to Know</title>
+    <author>
+      <name>Christian Powell-Byars</name>
+    </author>
+    <content type="html">
+      <![CDATA[<p>Our entire enterprise fleet of Vuzix smart glasses are now fully operating on Android 11. This major update to the M series OS enables a variety of key benefits, some of the most notable being a more secure platform, improved user experience, easier integration with a variety of Mobile Device Management (MDM) software packages, and enablement of advanced android features within third party apps. If your team uses Vuzix M series devices, you do not want to miss out on the new OS and can find instructions for easy updating below.<strong> </strong></p>
+<p><strong>Improved Security Allows for Ease of Use</strong></p>
+<p>Rolling out Android 11 across our devices allows for a significant increase in security and peace of mind for our enterprise customers. The latest operating system allows users to stay up to date with security patches and Android security updates. Android 11 adds the ability to connect to the WPA3 Wi-Fi protocol, the latest standard in Wi-Fi security, with all products supporting 2.4 and 5ghz frequencies. Use your smart glasses with confidence, knowing that you are operating on a secure platform.</p>
+<p><strong>Updates to the User Interface</strong></p>
+<p>Vuzix is continuously striving to offer our smart glasses users the best user experience in the market. As a direct response to extensive user feedback sessions, the Android 11 OS update = increases ease of use by using voice for streamlined navigation and control selections on the interface. In addition, system icons have been revamped to make it easier to differentiate and discern in any condition. These are only a few examples of how the updated OS offers a more streamlined, highly efficient user experience based on real-world needs.</p>
+<p><strong>Better Device Management for Admin</strong></p>
+<p>Another key feature of the latest update is the improved management of devices configurable across a variety of Mobile Device Management (MDM) software platforms. Such improvements enable enterprise-ready security and performance. Admin can enroll new devices into their platforms with ease, as Android 11 is compatible with a broader set of MDMs, including Microsoft InTune, Workspace One, and many more. This allows for IT departments to easily and quickly configure Vuzix devices, manage compliance, view all hardware properties, and much more; giving enterprise-level companies the security they need to feel safe onboarding potentially large quantities of glasses in a streamlined fashion and manage from one central location.</p>
+<p><strong>How to Update Your Device Now</strong></p>
+<p>Users will automatically be prompted to update the device upon connecting to Wi-Fi. By clicking ‘update now’, the download process will automatically start and then prompt the user when to install the update (the device will reboot during this process). By clicking ‘postpone’, this allows for the user to start the update process at a time most convenient to them. Simply navigate to Settings &gt; System &gt; OTA system update and click ‘Check server for updates now’ to initiate the process.</p>
+<p>For users already integrated with an MDM platform, the process is even easier. Once your system administrator verifies the new release, they simply need to push the update through the MDM, and the device will automatically update without any user interaction. </p>
+<p>Any questions regarding updating your device, contact <a href="https://web.archive.org/web/20250808163133/mailto:support@vuzix.com" rel="noopener noreferrer" target="_blank">support@vuzix.com</a>.</p>
+<p>To read the release notes, click here.</p>]]>
+    </content>
+  </entry>
+  <entry>
+    <id>https://www.vuzix.com/blogs/vuzix-blog/vuzix-ces-2023-day-1-a-booth-experience-like-never-before</id>
+    <published>2023-01-06T10:34:00-06:00</published>
+    <updated>2026-07-01T10:35:20-05:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.vuzix.com/blogs/vuzix-blog/vuzix-ces-2023-day-1-a-booth-experience-like-never-before"/>
+    <title>Vuzix CES 2023 Day 1: A Booth Experience Like Never Before</title>
+    <author>
+      <name>Christian Powell-Byars</name>
+    </author>
+    <content type="html">
+      <![CDATA[<main class="main-content relative" id="MainContent" role="main">
+<div id="shopify-section-template--18417790255270__main-article" class="shopify-section">
+<div class="section section--padding section--rounded relative">
+<article class="article page-width page-width--narrow relative" itemscope="" itemtype="http://schema.org/BlogPosting">
+<div class="rte text-base md:text-lg" itemprop="articleBody">
+<p>Year after year, Vuzix continues to set the bar with innovative smart glasses technology. CES has always been the place where we can get our solutions in front of the industry, and into your hands. With Vuzix Ultralite™ OEM platform, a CES 2023 Innovation Awards winner, along with interactive demos featuring Vuzix Shield™ and new Blade 2™ smart glasses, our booth has been packed with interest. Here’s what we’re showcasing this year.</p>
+<p><strong>An OEM Offering Like No Other: Vuzix Ultralite</strong></p>
+<p>Vuzix Ultralite OEM platform is a reference design that will enable leading consumer technology firms to accelerate deployment of AR smart glasses solutions to the masses. The advanced monocular waveguide optics and custom micro display engine work together to create a crisp, transparent image that wirelessly delivers all the important information on a user’s smartphone/watch, hands-free right before their eyes.</p>
+<p>This innovative technology is a go-to-market ready, turnkey offering designed to fast-track client AR solutions into production. Weighing in at a mere 38 grams and packing an impressive waveguide to display information from your phone hands-free to your eye, Vuzix Ultralite OEM platform is a blueprint for the world’s most fashion forward smart glasses.</p>
+<p>Private demos are still being scheduled, by appointment only, for those with a clear interest in optical components and/or white labeling Ultralite. For more information on how to set up a demo at CES, please complete the form at <a rel="noopener noreferrer" href="https://web.archive.org/web/20250808175947/https://www.vuzix.com/pages/vuzix-ultralite" target="_blank">https://www.vuzix.com/pages/vuzix-ultralite</a>.</p>
+<p><strong>Interactive Experience Demos </strong></p>
+<p>We can tell you all the ways in which our smart glasses can transform your workforce, but why not see for yourself? This year we’ve put together three experience demos that immerse users right in the action by allowing you to “be the hero” and solve real world challenges using AR technology.</p>
+<p> <img alt="" src="https://web.archive.org/web/20250808175947im_/https://cdn.shopify.com/s/files/1/0581/1208/2086/files/CES_blog_pic1_480x480.jpg?v=1673033945"></p>
+<p>What do you get when you combine the power of Augusta’s Superveloce 800 and AR? An experience you need to check out! The world’s first binocular waveguide smart glasses provide a 3D image that displays critical information in front of both eyes, along with over the ear speakers and optional safety shields for harsh industrial environments. <a rel="noopener noreferrer" href="https://web.archive.org/web/20250808175947/https://www.vuzix.com/pages/vuzix-shield" target="_blank"><strong>Vuzix Shield</strong></a><span> </span>is the next generation of safety smart glasses for connected workers. Get into the role of a quality manager inspecting a real MV Augusta Superveloce 800! Using Shield, you can scan for recalled parts using 3D imaging, and see if the bike is ready for the road.</p>
+<p><a rel="noopener noreferrer" href="https://web.archive.org/web/20250808175947/https://www.vuzix.com/products/vuzix-blade-2-smart-glasses" target="_blank"><strong>Vuzix Blade™ 2</strong></a><span> </span>are performance AR smart glasses for frontline workers. Experience how our waveguide optics merge digital instructions onto real-world tasks, removing distractions to assist a field worker who needs to reboot a power station.</p>
+<p><a href="https://web.archive.org/web/20250808175947/https://www.vuzix.com/products/m400-smart-glasses"><strong>Vuzix M400</strong></a><span><strong>™</strong></span><span> </span>smart glasses are ruggedized and built for the workplace, while optimized for comfort. Get to know why they are the industry’s go-to for enterprise smart glasses as you complete an immersive pick and pack assignment.</p>
+<p><img alt="" src="https://web.archive.org/web/20250808175947im_/https://cdn.shopify.com/s/files/1/0581/1208/2086/files/ces_blog_pic2_480x480.jpg?v=1673033976"></p>
+<p>It’s been an extraordinary first day at CES 2023 and our team is excited to share what’s happening at Vuzix with you! Between latest product developments, experience demos like never before, and a sneak peek at our OEM platform, our booth is guaranteed to impress.</p>
+<p>Stop by booth #16991 today!</p>
+</div>
+</article>
+</div>
+</div>
+<div id="shopify-section-template--18417790255270__shogun-optimizer" class="shopify-section"></div>
+</main>]]>
+    </content>
+  </entry>
+  <entry>
+    <id>https://www.vuzix.com/blogs/vuzix-blog/vuzix-ces-2023-see-in-infrared-save-the-power-grid-and-work-in-3d</id>
+    <published>2023-01-03T10:33:00-06:00</published>
+    <updated>2026-07-01T10:34:11-05:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.vuzix.com/blogs/vuzix-blog/vuzix-ces-2023-see-in-infrared-save-the-power-grid-and-work-in-3d"/>
+    <title>Vuzix CES 2023: See in Infrared, Save the Power Grid, and Work in 3D</title>
+    <author>
+      <name>Christian Powell-Byars</name>
+    </author>
+    <content type="html">
+      <![CDATA[<main class="main-content relative" id="MainContent" role="main">
+<div id="shopify-section-template--18647908155558__main-article" class="shopify-section">
+<div class="section section--padding section--rounded relative">
+<article class="article page-width page-width--narrow relative" itemscope="" itemtype="http://schema.org/BlogPosting">
+<div class="rte text-base md:text-lg" itemprop="articleBody">
+<p><span>CES is in just a few days and team Vuzix is ready to walk guests through our exciting lineup of experiences. Want a sneak peek at what’s in store for the floor? Let’s jump right in. </span></p>
+<p><b>A blast from the past: Infrared technology</b></p>
+<p><span>Originally unveiled at the prestigious Digital X event in Cologne Germany earlier in 2022, Vuzix enables users to see in the infrared spectrum. Simply using our accessory adaptor and a compatible infrared camera, including FLIR cameras, your M-Series smart glasses can give you a heads-up display of what’s normally hidden from view. In fact, we can broadcast infrared video over Zoom to enable team inspections. But that’s just one small way that our ultra versatile smart glasses can assist in the workplace. Learn how other accessories can expand the power of your smart glasses and see this technology in action at the booth.</span></p>
+<p><b>Be the Hero!</b></p>
+<p><span>Vuzix is putting you in the role of some of our field and industrial use cases, and now the entire local power grid rests in your hands. Luckily you have a pair of Vuzix Blade 2 smart glasses on your side. Using on-glasses video and work instructions, even complicated tasks like resetting a power station are no sweat. </span></p>
+<p><span>Love sexy bikes? How about sexy glasses? Put on a pair of Vuzix Shield smart glasses and prepare to lay your hands on a real MV Agusta Superveloce 800 muscle racer! Vuzix will be putting you in the role of a quality check inspector as you pull one of the most beautiful bikes ever made off the assembly line to perform a scan for equipment recalls. Is it ready for the road? Using Vuzix Shield smart glasses, you’ll view individual parts in 3D and ultimately make the call. It’s an experience you won’t want to miss!</span></p>
+<div><em><span>MV Agusta Superveloce 800; Image Credit <a href="https://web.archive.org/web/20251013150948/https://www.cyclenews.com/2021/02/article/2021-mv-agusta-superveloce-800-review/">Cycle News</a></span></em></div>
+<p><span>Last but not least, explore how major distribution centers drive efficiency every day using Teamviewer and Vuzix M400 smart glasses. When it comes to power and performance, these glasses are a must see. Pick the items and pack them correctly on a pallet like a pro!</span></p>
+<p><b>Glasses for the masses</b></p>
+<div>Vuzix has spent years in the design and manufacture of optical components and waveguides. Coupled with a US based manufacturing facility and the top talent in the nation, Vuzix is helping bring AR technology into new markets with our sleek smart glasses reference design, called Vuzix Ultralite. Offering fully customizable form factors, optics and more, Vuzix OEM solutions produce smart glasses and components in support of the worldwide adoption of AR that is miles ahead of the pack.</div>
+<div> <span></span>
+</div>
+<p><span>Stop by booth #16991 to explore all that Vuzix has to offer in 2023. We can’t wait to see you!</span></p>
+</div>
+</article>
+</div>
+</div>
+<div id="shopify-section-template--18647908155558__shogun-optimizer" class="shopify-section"></div>
+</main>
+<div id="shopify-section-sections--18647902716070__footer" class="shopify-section shopify-section-group-footer-group">
+<div class="section section--padding"><footer class="footer footer--no-info footer-width page-width page-width--full relative grid">
+<div class="footer__left flex flex-col md:flex-row gap-10">
+<div class="footer__logo flex flex-col gap-10">
+<p class="leading-none"> </p>
+</div>
+</div>
+</footer></div>
+</div>]]>
+    </content>
+  </entry>
+  <entry>
+    <id>https://www.vuzix.com/blogs/vuzix-blog/vuzix-blade-2-now-available-here-s-what-you-need-to-know</id>
+    <published>2022-09-28T10:32:00-05:00</published>
+    <updated>2026-07-01T10:32:32-05:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.vuzix.com/blogs/vuzix-blog/vuzix-blade-2-now-available-here-s-what-you-need-to-know"/>
+    <title>Vuzix Blade 2 Now Available – Here’s What You Need to Know</title>
+    <author>
+      <name>Christian Powell-Byars</name>
+    </author>
+    <content type="html">
+      <![CDATA[<main class="main-content relative" id="MainContent" role="main">
+<div id="shopify-section-template--17971951108262__main-article" class="shopify-section">
+<div class="section section--padding section--rounded relative">
+<article class="article page-width page-width--narrow relative" itemscope="" itemtype="http://schema.org/BlogPosting">
+<div class="rte text-base md:text-lg" itemprop="articleBody">
+<p>They’re here! Vuzix Blade 2™ smart glasses kept everything our clients loved from Blade Upgraded, and added some significant enhancements for the connected workforce. This latest model offers the same sleek and durable form factor that our customers have come to rely on, with the added advantage to connect frontline workers with critical AR systems with greater ease. The glasses are a grab-and-go AR workforce solution that delivers a host of advanced features and performance enhancements, specifically designed to meet the needs of connected workers.</p>
+<p> </p>
+<p><img src="https://web.archive.org/web/20250501163912im_/https://cdn.shopify.com/s/files/1/0581/1208/2086/files/Blade2_glasses_480x480.png?v=1661360933" alt=""> </p>
+<p>Vuzix Blade 2 smart glasses offer ultrabright waveguide optics, merging digital instructions into real-world tasks while removing distractions and vision occlusion, leading to reduced error rates and a more effective workforce. With safety being at the forefront of all product decisions, our Blade 2 smart glasses also offer full UV protection lenses, plus ANSI Z87.1 safety certifications, ensuring that our glasses meet the standards for occupational eye and face protection.</p>
+<p>The big difference lies within the optimization for enterprise use across a broader number of applications. Vuzix Blade 2 smart glasses house a high-performance Qualcomm processor that now runs on Android 11 OS, in support of a large variety of enterprise-focused software like MS Teams, Zoom and Teamviewer. In addition to the Android update, the glasses can integrate with common MDM solutions for easier device management and there is increased security with the integrated memory management. To top it off, the device offers expanded Wi-Fi capabilities for diverse workplace environments. Our Blade 2 smart glasses are a direct response to requests for a more muscular version, with greater functionality and performance, while preserving the all-important wearability factor.</p>
+<p>Vuzix Blade 2 is available NOW in the US, Canada, UK, EU and Japan.</p>
+<p>For more about Vuzix Blade 2 smart glasses, visit<span> </span><a href="https://web.archive.org/web/20250501163912/https://www.vuzix.com/products/vuzix-blade-2-smart-glasses">https://www.vuzix.com/products/vuzix-blade-2-smart-glasses</a>.  </p>
+</div>
+</article>
+</div>
+</div>
+<div id="shopify-section-template--17971951108262__shogun-optimizer" class="shopify-section"></div>
+</main>
+<div id="shopify-section-sections--17971951796390__footer" class="shopify-section shopify-section-group-footer-group">
+<div class="section section--padding"><footer class="footer footer--no-info footer-width page-width page-width--full relative grid">
+<div class="footer__left flex flex-col md:flex-row gap-10">
+<div class="footer__logo flex flex-col gap-10">
+<p class="leading-none"> </p>
+</div>
+</div>
+</footer></div>
+</div>]]>
+    </content>
+  </entry>
+  <entry>
+    <id>https://www.vuzix.com/blogs/vuzix-blog/vuzix-video-conferencing-app-for-zoom-makes-it-easier-than-ever-to-connect-with-remote-employees</id>
+    <published>2022-06-16T10:17:00-05:00</published>
+    <updated>2026-07-01T10:17:51-05:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.vuzix.com/blogs/vuzix-blog/vuzix-video-conferencing-app-for-zoom-makes-it-easier-than-ever-to-connect-with-remote-employees"/>
+    <title>Vuzix Video Conferencing App for Zoom Makes It Easier Than Ever to Connect with Remote Employees</title>
+    <author>
+      <name>Christian Powell-Byars</name>
+    </author>
+    <content type="html">
+      <![CDATA[<main class="main-content relative" id="MainContent" role="main">
+<div id="shopify-section-template--18647908155558__main-article" class="shopify-section">
+<div class="section section--padding section--rounded relative">
+<article class="article page-width page-width--narrow relative" itemscope="" itemtype="http://schema.org/BlogPosting">
+<div class="rte text-base md:text-lg" itemprop="articleBody">
+<p>Vuzix first launched their Video Conferencing app for Zoom in early 2020. The app came at a time when the world was in desperate need of the tools necessary to carry out work remotely, while still maintaining the same level of productivity. Vuzix Video Conferencing app for Zoom brings the award-winning Zoom experience that so much of the global workforce still relies on directly to Vuzix smart glasses.</p>
+<p>The communication tool, paired with the smart glasses, allows users to stay connected while sharing their view in a heads-up, hands-free environment. Start or join meetings instantly, utilizing see-what-I-see technology, screen-sharing, and more on the app, now with a newly expanded set of functionality for launching meetings with just a click, and managing group contact lists. Vuzix Video Conferencing for Zoom brings video conferencing, online meetings, and other features of the Zoom platform together, in one easy-to-use application on your Vuzix smart glasses; all while keeping your hands available to complete important tasks.</p>
+<p><span> </span>Since first launching the app, our team of engineers have continued to make improvements, making this one of our most widely downloaded apps for the glasses today. One of the biggest recent enhancements comes from upgrading to support OAuth.</p>
+<p>OAuth (Open Authorization) is an open standard for access delegation, commonly used as a way for internet users to grant websites or applications access to their information on other websites without having to give them confidential information. The standard redirects the user by launching a browser and automatically opening to the Zoom website, allowing all credentials to be input there and then redirecting back to the app on the glasses. The advantage of this is a more secure login process because user credentials are never being accessed or stored with third party companies and/or apps (i.e., Vuzix), and are only being handled in one domain (Zoom). This also allows for single sign on with corporate accounts and/or to be used with two-factor authentication. All of the above is yet a further step to provide a secure user experience, with Vuzix being one of the first companies to integrate OAuth login into an app powered by the Zoom SDK.</p>
+<p>As a direct result of having OAuth integration, our team of engineers can use a significantly more robust set of Zoom features, and have just released a major app update with some key features noted below.<span> </span></p>
+<ul>
+<li>
+<span></span><span></span>The Zoom API now provides access to the user’s contacts and channels, which allows for calling between users through the ‘Meet’ feature on the app. The user will send a message within the app that sends a link to join the meeting, now launchable in one easy click.</li>
+<li>
+<span> </span><span></span>The ability to add additional users to active meeting with the ‘invite’ feature.</li>
+<li>
+<span></span><span></span>The final major feature now available because of the OAuth integration is the contacts and channels (groups) inclusion. You can now join/start meetings on the glasses with groups of people (channels), that were set up on the desktop version of the app, all at once. </li>
+</ul>
+<p>The latest release of the Vuzix Video Conferencing app for Zoom was released on June 15, 2022. The award-winning Zoom video conferencing service can be accessed through your Vuzix smart glasses by downloading the app, available on the Vuzix app store (link:<span><a href="https://web.archive.org/web/20250918053753/https://apps.vuzix.com/app/zoom-for-smart-glasses">https://apps.vuzix.com/app/zoom-for-smart-glasses</a></span>).</p>
+<p>“Vuzix” Is A Registered Trademark Of Vuzix Corporation. All Product And Company Names Are Trademarks Or Registered Trademarks Of Their Respective Holders. Use Of Those Product And Company Names Does Not Imply An Affiliation With Or Endorsement By Them.<span> </span></p>
+</div>
+</article>
+</div>
+</div>
+<div id="shopify-section-template--18647908155558__shogun-optimizer" class="shopify-section"></div>
+</main>]]>
+    </content>
+  </entry>
+  <entry>
+    <id>https://www.vuzix.com/blogs/vuzix-blog/vuzix-expands-reach-with-device-certifications-that-matter-most</id>
+    <published>2022-06-06T10:31:00-05:00</published>
+    <updated>2026-07-01T10:31:20-05:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.vuzix.com/blogs/vuzix-blog/vuzix-expands-reach-with-device-certifications-that-matter-most"/>
+    <title>Vuzix Expands Reach with Device Certifications that Matter Most</title>
+    <author>
+      <name>Christian Powell-Byars</name>
+    </author>
+    <content type="html">
+      <![CDATA[<main class="main-content relative" id="MainContent" role="main">
+<div id="shopify-section-template--18647908155558__main-article" class="shopify-section">
+<div class="section section--padding section--rounded relative">
+<article class="article page-width page-width--narrow relative" itemscope="" itemtype="http://schema.org/BlogPosting">
+<div class="rte text-base md:text-lg" itemprop="articleBody">
+<p>Vuzix® has made a commitment to our customers to provide cutting edge technology for use in various enterprise markets. Our diligence when it comes to certifying our smart glasses gives our users the competitive edge to bring these glasses into areas like ORs, pharmaceutical facilities, clean manufacturing and research labs, and other sensitive environments. These certifications are yet another differentiator that sets Vuzix apart.</p>
+<p><strong>IP67 Dust and Water Protection</strong></p>
+<p><span>Electronic equipment can deteriorate or malfunction when water or dust enters the device. The IEC has developed the ingress protection (IP) ratings, which grade the resistance of an enclosure against the intrusion of dust or liquids. IP67 is the rating given to Vuzix M400™ and Vuzix M4000™ smart glasses and represents an extremely high level of protection against ingress. The rating means that both M-Series products have demonstrated they are dust tight and are protected against water ingress when immersed for up to 30 minutes, at a depth of 1m. When it comes to harsh work environments, the IP67 rating gives our users peace of mind that their smart glasses will continue functioning through inclement conditions.</span></p>
+<p><em><img src="https://web.archive.org/web/20250918053621im_/https://cdn.shopify.com/s/files/1/0581/1208/2086/files/Certificaitons_blog_image_copy_480x480.jpg?v=1654093540" alt="Vuzix M400 smart glasses in rugged environment"></em></p>
+<p><i>An IP67 rating for Vuzix M-Series smart glasses ensures that they can withstand inclement and rugged work environments and still get the job done.</i></p>
+<p><strong>IEC 60601 Medical Use Ratings</strong></p>
+<p>Vuzix continues to innovate the global healthcare industry with our heads-up, hands-free displays used in OR settings for operations and surgeries, as well as a remote training tool. Vuzix M400 and M4000 smart glasses are used dailyaround the world to provide surgical training and remote assistance for life-saving surgeries. Most recently, Vuzix collaborated with Ohana One and TeleVU to <a href="https://web.archive.org/web/20250918053621/https://www.vuzix.com/blogs/vuzix-blog/vuzix-donates-smart-glasses-for-use-in-ukraine-to-support-the-assisted-treatment-of-the-wounded" rel="noopener noreferrer" target="_blank">deliver smart glasses for use in Ukraine</a><span> </span>to support the assisted treatment of the wounded. Broad-based opportunities like this, for use in a medical capacity, wouldn’t be possible if it weren’t for the Vuzix M-series glasses’ growing list of IEC 60601 certifications.</p>
+<p><strong>IEC 60601-1-2:2014</strong><strong>EMC</strong></p>
+<p>Vuzix M400 and M4000 devices are compliant with the EMC (Electromagnetic Compatibility) safety standards and have earned their IEC 60601-1-2:2014 certification. This set of strict rules, procedures, emission restrictions and immunity levels ensure the glasses emit little to no electromagnetic field. To receive this certification, the glasses were put through a series of rigorous tests and only passed after meeting certain safety and quality criteria, deeming them safe for use in medical and healthcare settings. The IEC 60601-1-2:2014 certification tells medical professionals that Vuzix M400 and M4000 smart glasses are safe in a wide array of medical and health related applications where other sensitive equipment is in use.</p>
+<p><strong>IEC 60601-1.2005<span> </span></strong><strong>Essential Performance</strong></p>
+<p>Essential performance, IEC 60601-1:2005, is defined in the standard as “performance necessary to achieve freedom from unacceptable risk”. The essential performance must be defined by the manufacturer as part of their safety risk management process. The standard represents a change in the way medical devices are typically developed and includes heavy reliance on safety risk management and usability engineering processes. The standard focuses on safety and performance of the device, and presents a multitude of requirements, including safety risk management processes, usability engineering processes, electrical and mechanical safety testing, and labeling.</p>
+<p><strong>IEC 60601-1-6:2010, AMD1:2013 </strong><strong>Usability</strong></p>
+<p>Regarding usability, the M-series glasses are also IEC 60601-1-6:2010, AMD1:2013 certified. This certification ensures that the glasses possess the characteristics that establish effectiveness, efficiency, and operator learnability and satisfaction. This standard is considered and tightly integrated into the entire device development process. Usability was considered early in the lifecycle to understand and design out potential usability issues prior to the products being realized in the physical domain. The application of the device, its primary operating functions, and safety labeling, all serve as inputs to the usability engineering process.</p>
+<p><strong>IEC 60601-1-11:2015IEC 60601-1-2:2014</strong><strong>Home Health Ratings</strong></p>
+<p>The M-series glasses are also IEC 60601-1-11:2015IEC 60601-1-2:2014 certified, enabling them to be used in the home healthcare environment. This standard applies to medical equipment regardless of whether it is intended for use by an untrained individual or by trained healthcare personnel. A home healthcare environment can include any place in which a patient lives and/or places in which the patient is present (both indoor/outdoor), excluding healthcare facility environments where operators with medical training are continuously available when patients are present (i.e., hospitals, around-the-clock patient care facilities, etc.).<span> </span><span> </span></p>
+<p>With these certifications allowing Vuzix smart glasses into the OR and a wide variety of home health opportunities, health workers can safely access advanced AR capabilities while administering care, giving others access to see-what-I-see technology, allowing hands-free access to information, remote assistance, and training. Of course, technology approved for use in medical environments needs to not only have the right certifications, but also needs to be thoroughly wearable (allowing the surgeon’s hands to remain free), lightweight, and able to be worn for long periods of time. This is exactly what Vuzix enables: remote medical assistance provided at moment of need, safely and comfortably, with zero cognitive burden.</p>
+<p><strong>ISO 14644-1 Cleanroom rating</strong></p>
+<p>Vuzix M400 smart glasses have been tested for airborne particle purity and have received ISO class 2 certification. The assignment of ISO class 2, according to DIN EN ISO 14644-1, means that the Vuzix M400 devices only emit a maximum of 8 particles of size 0.1 µm and 3 particles of size 0.2 µm in one minute per cubic foot of air. If you’re manufacturing highly sensitive equipment or otherwise operating within regulated environments, this certification allows the M400 smart glasses to be used within clean room environments that are typically employed by firms in industries that include electronics, pharmaceuticals, medical devices, optics, solar and aerospace/defense.</p>
+<p><strong>Ruggedized and Drop Tested to 2 Meters</strong></p>
+<p>MIL STD 810g at 2m is an industry standard that helps demonstrate usability and robustness of a head worn device.<span>  </span>The Vuzix M400 devices have been tested to ensure each device will still work after multiple drops in various orientations. This certification ensures that our glasses can be worn in rugged environments and still operate to the highest standard.</p>
+<p>The list of certifications for Vuzix' M400 and M4000 smart glasses is a huge accomplishment for Vuzix and reflects our continued commitment to meet and exceed market standards.</p>
+<p>Additional certification information is available at the product level on Vuzix.com.</p>
+</div>
+</article>
+</div>
+</div>
+<div id="shopify-section-template--18647908155558__shogun-optimizer" class="shopify-section"></div>
+</main>
+<div id="shopify-section-sections--18647902716070__footer" class="shopify-section shopify-section-group-footer-group">
+<div class="section section--padding"><footer class="footer footer--no-info footer-width page-width page-width--full relative grid">
+<div class="footer__left flex flex-col md:flex-row gap-10">
+<div class="footer__logo flex flex-col gap-10">
+<p class="leading-none"> </p>
+</div>
+</div>
+</footer></div>
+</div>]]>
+    </content>
+  </entry>
+  <entry>
+    <id>https://www.vuzix.com/blogs/vuzix-blog/forbes-lists-vuzix-among-america-s-best-small-companies-in-2021</id>
+    <published>2022-05-11T10:27:00-05:00</published>
+    <updated>2026-07-01T10:29:05-05:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.vuzix.com/blogs/vuzix-blog/forbes-lists-vuzix-among-america-s-best-small-companies-in-2021"/>
+    <title>Forbes Lists Vuzix Among America’s Best Small Companies in 2021</title>
+    <author>
+      <name>Christian Powell-Byars</name>
+    </author>
+    <content type="html">
+      <![CDATA[<p><b>Wearable display pioneer in good company</b></p>
+<p><span>Forbes has officially named Vuzix® to its 2021 list of America’s top 100 small companies. </span></p>
+<p><span>The endorsement comes after a </span><a href="https://web.archive.org/web/20251016115836/https://ir.vuzix.com/news-events/press-releases/detail/1875/vuzix-reports-record-4q-and-full-year-smart-glasses-revenues"><span>very successful year for Vuzix</span></a><span>, as more smart glasses begin to enter the workplace with each passing week. </span></p>
+<p><span>Ranked 69th on the list with an annual return of 223.7 percent, Vuzix faced stiff competition in being named to Forbes’ list. Over 1,000 companies were considered, all of which have been public for at least 12 months.</span></p>
+<p><b>RELATED:<span> </span></b><a href="https://web.archive.org/web/20251016115836/https://www.vuzix.com/blogs/vuzix-blog/newsweek-names-vuzix-to-top-100-most-loved-workplaces-2021-list"><b>Newsweek Names Vuzix to Top 100 Most Loved Workplaces </b></a></p>
+<p><span>The rankings were based on the following metrics:</span></p>
+<ul>
+<li><span>Earnings</span></li>
+<li><span>Sales growth</span></li>
+<li><span>Return on equity</span></li>
+<li>
+<span>Total stock return (over the past 12 months and last five years)</span><span></span>
+</li>
+</ul>
+<p><span><img alt="Vuzix Forbes top 100 small companies 2021" src="https://web.archive.org/web/20251016115836im_/https://cdn.shopify.com/s/files/1/0581/1208/2086/files/Screen_Shot_2022-03-11_at_2.46.56_PM_480x480.png?v=1647031636"></span><span></span></p>
+<p><b><span>Vuzix has been named for Forbes list of 100 Best Small Companies for 2021</span></b></p>
+<p><b>A year to remember for hands-free AR</b></p>
+<p><span>Such recognition comes at the tail end of another remarkable year for Vuzix and its line of smart glasses for enterprise. </span></p>
+<p><span>Before March 2020, smart glasses were beginning to take the business world by storm. Leaders in </span><a href="https://web.archive.org/web/20251016115836/https://www.vuzix.com/blogs/vuzix-blog/how-medical-field-ar-smart-glasses-will-revolutionize-healthcare"><span>healthcare</span></a><span>, </span><a href="https://web.archive.org/web/20251016115836/https://www.vuzix.com/Blog/vuzix-smart-glasses-manufacturing"><span>manufacturing</span></a><span>, and </span><a href="https://web.archive.org/web/20251016115836/https://www.vuzix.com/Blog/smart-glasses-field-service-professionals"><span>technical work</span></a><span> had begun to see the benefits of equipping team members with wearable displays.</span></p>
+<p><span>Global lockdowns accelerated adoption rates, as businesses looked to technology to navigate the perils of operating during a </span><a href="https://web.archive.org/web/20251016115836/https://www.vuzix.com/blogs/vuzix-blog/working-from-home-and-smart-glasses-pandemic-spotlights-ar-tech"><span>global pandemic</span></a><span>. Vuzix smart glasses helped fill the gap, </span><a href="https://web.archive.org/web/20251016115836/https://www.vuzix.com/blogs/vuzix-blog/training-vaccine-handlers-with-vuzix-m400-smart-glasses"><span>even helping to train vaccine handlers</span></a><span>.  </span></p>
+<p><a href="https://web.archive.org/web/20251016115836/https://www.forbes.com/lists/best-small-cap-companies/#1c5b940847db"><span>You can find the full list of Forbes’ best small companies for 2022 here.</span></a></p>
+<p><span>“Vuzix” is a registered trademark of Vuzix Corporation. All product and company names are trademarks or registered trademarks of their respective holders. Use of those product and company names does not imply an affiliation with or endorsement by them.  </span></p>]]>
+    </content>
+  </entry>
+  <entry>
+    <id>https://www.vuzix.com/blogs/vuzix-blog/vuzix-donates-smart-glasses-for-use-in-ukraine-to-support-the-assisted-treatment-of-the-wounded</id>
+    <published>2022-05-02T10:29:00-05:00</published>
+    <updated>2026-07-01T10:30:10-05:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.vuzix.com/blogs/vuzix-blog/vuzix-donates-smart-glasses-for-use-in-ukraine-to-support-the-assisted-treatment-of-the-wounded"/>
+    <title>Vuzix Donates Smart Glasses for Use in Ukraine to Support the Assisted Treatment of the Wounded</title>
+    <author>
+      <name>Christian Powell-Byars</name>
+    </author>
+    <content type="html">
+      <![CDATA[<main class="main-content relative" id="MainContent" role="main">
+<div id="shopify-section-template--17971951108262__main-article" class="shopify-section">
+<div class="section section--padding section--rounded relative">
+<article class="article page-width page-width--narrow relative" itemscope="" itemtype="http://schema.org/BlogPosting">
+<div class="rte text-base md:text-lg" itemprop="articleBody">
+<p>The medical professionals in Ukraine have been overwhelmed by the number of military and civilian casualties encountered since the first Russian invasion on their country on February 24. Doctors have done their best, and continue to do so, to keep up with the rising demand for medical attention, while the men and women continue to bravely fight for their nation, with still no end in sight. As a result, many medical facilities are left overwhelmed and unable to keep up with demand. Vuzix, in collaboration with<span> </span><a href="https://web.archive.org/web/20250423020942/https://ohanaone.one/" rel="noopener noreferrer" target="_blank">Ohana One</a> and<span> </span><a href="https://web.archive.org/web/20250423020942/https://televu.ca/" rel="noopener noreferrer" target="_blank">TeleVU</a>, has taken meaningful strides to assist the medical professionals in war-torn Ukraine, equipping teams with the necessary surgical infrastructure.</p>
+<p><img src="https://web.archive.org/web/20250423020942im_/https://cdn.shopify.com/s/files/1/0581/1208/2086/files/VuzixOhanaOne_packaging_480x480.png?v=1651498580" alt=""><br>Ohana One is a California-based surgical training nonprofit organization whose mission is to cultivate high-quality surgical and anesthesia programs in developing areas around the world today. In partnership with TeleVU, an Ontario-based technology company offering innovative AR, AI and IoT solutions with a special focus on healthcare, Ohana One equips medical professionals with a network of AR smart glasses assisted training resources. Ohana One’s goal has been to bridge global gaps in surgical care by enabling the access to advanced surgical training and mentorship programs, and Vuzix has supported that vision by providing the innovative technology. Together the partnership allows for educational resources to be made available in both developing areas and/or areas of need.</p>
+<p>Vuzix has donated several pairs of M400 smart glasses, which will run the TeleVU telepresence software and be administered through Ohana One’s ongoing borderless mentor/mentee effort, to support efforts in war-torn Ukraine. The M400 smart glasses will be worn during medical procedures to assist the medical professionals and give them the support they need as they administer to the wounded.</p>
+<p>The smart glasses will provide each surgeon with a portable, high-quality viewing experience, providing the ideal environment for the use of TeleVU telepresence software enabling mobile iSee-what-uSee video streaming, and augmented reality surgery assist, all in real-time. This allows for the doctors in Ukraine to share their surgical fields directly with connected medical professionals around the world, including live studio-quality feeds, recorded videos, and high-definition images, as well as the ability to subsequently write on top of captured images. Such videos are processed by TeleVU’s AI facial blurring algorithms to ensure privacy of patients and staff. The doctors connecting to them can offer commentary and written instructions, as well as use their hands to point out areas that may need special attention or direction, all as if they were physically in the operation room. Vuzix hardware, paired with the TeleVU software, enables Ohana One’s seamless and instantaneous mentor/mentee experience by creating an environment where medical professionals from around the world can be available in real-time during surgeries, preoperative planning, and post-operative monitoring.</p>
+<p>“The humanitarian crisis in Ukraine has been devastating and we felt that one of the best ways Vuzix could offer the country assistance is to support their efforts in treating their wounded,” said Paul Travers, President and CEO of Vuzix. “With the country’s doctors, nurses and facilities inundated with casualties in many regions, our smart glasses and the remote medical support they can provide will help facilitate the best medical treatment possible under their extremely tough conditions.” For more information about the collaboration efforts between the companies, read the full press release<span> </span><a href="https://web.archive.org/web/20250423020942/https://cdn.shopify.com/s/files/1/0581/1208/2086/files/04-27-2022_Vuzix_Ukraine_Support_Final-1_ae873224-e863-4a9d-9a23-dd02c8fcebda.pdf?v=1651078889" rel="noopener noreferrer" target="_blank">here</a>.</p>
+<p><strong>“Vuzix” Is A Registered Trademark Of Vuzix Corporation. All Product And Company Names Are Trademarks Or Registered Trademarks Of Their Respective Holders. Use Of Those Product And Company Names Does Not Imply An Affiliation With Or Endorsement By Them.  </strong></p>
+</div>
+</article>
+</div>
+</div>
+<div id="shopify-section-template--17971951108262__shogun-optimizer" class="shopify-section"></div>
+</main>
+<div id="shopify-section-sections--17971951796390__footer" class="shopify-section shopify-section-group-footer-group">
+<div class="section section--padding"><footer class="footer footer--no-info footer-width page-width page-width--full relative grid">
+<div class="footer__left flex flex-col md:flex-row gap-10">
+<div class="footer__logo flex flex-col gap-10">
+<p class="leading-none"> </p>
+</div>
+</div>
+</footer></div>
+</div>]]>
+    </content>
+  </entry>
+  <entry>
+    <id>https://www.vuzix.com/blogs/vuzix-blog/televu-and-vuzix-equip-healthcare-workers-with-the-power-of-hands-free-ar-ai</id>
+    <published>2022-02-11T10:27:00-06:00</published>
+    <updated>2026-07-01T10:27:33-05:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.vuzix.com/blogs/vuzix-blog/televu-and-vuzix-equip-healthcare-workers-with-the-power-of-hands-free-ar-ai"/>
+    <title>TeleVU and Vuzix Equip Healthcare Workers with the Power of Hands-Free AR, AI</title>
+    <author>
+      <name>Christian Powell-Byars</name>
+    </author>
+    <content type="html">
+      <![CDATA[<p><b>Removing geographical barriers to specialized care</b></p>
+<p><span>Virtual healthcare is taking the industry by storm…and why shouldn’t it? A world where anyone can receive immediate access to a healthcare specialist regardless of location is worth pursuing. </span></p>
+<p><span>Remote patient care leader </span><a href="https://web.archive.org/web/20250615112636/https://televu.ca/"><span>TeleVU</span></a><span> has partnered with Vuzix® to make this a reality. </span></p>
+<p><span>The arrangement is simple, yet it carries the </span><a href="https://web.archive.org/web/20250615112636/https://finance.yahoo.com/news/vuzix-televu-webinar-highlight-smart-150000174.html"><span>potential for global change</span></a><span>. </span></p>
+<p><span>TeleVU creates user-friendly communication software that connects patients with doctors.</span></p>
+<p><span>Vuzix provides smart glasses that allow specialists to harness the power of </span><a href="https://web.archive.org/web/20250615112636/https://www.vuzix.com/Blog/Vuzix-a-Global-Leader-in-Assisted-and-Augmented-Reality-Technology"><span>augmented reality, assisted reality</span></a><span>, and </span><a href="https://web.archive.org/web/20250615112636/https://www.vuzix.com/Blog/Vuzix-M4000-M400-Smart-Glasses-AI-Artificial-Intelligence-TechSee"><span>artificial intelligence</span></a><span>. Did we mention this access is completely hands-free?  </span></p>
+<p><span><img src="https://web.archive.org/web/20250615112636im_/https://cdn.shopify.com/s/files/1/0581/1208/2086/files/lady_480x480.jpg?v=1644601759" alt="TeleVU Vuzix remote healthcare smart glasses assisted reality augmented reality telemedicine"></span></p>
+<p><span>Healthcare specialists don’t have to be on the same continent to treat a patient thanks to Vuzix’s partnership with TeleVU.</span></p>
+<p><b>The future of patient care</b></p>
+<p><span>Vuzix smart glasses provide a live audio-visual link between frontline clinicians and remote experts from anywhere in the world via TeleVU.</span></p>
+<p><span>The two companies </span><a href="https://web.archive.org/web/20250615112636/https://www.vuzix.com/blogs/webinars/webinar-televu"><span>hosted a joint webinar walking healthcare leaders through the technology</span></a><span> on November 30th, 2021.</span></p>
+<p><b>RELATED:<span> </span></b><a href="https://web.archive.org/web/20250615112636/https://www.vuzix.com/Blog/smart-glasses-could-revolutionize-healthcare-and-education-in-the-2020s"><b>Smart Glasses Could Revolutionize Healthcare &amp; Education in the 2020s</b></a></p>
+<p><span>How Vuzix and TeleVU make life easy for healthcare workers while saving lives:</span></p>
+<ul>
+<li><b>IoT excellence:<span> </span><span>Specialists can summon information </span><a href="https://web.archive.org/web/20250615112636/https://www.prnewswire.com/news-releases/vuzix-enters-into-a-relationship-with-vivoka-to-provide-industry-leading-voice-recognition-language-support-for-vuzix-m-series-smart-glasses-301402231.html"><span>using their voice</span></a><span>. No matter the procedure, life-saving techniques and know-how can be accessed hands-free.</span></b></li>
+<li>
+<b><span> </span></b><b>Assisted reality:<span> </span><span>Like tracing a picture, specialists can follow virtual procedure walkthroughts that project digital instructions over the real-world. </span><a href="https://web.archive.org/web/20250615112636/https://www.vuzix.com/Blog/Knee-Shoulder-Spine-Surgeries-Powered-by-Vuzix-Smart-Glasses"><span>This technology is set to automate routine procedures, as even the most junior healthcare pro could step in and mimic the movements provided by the visual instructions - much like a video game.</span></a></b>
+</li>
+<li><b>AI and machine learning: <span>The devices feature top-of-the-line automation capabilities. The more they’re used, the more efficiently they’ll be able to help healthcare workers adapt to even the most complex procedures.</span></b></li>
+<li><b>Contact free: <span>This technology is invaluable in the wake of social distancing protocols. </span><a href="https://web.archive.org/web/20250615112636/https://www.vuzix.com/Blog/Vuzix-Smart-Glasses-Augmented-Reality-AR-Tech-Surgery-Remote-Work-Technology-01"><span>Doctors would never have to be in the same room as their patients</span></a><span> when equipped with Vuzix smart glasses.</span></b></li>
+</ul>
+<p><span>To learn more about TeleVU, </span><a href="https://web.archive.org/web/20250615112636/https://www.prnewswire.com/news-releases/vuzix-and-televu-webinar-will-highlight-smart-glasses-harnessing-the-power-of-ar-and-ai-in-virtual-healthcare-301429123.html"><span>click here</span></a><span>.</span></p>
+<p><span>To learn how Vuzix is improving working conditions for healthcare workers, while saving lives, </span><a href="https://web.archive.org/web/20250615112636/https://www.vuzix.com/Blogs?category=87&amp;page=1"><span>click here</span></a><span>.</span></p>
+<p><span>“Vuzix” is a registered trademark of Vuzix Corporation. All product and company names are trademarks or registered trademarks of their respective holders. Use of those product and company names does not imply an affiliation with or endorsement by them.  </span></p>]]>
+    </content>
+  </entry>
+  <entry>
+    <id>https://www.vuzix.com/blogs/vuzix-blog/barcotec-vuzix-partnership-a-win-for-european-businesses</id>
+    <published>2022-02-09T10:24:00-06:00</published>
+    <updated>2026-07-01T10:25:55-05:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.vuzix.com/blogs/vuzix-blog/barcotec-vuzix-partnership-a-win-for-european-businesses"/>
+    <title>Barcotec-Vuzix Partnership a Win for European Businesses</title>
+    <author>
+      <name>Christian Powell-Byars</name>
+    </author>
+    <content type="html">
+      <![CDATA[<main class="main-content relative" id="MainContent" role="main">
+<div id="shopify-section-template--18417790255270__main-article" class="shopify-section">
+<div class="section section--padding section--rounded relative">
+<article class="article page-width page-width--narrow relative" itemscope="" itemtype="http://schema.org/BlogPosting">
+<div class="rte text-base md:text-lg" itemprop="articleBody">
+<p><b>Agreement enhances European distribution of Vuzix</b><b>®</b><b><span> </span>Smart Glasses</b></p>
+<p><span>Headquartered in Rochester, New York, Vuzix is a global leader in wearable display technology for enterprise. </span></p>
+<p><span>Headquartered in Salzburg, Austria, </span><a href="https://web.archive.org/web/20250808171547/https://www.barcotec.at/"><span>Barcotec</span></a><span> is a global leader in the distribution of technologies that help businesses automate processes to operate more efficiently. In turn, </span><a href="https://web.archive.org/web/20250808171547/https://www.vuzix.com/Blog/Clorox-M400-Smart-Glasses-Vuzix-Augmented-Reality-Audit"><span>this benefits their bottom-line</span></a><span>. </span></p>
+<p><span>Needless to say, the Barcotec-Vuzix partnership is a no-brainer:</span></p>
+<ul>
+<li><span>Vuzix develops and manufactures hands-free smart glasses</span></li>
+<li><span>Barcotec helps agile and innovative businesses equip themselves with the revolutionary technology </span></li>
+</ul>
+<p><b>RELATED:<span> </span></b><a href="https://web.archive.org/web/20250808171547/https://www.vuzix.com/blogs/vuzix-blog/smart-glasses-could-revolutionize-healthcare-education-in-the-2020s-1"><span>Smart Glasses Could Revolutionize Healthcare and Education in the 2020s</span></a></p>
+<p><span>Barcotec is perfectly equipped to help the in-flux of business owners in </span><a href="https://web.archive.org/web/20250808171547/http://n/"><span>manufacturing</span></a><span>, </span><a href="https://web.archive.org/web/20250808171547/https://www.vuzix.com/blogs/vuzix-blog/how-medical-field-ar-smart-glasses-will-revolutionize-healthcare"><span>healthcare</span></a><span>, </span><a href="https://web.archive.org/web/20250808171547/https://www.vuzix.com/blogs/vuzix-blog/remote-support-from-anywhere-vuzix-and-softfoundry-combine-on-hands-free-4k-video-communication"><span>remote work</span></a><span> and other industries that are onboarding Vuzix smart glasses. </span></p>
+<p><span>Even before the ‘New Normal’ took the business world by storm, firms both large and small were reporting the benefits of equipping their teams with wearable displays. </span><a href="https://web.archive.org/web/20250808171547/https://www.vuzix.com/Blog/pandemic-smart-glasses-adoption"><span>As the pandemic has become endemic</span></a><span>, smart glasses have become a staple of warehouses, operating rooms, and even boardrooms throughout the developed world. </span></p>
+<h5>By partnering with Barcotec, Vuzix has gained a competitive advantage in the European market. Barcotec is uniquely positioned to enhance distribution efforts to businesses across the continent, helping clients integrate the hands-free technology into their operations. </h5>
+<p><b>A competitive advantage in the age of gridlocks and social distancing</b></p>
+<p><span>It’s no secret that the </span><a href="https://web.archive.org/web/20250808171547/https://www.forbes.com/sites/davidblackmon/2021/10/17/global-supply-chain-gridlock-cuts-across-all-industries-including-energy/"><span>global supply chain</span></a><span> is on life support. As they should be, transportation leaders look to technology for a solution to rampant shipping delays.</span></p>
+<p><span>Meanwhile, the past two years have forever changed the nature of in-person communication. Many businesses continue to suffer as lockdown protocols make operating at full capacity an impossibility. </span></p>
+<p><span>Smart glasses offer a viable solution to both of these problems. </span></p>
+<p><span>Armed with wearable displays, workers in countless fields have hands-free access to all the information they need to work faster and more efficiently. </span></p>
+<p><span>Vuzix and Barcotec are primed to equip European businesses with the power of </span><a href="https://web.archive.org/web/20250808171547/https://www.vuzix.com/Blog/Vuzix-a-Global-Leader-in-Assisted-and-Augmented-Reality-Technology"><span>augmented and assisted reality</span></a><span>. Europe: get ready for the hands-free age.    </span></p>
+<h6><span>“Vuzix” is a registered trademark of Vuzix Corporation. All product and company names are trademarks or registered trademarks of their respective holders. Use of those product and company names does not imply an affiliation with or endorsement by them.  </span></h6>
+</div>
+</article>
+</div>
+</div>
+<div id="shopify-section-template--18417790255270__shogun-optimizer" class="shopify-section"></div>
+</main>
+<div id="shopify-section-sections--18417784815782__footer" class="shopify-section shopify-section-group-footer-group">
+<div class="section section--padding"><footer class="footer footer--no-info footer-width page-width page-width--full relative grid">
+<div class="footer__left flex flex-col md:flex-row gap-10">
+<div class="footer__logo flex flex-col gap-10">
+<p class="leading-none"> </p>
+</div>
+</div>
+</footer></div>
+</div>]]>
+    </content>
+  </entry>
+  <entry>
+    <id>https://www.vuzix.com/blogs/vuzix-blog/is-the-metaverse-possible-without-smart-glasses</id>
+    <published>2022-02-03T10:23:00-06:00</published>
+    <updated>2026-07-01T10:24:02-05:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.vuzix.com/blogs/vuzix-blog/is-the-metaverse-possible-without-smart-glasses"/>
+    <title>Is the Metaverse Possible Without Smart Glasses?</title>
+    <author>
+      <name>Christian Powell-Byars</name>
+    </author>
+    <content type="html">
+      <![CDATA[<p><b>Digital future to rely on wearable display tech</b></p>
+<p><span>The internet as you know it is about to change. In fact, the 2D, search-based internet will soon be replaced by a </span><a href="https://web.archive.org/web/20251013143852/https://www.forbes.com/sites/cathyhackl/2020/07/05/the-metaverse-is-coming--its-a-very-big-deal/?sh=7c67c8f8440f"><span>3D, immersive world</span></a><span> that mirrors the real world. </span></p>
+<p><span>We’re speaking, of course, about the Metaverse. Yet, most business owners and consumers don’t fully understand how this new concept is set to change life as we know it. </span></p>
+<p><b>RELATED:<span> </span></b><a href="https://web.archive.org/web/20251013143852/https://www.vuzix.com/Blog/facebook-jumps-into-the-smart-glasses-arena"><b>Facebook Jumps into the Smart Glasses Arena</b></a></p>
+<p><span>Simply put, the Metaverse will take everything we love about the modern internet and place it in a highly-interactive, 3D realm. Yes, something like how the popular film </span><a href="https://web.archive.org/web/20251013143852/https://www.gamespot.com/articles/mark-zuckerberg-outlines-his-vision-for-a-ready-player-one-like-metaverse-and-it-sounds-wild/1100-6494443/"><span>Ready Player One</span></a><span> portrays the near future. </span></p>
+<p><span>While there are similarities to the film’s VR-fueled world, the Metaverse will have practical benefits far beyond the world of gaming. In fact, smart glasses are set to project the digital world over the real one. This is unlike the goggles used by the film’s characters, which completely immerses them in a different world.</span></p>
+<p><span>This begs an important question: can the Metaverse become our primary way of using the internet without the assistance of wearable displays, like Vuzix(R) smart glasses?</span></p>
+<div><span>The forthcoming Metaverse will likely rely heavily on smart glasses..</span></div>
+<div>
+<span></span><br>
+</div>
+<p><b>The Metaverse and wearable display tech</b></p>
+<p><span>Soon, workers and consumers will experience the internet as digital avatars, teleporting throughout endless 3D environments. However, this future isn’t possible without the technology that connects all the hidden systems that serve as the network’s foundation. </span></p>
+<p><span>By giving users the power of AR (</span><a href="https://web.archive.org/web/20251013143852/https://www.vuzix.com/Blog/Vuzix-a-Global-Leader-in-Assisted-and-Augmented-Reality-Technology"><span>augmented and assisted reality</span></a><span>), smart glasses allow </span><a href="https://web.archive.org/web/20251013143852/https://www.vuzix.com/Blog/smart-glasses-field-service-professionals"><span>technicians</span></a><span>, </span><a href="https://web.archive.org/web/20251013143852/https://www.vuzix.com/Blog/Vuzix-Smart-Glasses-M400-Augmented-Reality-Ox-Fulfillment-Solutions-Supply-Chain-Optimization-Strategic-Investment"><span>supply chain workers</span></a><span>, and a variety of other professionals to benefit from digital overlays that project atop real world objects. </span></p>
+<p><span>These capabilities are soon to become staples of the Metaverse. By making them accessible to businesses, Vuzix offers the world a glimpse of the internet of tomorrow. </span></p>
+<p><span>The sophistication of smart glasses technology should skyrocket alongside the Metaverse’s adoption rate. </span></p>
+<p><span>After all, there’s no way to access a 3D world without a hands-free wearable display.</span></p>
+<h6><span>“Vuzix” is a registered trademark of Vuzix Corporation. All product and company names are trademarks or registered trademarks of their respective holders. Use of those product and company names does not imply an affiliation with or endorsement by them.  </span></h6>]]>
+    </content>
+  </entry>
+  <entry>
+    <id>https://www.vuzix.com/blogs/vuzix-blog/vuzix-shield-smart-glasses-earn-ces-2022-innovation-awards-recognition</id>
+    <published>2022-02-01T10:08:00-06:00</published>
+    <updated>2026-07-01T10:08:31-05:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.vuzix.com/blogs/vuzix-blog/vuzix-shield-smart-glasses-earn-ces-2022-innovation-awards-recognition"/>
+    <title>Vuzix Shield Smart Glasses Earn CES 2022 Innovation Awards Recognition</title>
+    <author>
+      <name>Christian Powell-Byars</name>
+    </author>
+    <content type="html">
+      <![CDATA[<p><b>Vuzix named multiple Innovation Awards honoree for new product line</b></p>
+<p><span>The CESⓇ 2022 Innovation Awards took place on January 5th, in Las Vegas. Yet, VuzixⓇ was recognized by </span><a href="https://web.archive.org/web/20251007152926/https://ces.tech/Innovation-Awards/Meet-the-CES-2021-Judges.aspx"><span>the elite panel of industry expert judges who hosted the event</span></a><span> before 2021 drew to a close.</span></p>
+<p><a href="https://web.archive.org/web/20251007152926/https://www.vuzix.com/technology/next-gen"><span>Vuzix Shield™ smart glasses</span></a><span>, the first binocular AR (augmented reality) smart glasses for enterprise that feature a powerful set of microLED projectors and HD cameras, earned Innovation Awards honoree status. </span></p>
+<p><span>This achievement comes amidst the highest level of competition the event ever saw. </span><a href="https://web.archive.org/web/20251007152926/https://ces.tech/Innovation-Awards/Honorees.aspx"><span>CES ‘22</span></a><span> received over 1,800 award submissions.</span></p>
+<p><b>RELATED:<span> </span></b><a href="https://web.archive.org/web/20251007152926/https://www.vuzix.com/Blog/businesses-can-broadcast-to-the-world-with-vuzix-smart-glasses"><b>Businesses can Broadcast to the World with Vuzix Smart Glasses</b></a></p>
+<p><strong>Why Vuzix Shield smart glasses earned CES ‘22 honoree status</strong>:</p>
+<ul>
+<li>First binocular AR smart glasses for enterprise with HD stereo cameras</li>
+<li>MicroLED displays </li>
+<li>Prescription-ready</li>
+<li><a href="https://web.archive.org/web/20251007152926/https://blog.safetyglassesusa.com/what-does-ansi-z87-1-certified-mean/">Z87.1 safety glasses rating</a></li>
+<li>Powered by an 8-core CPU that runs Android 11 OS</li>
+<li>Wi-Fi and Bluetooth enabled</li>
+</ul>
+<p><span>Vuzix Shield devices will allow business owners, operators, and workers access to the metaverse. Hands-free and voice-activated, it offers seamless access to AR tools in </span><a href="https://web.archive.org/web/20251007152926/https://www.vuzix.com/Blog/Healthcare-Industry-to-Benefit-from-Marriage-of-5G-and-Smart-Glasses"><span>healthcare</span></a><span>, </span><a href="https://web.archive.org/web/20251007152926/https://www.vuzix.com/Blog/ar-smart-glasses-warehouse-productivity"><span>warehousing</span></a><span>, and </span><a href="https://web.archive.org/web/20251007152926/https://www.vuzix.com/Blog/smart-glasses-field-service-professionals"><span>field service</span></a><span>, among other industries. </span></p>
+<p><span>Vuzix Shield earned much attention during CES 2022. The first binocular AR smart glasses with HD stereo cameras, the device is poised to become a game changer for business leaders.</span></p>
+<p><span><img src="https://web.archive.org/web/20251007152926im_/https://cdn.shopify.com/s/files/1/0581/1208/2086/files/today_2_480x480.jpg?v=1643740017" alt="Vuzix Shield earned much attention during CES 2022. The first binocular AR smart glasses with HD stereo cameras, the device is poised to become a game changer for business leaders."></span></p>
+<p><span>Vuzix Shield earned much attention during CES 2022. The first binocular AR smart glasses with HD stereo cameras, the device is poised to become a game changer for business leaders.</span></p>
+<p><b>A pillar of innovation</b></p>
+<p><span>2022 marks the 18th straight year Vuzix has been honored at CES. </span><a href="https://web.archive.org/web/20251007152926/https://www.linkedin.com/in/paul-travers-534b336"><span>Vuzix President &amp; CEO Paul Travers</span></a><span> acknowledged this is longer than the life span of most competitors in the wearable display space.</span></p>
+<p><span>Whether it’s a warehouse worker scanning barcodes, or a technician streaming their first-person view to off-site colleagues, Vuzix products make it easy to perform countless tasks hands-free.</span></p>
+<p><a href="https://web.archive.org/web/20251007152926/https://d2iankuf53zudv.cloudfront.net/Content/Upload/PDFs/11_11_2021_Vuzix_Sheild_CES_Awards_Final.pdf"><span>Read the full press release here.</span></a></p>
+<p><a href="https://web.archive.org/web/20251007152926/https://www.youtube.com/watch?v=tIFMcB7_BUA"><span>Click here for a video explaining how Vuzix devices will connect users to the metaverse. </span></a></p>
+<h5><span>“Vuzix” is a registered trademark of Vuzix Corporation. All product and company names are trademarks or registered trademarks of their respective holders. Use of those product and company names does not imply an affiliation with or endorsement by them.  </span></h5>]]>
+    </content>
+  </entry>
+</feed>

@@ -1,0 +1,1238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xml:lang="en" xmlns="http://www.w3.org/2005/Atom" xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:s="http://jadedpixel.com/-/spec/shopify">
+  <id>https://www.vuzix.com/collections/all.atom</id>
+  <link rel="alternate" type="text/html" href="https://www.vuzix.com/collections/all"/>
+  <link rel="self" type="application/atom+xml" href="https://www.vuzix.com/collections/all.atom"/>
+  <title>Vuzix Corporation</title>
+  <updated>2026-05-04T13:30:01-05:00</updated>
+  <author>
+    <name>Vuzix Corporation</name>
+  </author>
+  <entry>
+    <id>https://www.vuzix.com/products/15300638310566</id>
+    <published>2026-05-04T13:30:01-05:00</published>
+    <updated>2026-05-04T13:30:01-05:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.vuzix.com/products/warranty-product-1"/>
+    <title>Warranty Product</title>
+    <s:type>wk_warranty</s:type>
+    <s:vendor>Vuzix Corporation</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0581/1208/2086/products/Product_Image_M400_1.jpg?v=1750868426"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Vendor: </strong>Vuzix Corporation<br>
+        <strong>Type: </strong>wk_warranty<br>
+        <strong>Price: </strong>
+            0.00 - 499.99
+            <a href="https://www.vuzix.com/products/warranty-product-1">(7 variants)</a>
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"></td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:tag>wk_warranty</s:tag>
+    <s:variant>
+      <id>https://www.vuzix.com/products/15300638310566</id>
+      <title>Default Title</title>
+      <s:price currency="USD">0.00</s:price>
+      <s:sku/>
+      <s:grams>0</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.vuzix.com/products/15300638310566</id>
+      <title>m400-smart-glasses - 1 years Warranty</title>
+      <s:price currency="USD">0.00</s:price>
+      <s:sku/>
+      <s:grams>0</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.vuzix.com/products/15300638310566</id>
+      <title>m400-smart-glasses - 2 years Extended Warranty</title>
+      <s:price currency="USD">299.99</s:price>
+      <s:sku>472T0A008</s:sku>
+      <s:grams>0</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.vuzix.com/products/15300638310566</id>
+      <title>vuzix-lx1-smart-glasses - 1 years Warranty</title>
+      <s:price currency="USD">0.00</s:price>
+      <s:sku/>
+      <s:grams>0</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.vuzix.com/products/15300638310566</id>
+      <title>Vuzix LX1 Smart Glasses- 2 years Extended Warranty</title>
+      <s:price currency="USD">399.99</s:price>
+      <s:sku>472T0A023</s:sku>
+      <s:grams>0</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.vuzix.com/products/15300638310566</id>
+      <title>Vuzix LX1 Smart Glasses- 3 years Extended Warranty</title>
+      <s:price currency="USD">499.99</s:price>
+      <s:sku>516T0A011</s:sku>
+      <s:grams>0</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.vuzix.com/products/15300638310566</id>
+      <title>Vuzix M400™ Smart Glasses- 3 years Extended Warranty</title>
+      <s:price currency="USD">399.99</s:price>
+      <s:sku>516T0A014</s:sku>
+      <s:grams>0</s:grams>
+    </s:variant>
+  </entry>
+  <entry>
+    <id>https://www.vuzix.com/products/15298833547430</id>
+    <published>2026-05-01T11:08:17-05:00</published>
+    <updated>2026-05-01T11:08:17-05:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.vuzix.com/products/lx1-hat-mount"/>
+    <title>LX1 Hat Mount</title>
+    <s:type>Accessories</s:type>
+    <s:vendor>Vuzix Corporation</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0581/1208/2086/files/DSC00365.jpg?v=1777651671"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Vendor: </strong>Vuzix Corporation<br>
+        <strong>Type: </strong>Accessories<br>
+        <strong>Price: </strong>
+            14.99
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><p><meta charset="utf-8">LX1 Hat Mount Clips are designed for all-day comfort. They easily attach to most baseball caps, visors, and safety bump caps, providing a secure and stable mounting solution for LX1 Smart Glasses.</p>
+<p><br aria-hidden="true">Built for versatility, the clips feature a lightweight, low-profile design that maintains balance while keeping your device firmly in place during active use. The mounting system allows for smooth positioning and adjustment, so users can quickly adapt their setup for optimal viewing.</p></td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:tag>LX1</s:tag>
+    <s:variant>
+      <id>https://www.vuzix.com/products/15298833547430</id>
+      <title>Default Title</title>
+      <s:price currency="USD">14.99</s:price>
+      <s:sku>516T0A004</s:sku>
+      <s:grams>45</s:grams>
+    </s:variant>
+  </entry>
+  <entry>
+    <id>https://www.vuzix.com/products/15287308583078</id>
+    <published>2026-04-28T09:13:34-05:00</published>
+    <updated>2026-04-28T09:13:34-05:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.vuzix.com/products/lx1-4-bank-charger-cradle"/>
+    <title>LX1 Charger Kit</title>
+    <s:type>Accessories</s:type>
+    <s:vendor>Vuzix Corporation</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0581/1208/2086/files/DSC00380.jpg?v=1776348078"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Vendor: </strong>Vuzix Corporation<br>
+        <strong>Type: </strong>Accessories<br>
+        <strong>Price: </strong>
+            199.99
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><p><img><img><img><meta charset="utf-8">Keep your team powered for the day with this high-efficiency multi-charger for the Vuzix LX1 7000 mAh battery. Capable of charging up to four batteries simultaneously, each charging slot features a clear LED light indicator, so you always know when batteries are ready for use. This reliable charging solution ensures your devices stay operational throughout the workday.<br></p>
+<ul>
+<li>Includes 4 bank charger, AC/DC adapter, AC power cord (115V 60HZ Type A), and user manual.</li>
+<li>The rated charger input is 12VDC 4A, output is 4.2VDC 2A.</li>
+<li>The charger must be used with included Vuzix approved UL Listed AC adapter model ADP-48GR.</li>
+</ul></td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:variant>
+      <id>https://www.vuzix.com/products/15287308583078</id>
+      <title>Default Title</title>
+      <s:price currency="USD">199.99</s:price>
+      <s:sku>516T0A020</s:sku>
+      <s:grams>454</s:grams>
+    </s:variant>
+  </entry>
+  <entry>
+    <id>https://www.vuzix.com/products/15287307174054</id>
+    <published>2026-04-17T10:44:10-05:00</published>
+    <updated>2026-04-17T10:44:10-05:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.vuzix.com/products/lx1-7ah-battery-pack"/>
+    <title>LX1 Long-Shift Power Bank</title>
+    <s:type>Accessories</s:type>
+    <s:vendor>Vuzix Corporation</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0581/1208/2086/files/DSC00370_c24e3a9f-de05-4b42-abf8-87c858b9977b.jpg?v=1776347790"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Vendor: </strong>Vuzix Corporation<br>
+        <strong>Type: </strong>Accessories<br>
+        <strong>Price: </strong>
+            119.99
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><div aria-setsize="-1" id="message-list_1776450854.717129">
+<div>
+<div aria-roledescription="message">
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>The LX1 Long-Shift 7000 mAh battery Power Bank is engineered to keep your team running even in harsh conditions. Designed for durability, it performs reliably in extreme temperatures ranging from -20°C (-4°F) to 45°C (113°F). It features a convenient slide-and-snap mounting system for quick, secure attachment to your LX1 smart glasses. Delivering dependable, all-shift power, it’s the ideal solution for warehouse teams and field technicians who need uninterrupted performance wherever the job takes them.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:variant>
+      <id>https://www.vuzix.com/products/15287307174054</id>
+      <title>Default Title</title>
+      <s:price currency="USD">119.99</s:price>
+      <s:sku>516T0A001</s:sku>
+      <s:grams>227</s:grams>
+    </s:variant>
+  </entry>
+  <entry>
+    <id>https://www.vuzix.com/products/15287304323238</id>
+    <published>2026-04-17T10:43:53-05:00</published>
+    <updated>2026-04-17T10:43:53-05:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.vuzix.com/products/bump-cap"/>
+    <title>LX1 Bump Cap</title>
+    <s:type>Accessories</s:type>
+    <s:vendor>Vuzix Corporation</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0581/1208/2086/files/DSC00269.jpg?v=1776347602"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Vendor: </strong>Vuzix Corporation<br>
+        <strong>Type: </strong>Accessories<br>
+        <strong>Price: </strong>
+            49.99
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><p><meta charset="utf-8">The Vuzix bump cap is a lightweight, comfortable head protection solution designed for environments where minor bumps and scrapes are a risk, but a full hard hat isn’t required. Featuring a durable inner shell and a stylish outer cap, it blends safety with everyday wearability. Compatible with Vuzix M400 and LX1 hat-clip mounts, the bump cap is ideal for warehouses, maintenance work, and low-risk industrial settings.</p></td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:variant>
+      <id>https://www.vuzix.com/products/15287304323238</id>
+      <title>Default Title</title>
+      <s:price currency="USD">49.99</s:price>
+      <s:sku>516T0A013</s:sku>
+      <s:grams>454</s:grams>
+    </s:variant>
+  </entry>
+  <entry>
+    <id>https://www.vuzix.com/products/15275942477990</id>
+    <published>2026-04-01T11:11:56-05:00</published>
+    <updated>2026-04-01T11:11:56-05:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.vuzix.com/products/black-mug-get-augmented-fade"/>
+    <title>Black Mug - Get Augmented Fade</title>
+    <s:type>Merchandise</s:type>
+    <s:vendor>Vuzix</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0581/1208/2086/files/black-glossy-mug-black-11-oz-handle-on-right-69cd43b5a1835.jpg?v=1775059914"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Vendor: </strong>Vuzix<br>
+        <strong>Type: </strong>Merchandise<br>
+        <strong>Price: </strong>
+            12.99 - 13.99
+            <a href="https://www.vuzix.com/products/black-mug-get-augmented-fade">(2 variants)</a>
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">This cupboard essential is sturdy, sleek, and perfect for your morning java or afternoon tea. <br>
+<br>
+• Ceramic<br>
+• 11 oz mug dimensions: height 3.85" (9.8 cm), diameter 3.35" (8.5 cm)<br>
+• 15 oz mug dimensions: height 4.7" (12 cm), diameter 3.35" (8.5 cm)<br>
+• Lead and BPA-free material<br>
+• Glossy finish<br>
+• Dishwasher and microwave safe</td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:variant>
+      <id>https://www.vuzix.com/products/15275942477990</id>
+      <title>11 oz</title>
+      <s:price currency="USD">12.99</s:price>
+      <s:sku>4805914_9323</s:sku>
+      <s:grams>362</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.vuzix.com/products/15275942477990</id>
+      <title>15 oz</title>
+      <s:price currency="USD">13.99</s:price>
+      <s:sku>4805914_9324</s:sku>
+      <s:grams>454</s:grams>
+    </s:variant>
+  </entry>
+  <entry>
+    <id>https://www.vuzix.com/products/15275942412454</id>
+    <published>2026-04-01T11:10:50-05:00</published>
+    <updated>2026-04-01T11:10:50-05:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.vuzix.com/products/white-mug-get-augmented-fade"/>
+    <title>White Mug - Get Augmented Fade</title>
+    <s:type>Merchandise</s:type>
+    <s:vendor>Vuzix</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0581/1208/2086/files/white-ceramic-mug-with-color-inside-red-11-oz-front-69cd437774f29.jpg?v=1775059848"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Vendor: </strong>Vuzix<br>
+        <strong>Type: </strong>Merchandise<br>
+        <strong>Price: </strong>
+            12.99
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">Add a splash of color to your morning coffee or tea ritual! These ceramic mugs not only have a  beautiful design on them, but also a colorful rim, handle, and inside, so the mug is bound to spice up your mug rack.<br>
+<br>
+• Ceramic<br>
+• 11 oz mug dimensions: 3.79″ (9.6 cm) in height, 3.25″ (8.3 cm) in diameter<br>
+• 15 oz mug dimensions: 4.69″ (11.9 cm) in height, 3.35″ (8.5 cm) in diameter<br>
+• Lead and BPA-free material<br>
+• Colored rim, inside, and handle<br>
+• Dishwasher and microwave safe</td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:variant>
+      <id>https://www.vuzix.com/products/15275942412454</id>
+      <title>11 oz</title>
+      <s:price currency="USD">12.99</s:price>
+      <s:sku>9111135_11049</s:sku>
+      <s:grams>369</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.vuzix.com/products/15275942412454</id>
+      <title>15 oz</title>
+      <s:price currency="USD">12.99</s:price>
+      <s:sku>9111135_17200</s:sku>
+      <s:grams>454</s:grams>
+    </s:variant>
+  </entry>
+  <entry>
+    <id>https://www.vuzix.com/products/15226384154790</id>
+    <published>2026-02-18T07:12:12-06:00</published>
+    <updated>2026-02-18T07:12:12-06:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.vuzix.com/products/remote-assist-kit"/>
+    <title>Remote Assist Kit - M400</title>
+    <s:type></s:type>
+    <s:vendor>Vuzix Corporation</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0581/1208/2086/files/DSC00151-smaller.png?v=1770667008"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Vendor: </strong>Vuzix Corporation<br>
+        <strong>Type: </strong><br>
+        <strong>Price: </strong>
+            1699.99
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><p><meta charset="utf-8">Empower frontline and field workers with hands-free remote assistance using the Vuzix Remote Assist Kit. Designed for real-world environments, this turnkey solution enables workers to securely share their point of view with remote experts—improving speed, accuracy, and first-time fix rates. With a connection to your favorite collaboration platform, and a rugged, field-ready kit, teams can deploy quickly and start collaborating immediately. Each kit includes:</p>
+<ul>
+<li>M400 Smart Glasses</li>
+<li>4800 mAh Power Bank</li>
+<li>Headband Mount</li>
+<li>Ball Cap Mounts</li>
+<li>USB-C Viewer Cable</li>
+<li>USB-A to USB-C Charging Cable</li>
+<li>Custom Hard Case</li>
+<li>Manuals</li>
+<li>
+<meta charset="utf-8">Pre-loaded software to connect with Microsoft Teams and Zoom</li>
+</ul></td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:tag>Remote Assist Kit</s:tag>
+    <s:variant>
+      <id>https://www.vuzix.com/products/15226384154790</id>
+      <title>Default Title</title>
+      <s:price currency="USD">1699.99</s:price>
+      <s:sku>472T00033</s:sku>
+      <s:grams>0</s:grams>
+    </s:variant>
+  </entry>
+  <entry>
+    <id>https://www.vuzix.com/products/15226842153126</id>
+    <published>2026-02-17T13:06:11-06:00</published>
+    <updated>2026-02-17T13:06:11-06:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.vuzix.com/products/remote-assist-kit-lx1"/>
+    <title>Remote Assist Kit - LX1</title>
+    <s:type></s:type>
+    <s:vendor>Vuzix Corporation</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0581/1208/2086/files/LX1Isometric2_47e5a8e1-449b-44d2-a192-1821a7c74b1b.jpg?v=1770666954"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Vendor: </strong>Vuzix Corporation<br>
+        <strong>Type: </strong><br>
+        <strong>Price: </strong>
+            2099.99
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><p><meta charset="utf-8">Empower frontline and field workers with hands-free remote assistance using the Vuzix Remote Assist Kit. Designed for real-world environments, this turnkey solution enables workers to securely share their point of view with remote experts—improving speed, accuracy, and first-time fix rates. <meta charset="utf-8">With a connection to your favorite collaboration platform, and a rugged, field-ready kit, teams can deploy quickly and start collaborating immediately. Each kit includes:</p>
+<ul>
+<li>
+<meta charset="UTF-8"> LX1 Smart Glasses</li>
+<li>7000 mAh Battery Pack</li>
+<li>Headband Mount</li>
+<li>Bump Cap Mounts</li>
+<li>USB-A to USB-C Charging Cable</li>
+<li>Custom Hard Case</li>
+<li>Manual</li>
+<li>Vuzix Bump Cap</li>
+<li>
+<meta charset="utf-8">Pre-loaded software to connect with Microsoft Teams and Zoom</li>
+</ul></td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:tag>Remote Assist Kit</s:tag>
+    <s:variant>
+      <id>https://www.vuzix.com/products/15226842153126</id>
+      <title>Default Title</title>
+      <s:price currency="USD">2099.99</s:price>
+      <s:sku>516T00003</s:sku>
+      <s:grams>0</s:grams>
+    </s:variant>
+  </entry>
+  <entry>
+    <id>https://www.vuzix.com/products/8547952787622</id>
+    <published>2025-08-11T08:53:51-05:00</published>
+    <updated>2025-08-11T08:53:51-05:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.vuzix.com/products/vuzix-lx1-smart-glasses"/>
+    <title>Vuzix LX1 Smart Glasses</title>
+    <s:type>Smart Glasses</s:type>
+    <s:vendor>Vuzix Corporation</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0581/1208/2086/files/LX1Isometric2.jpg?v=1754321981"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Vendor: </strong>Vuzix Corporation<br>
+        <strong>Type: </strong>Smart Glasses<br>
+        <strong>Price: </strong>
+            2199.99
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><div class="elementToProof">Designed for field support and warehousing, Vuzix LX1 smart glasses combine rugged durability with powerful, hands-free functionality to enhance the productivity of your teams. Featuring a vibrant heads-up display, voice-activated controls, and Qualcomm® processor for device longevity, the LX1 enables workers to view pick lists, stream their view, and manage workflows without breaking stride. With a -20°C operation rating and a full-shift high capacity battery, the LX1 is built to withstand the harshest conditions.</div>
+<ul>
+<li>LX1 Smart Glasses (-20℃/-4℉ to 45℃/113℉ rated)</li>
+<li>7000 mAh long-shift clip in battery</li>
+<li>Headband with easy release mounting system</li>
+<li>Available multi-battery charging station</li>
+<li>Available baseball cap mount</li>
+<li>User manual</li>
+<li>Mounting guide</li>
+<li>One-year manufacturer’s warranty</li>
+</ul></td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:variant>
+      <id>https://www.vuzix.com/products/8547952787622</id>
+      <title>Default Title</title>
+      <s:price currency="USD">2199.99</s:price>
+      <s:sku>516PVT001</s:sku>
+      <s:grams>0</s:grams>
+    </s:variant>
+  </entry>
+  <entry>
+    <id>https://www.vuzix.com/products/8425604481190</id>
+    <published>2025-03-05T11:04:37-06:00</published>
+    <updated>2025-03-05T11:04:37-06:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.vuzix.com/products/human-2-0-tee"/>
+    <title>Human 2.0 Tee</title>
+    <s:type>Merchandise</s:type>
+    <s:vendor>Vuzix</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0581/1208/2086/files/unisex-staple-t-shirt-black-heather-front-67c88419ed7ea.jpg?v=1741194276"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Vendor: </strong>Vuzix<br>
+        <strong>Type: </strong>Merchandise<br>
+        <strong>Price: </strong>
+            24.99
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">This t-shirt is everything you've dreamed of and more. It feels soft and lightweight, with the right amount of stretch. It's comfortable and flattering for all. <br>
+<br>
+• 100% combed and ring-spun cotton (Heather colors contain polyester)<br>
+• Fabric weight: 4.2 oz./yd.² (142 g/m²)<br>
+• Pre-shrunk fabric<br>
+• Side-seamed construction<br>
+• Shoulder-to-shoulder taping<br>
+• Blank product sourced from Nicaragua, Mexico, Honduras, or the US</td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:variant>
+      <id>https://www.vuzix.com/products/8425604481190</id>
+      <title>S</title>
+      <s:price currency="USD">24.99</s:price>
+      <s:sku>3150246_8923</s:sku>
+      <s:grams>130</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.vuzix.com/products/8425604481190</id>
+      <title>M</title>
+      <s:price currency="USD">24.99</s:price>
+      <s:sku>3150246_8924</s:sku>
+      <s:grams>142</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.vuzix.com/products/8425604481190</id>
+      <title>L</title>
+      <s:price currency="USD">24.99</s:price>
+      <s:sku>3150246_8925</s:sku>
+      <s:grams>164</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.vuzix.com/products/8425604481190</id>
+      <title>XL</title>
+      <s:price currency="USD">24.99</s:price>
+      <s:sku>3150246_8926</s:sku>
+      <s:grams>170</s:grams>
+    </s:variant>
+  </entry>
+  <entry>
+    <id>https://www.vuzix.com/products/8397858537638</id>
+    <published>2025-02-04T16:32:39-06:00</published>
+    <updated>2025-02-04T16:32:39-06:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.vuzix.com/products/baseball-hat-human-2-0"/>
+    <title>Ball Cap - Human 2.0</title>
+    <s:type>Merchandise</s:type>
+    <s:vendor>Vuzix</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0581/1208/2086/files/classic-dad-hat-black-left-side-67a2957e12115.jpg?v=1738708357"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Vendor: </strong>Vuzix<br>
+        <strong>Type: </strong>Merchandise<br>
+        <strong>Price: </strong>
+            20.99
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><p>Ball caps aren't just for dads. This one's got a low profile with an adjustable strap and curved visor.<br><br>• 100% chino cotton twill<br>• Unstructured, 6-panel, low-profile<br>• 6 embroidered eyelets<br>• 3 ⅛” (7.6 cm) crown<br>• Adjustable strap with antique buckle</p></td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:tag>Affiliate</s:tag>
+    <s:variant>
+      <id>https://www.vuzix.com/products/8397858537638</id>
+      <title>Default Title</title>
+      <s:price currency="USD">20.99</s:price>
+      <s:sku>9225874_7854</s:sku>
+      <s:grams>94</s:grams>
+    </s:variant>
+  </entry>
+  <entry>
+    <id>https://www.vuzix.com/products/8351392039078</id>
+    <published>2024-11-25T10:18:31-06:00</published>
+    <updated>2024-11-25T10:18:31-06:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.vuzix.com/products/mens-premium-polo-1"/>
+    <title>Men&apos;s Polo</title>
+    <s:type>Merchandise</s:type>
+    <s:vendor>Vuzix</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0581/1208/2086/files/premium-polo-shirt-black-front-673fcae208c5d.jpg?v=1732233959"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Vendor: </strong>Vuzix<br>
+        <strong>Type: </strong>Merchandise<br>
+        <strong>Price: </strong>
+            28.99
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">A classic piece that never goes out of style, this Port Authority embroidered polo has it all—relaxed fit, silky fabric, and a comfortable length. Get one for yourself and watch how it becomes a true outfit game-changer in your wardrobe.<br>
+<br>
+• 65% polyester, 35% cotton pique<br>
+• Fabric weight: 5.0 oz/yd² (169.5 g/m²)<br>
+• Relaxed fit that runs large<br>
+• Flat knit collar and cuffs<br>
+• Metal buttons with dyed-to-match plastic rims<br>
+• Side vents for breathability<br>
+• Blank product sourced from Ethiopia</td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:tag>Affiliate</s:tag>
+    <s:variant>
+      <id>https://www.vuzix.com/products/8351392039078</id>
+      <title>S</title>
+      <s:price currency="USD">28.99</s:price>
+      <s:sku>3203611_9898</s:sku>
+      <s:grams>207</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.vuzix.com/products/8351392039078</id>
+      <title>M</title>
+      <s:price currency="USD">28.99</s:price>
+      <s:sku>3203611_9899</s:sku>
+      <s:grams>232</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.vuzix.com/products/8351392039078</id>
+      <title>L</title>
+      <s:price currency="USD">28.99</s:price>
+      <s:sku>3203611_9900</s:sku>
+      <s:grams>261</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.vuzix.com/products/8351392039078</id>
+      <title>XL</title>
+      <s:price currency="USD">28.99</s:price>
+      <s:sku>3203611_9901</s:sku>
+      <s:grams>272</s:grams>
+    </s:variant>
+  </entry>
+  <entry>
+    <id>https://www.vuzix.com/products/8351377326246</id>
+    <published>2024-11-25T10:18:29-06:00</published>
+    <updated>2024-11-25T10:18:29-06:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.vuzix.com/products/snapback-hat-4"/>
+    <title>Snapback Hat - Human 2.0</title>
+    <s:type>Merchandise</s:type>
+    <s:vendor>Vuzix</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0581/1208/2086/files/classic-snapback-black-front-673fc65d0efdd.jpg?v=1732232805"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Vendor: </strong>Vuzix<br>
+        <strong>Type: </strong>Merchandise<br>
+        <strong>Price: </strong>
+            27.99
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">This hat is structured with a classic fit, flat brim, and full buckram. The adjustable snap closure makes it a comfortable, one-size-fits-most hat. <br>
+<br>
+• 80% acrylic, 20% wool<br>
+• Green Camo is 60% cotton, 40% polyester<br>
+• Structured, 6-panel, high-profile<br>
+• 6 embroidered eyelets<br>
+• Plastic snap closure<br>
+• Green undervisor<br>
+• Head circumference: 21⅝″–23⅝″ (54.9 cm–60 cm)<br>
+• Blank product sourced from Vietnam or Bangladesh<p><strong class="size-guide-title">Size guide</strong></p><div class="table-responsive dynamic" data-unit-system="imperial"><table cellpadding="5"><tbody>
+<tr>
+<td> </td>
+<td><strong>A (inches)</strong></td>
+<td><strong>B (inches)</strong></td>
+<td><strong>C (inches)</strong></td>
+<td><strong>D (inches)</strong></td>
+</tr>
+<tr>
+<td><strong>One size</strong></td>
+<td>20 ⅛-23 ⅝</td>
+<td>4 ½</td>
+<td>2 ½</td>
+<td>7 ⅛</td>
+</tr>
+</tbody></table></div></td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:tag>Affiliate</s:tag>
+    <s:variant>
+      <id>https://www.vuzix.com/products/8351377326246</id>
+      <title>Default Title</title>
+      <s:price currency="USD">27.99</s:price>
+      <s:sku>7110336_4792</s:sku>
+      <s:grams>113</s:grams>
+    </s:variant>
+  </entry>
+  <entry>
+    <id>https://www.vuzix.com/products/8351365464230</id>
+    <published>2024-11-25T10:18:28-06:00</published>
+    <updated>2024-11-25T10:18:28-06:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.vuzix.com/products/snapback-hat-3"/>
+    <title>Snapback Hat - Augmented Human</title>
+    <s:type>Merchandise</s:type>
+    <s:vendor>Vuzix</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0581/1208/2086/files/classic-snapback-black-front-673fc33f5d590.jpg?v=1732232007"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Vendor: </strong>Vuzix<br>
+        <strong>Type: </strong>Merchandise<br>
+        <strong>Price: </strong>
+            27.99
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">This hat is structured with a classic fit, flat brim, and full buckram. The adjustable snap closure makes it a comfortable, one-size-fits-most hat. <br>
+<br>
+Embroidered design on front with "VUZIX" logo on the side.<br>
+<br>
+• 80% acrylic, 20% wool<br>
+• Green Camo is 60% cotton, 40% polyester<br>
+• Structured, 6-panel, high-profile<br>
+• 6 embroidered eyelets<br>
+• Plastic snap closure<br>
+• Green undervisor<br>
+• Head circumference: 21⅝″–23⅝″ (54.9 cm–60 cm)<br>
+• Blank product sourced from Vietnam or Bangladesh<p><strong class="size-guide-title">Size guide</strong></p><div class="table-responsive dynamic" data-unit-system="imperial"><table cellpadding="5"><tbody>
+<tr>
+<td> </td>
+<td><strong>A (inches)</strong></td>
+<td><strong>B (inches)</strong></td>
+<td><strong>C (inches)</strong></td>
+<td><strong>D (inches)</strong></td>
+</tr>
+<tr>
+<td><strong>One size</strong></td>
+<td>20 ⅛-23 ⅝</td>
+<td>4 ½</td>
+<td>2 ½</td>
+<td>7 ⅛</td>
+</tr>
+</tbody></table></div></td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:tag>Affiliate</s:tag>
+    <s:variant>
+      <id>https://www.vuzix.com/products/8351365464230</id>
+      <title>Default Title</title>
+      <s:price currency="USD">27.99</s:price>
+      <s:sku>8205952_4792</s:sku>
+      <s:grams>113</s:grams>
+    </s:variant>
+  </entry>
+  <entry>
+    <id>https://www.vuzix.com/products/8351357993126</id>
+    <published>2024-11-25T10:18:27-06:00</published>
+    <updated>2024-11-25T10:18:27-06:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.vuzix.com/products/ball-cap-vuzix"/>
+    <title>Ball Cap - Vuzix</title>
+    <s:type>Merchandise</s:type>
+    <s:vendor>Vuzix</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0581/1208/2086/files/classic-dad-hat-black-front-673fc202495f4.jpg?v=1732231687"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Vendor: </strong>Vuzix<br>
+        <strong>Type: </strong>Merchandise<br>
+        <strong>Price: </strong>
+            20.99
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><p>Dad hats aren't just for dads. This one's got a low profile with an adjustable strap and curved visor.<br><br>• 100% chino cotton twill<br>• 35% chino cotton twill, 65% polyester<br>• Unstructured, 6-panel, low-profile<br>• 6 embroidered eyelets<br>• 3 ⅛” (7.6 cm) crown<br>• Adjustable strap with antique buckle<br>• Blank product sourced from Vietnam or Bangladesh</p></td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:tag>Affiliate</s:tag>
+    <s:variant>
+      <id>https://www.vuzix.com/products/8351357993126</id>
+      <title>Default Title</title>
+      <s:price currency="USD">20.99</s:price>
+      <s:sku>7546031_7854</s:sku>
+      <s:grams>94</s:grams>
+    </s:variant>
+  </entry>
+  <entry>
+    <id>https://www.vuzix.com/products/8351394103462</id>
+    <published>2024-11-21T18:09:10-06:00</published>
+    <updated>2024-11-21T18:09:10-06:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.vuzix.com/products/unisex-t-shirt-1"/>
+    <title>Unisex Tee</title>
+    <s:type>Merchandise</s:type>
+    <s:vendor>Vuzix</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0581/1208/2086/files/unisex-staple-t-shirt-black-heather-front-673fcb9be7523.jpg?v=1732234148"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Vendor: </strong>Vuzix<br>
+        <strong>Type: </strong>Merchandise<br>
+        <strong>Price: </strong>
+            24.99
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">This t-shirt is everything you've dreamed of and more. It feels soft and lightweight, with the right amount of stretch. It's comfortable and flattering for all. <br>
+<br>
+• 100% combed and ring-spun cotton (Heather colors contain polyester)<br>
+• Fabric weight: 4.2 oz./yd.² (142 g/m²)<br>
+• Pre-shrunk fabric<br>
+• Side-seamed construction<br>
+• Shoulder-to-shoulder taping<br>
+• Blank product sourced from Nicaragua, Mexico, Honduras, or the US</td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:tag>Affiliate</s:tag>
+    <s:variant>
+      <id>https://www.vuzix.com/products/8351394103462</id>
+      <title>S</title>
+      <s:price currency="USD">24.99</s:price>
+      <s:sku>4939610_8923</s:sku>
+      <s:grams>130</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.vuzix.com/products/8351394103462</id>
+      <title>M</title>
+      <s:price currency="USD">24.99</s:price>
+      <s:sku>4939610_8924</s:sku>
+      <s:grams>142</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.vuzix.com/products/8351394103462</id>
+      <title>L</title>
+      <s:price currency="USD">24.99</s:price>
+      <s:sku>4939610_8925</s:sku>
+      <s:grams>164</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://www.vuzix.com/products/8351394103462</id>
+      <title>XL</title>
+      <s:price currency="USD">24.99</s:price>
+      <s:sku>4939610_8926</s:sku>
+      <s:grams>170</s:grams>
+    </s:variant>
+  </entry>
+  <entry>
+    <id>https://www.vuzix.com/products/8270184841382</id>
+    <published>2024-08-12T06:24:04-05:00</published>
+    <updated>2024-08-12T06:24:04-05:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.vuzix.com/products/3200mah-xtreme-weather-power-bank"/>
+    <title>3200mAh Xtreme Weather Power Bank</title>
+    <s:type>Accessories</s:type>
+    <s:vendor>Vuzix</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0581/1208/2086/files/3200RotationLow-Right.2477_de65d05e-77bb-4a60-aed9-a69b3edea147.png?v=1723152057"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Vendor: </strong>Vuzix<br>
+        <strong>Type: </strong>Accessories<br>
+        <strong>Price: </strong>
+            49.99
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><p dir="ltr"><span>The M-Series Xtreme Weather power bank is built to withstand the harshest workplace environments, with operating temperatures ranging from -20℃/-4℉ to 45℃/113℉. This lightweight battery has an IP67 rating against dust and water immersion and packs plenty of power for long assignments. Compatible with all M-Series products, it features the easy-to-use rail mounting design that supports Vuzix’ unique hot-swap capabilities, meaning you never need to interrupt your work when changing out the battery.</span></p>
+<p dir="ltr"><span>Included in the M400 Xtreme Kit.</span></p>
+<p> </p></td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:tag>Affiliate</s:tag>
+    <s:tag>M-Series</s:tag>
+    <s:tag>match-m400</s:tag>
+    <s:tag>match-m4000</s:tag>
+    <s:tag>Power</s:tag>
+    <s:variant>
+      <id>https://www.vuzix.com/products/8270184841382</id>
+      <title>Default Title</title>
+      <s:price currency="USD">49.99</s:price>
+      <s:sku>536T0A001</s:sku>
+      <s:grams>454</s:grams>
+    </s:variant>
+  </entry>
+  <entry>
+    <id>https://www.vuzix.com/products/6950150996134</id>
+    <published>2024-08-09T15:46:10-05:00</published>
+    <updated>2024-08-09T15:46:10-05:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.vuzix.com/products/collar-power-bank"/>
+    <title>Collar Power Bank</title>
+    <s:type>Accessories Country</s:type>
+    <s:vendor>Vuzix</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0581/1208/2086/products/Product_Image_Vuzix_Accessories_collar1.png?v=1628086943"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Vendor: </strong>Vuzix<br>
+        <strong>Type: </strong>Accessories Country<br>
+        <strong>Price: </strong>
+            99.99
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><p><span>The Collar Power Bank is a 2850 mAh battery designed specifically for Vuzix Smart Glasses. It offers ten times the battery capacity of Blade Smart Glasses for 10 hours of run time under normal operation. The battery is worn around the neck to comfortably and conveniently extend device usage. It also provides pass-through audio from the Vuzix Blade Model 447 to headphones. Note: Vuzix Blade Model 494 cannot use the pass-through audio.</span></p></td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:tag>Affiliate</s:tag>
+    <s:tag>M-Series</s:tag>
+    <s:tag>match-blade2</s:tag>
+    <s:tag>Power</s:tag>
+    <s:variant>
+      <id>https://www.vuzix.com/products/6950150996134</id>
+      <title>Default Title</title>
+      <s:price currency="USD">99.99</s:price>
+      <s:sku>447T0A006</s:sku>
+      <s:grams>907</s:grams>
+    </s:variant>
+  </entry>
+  <entry>
+    <id>https://www.vuzix.com/products/7996098740390</id>
+    <published>2024-03-28T11:28:40-05:00</published>
+    <updated>2024-03-28T11:28:40-05:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.vuzix.com/products/default-warranty"/>
+    <title>Default Warranty</title>
+    <s:type></s:type>
+    <s:vendor>Vuzix</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="#"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Vendor: </strong>Vuzix<br>
+        <strong>Type: </strong><br>
+        <strong>Price: </strong>
+            0.00
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"></td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:tag>Affiliate</s:tag>
+    <s:variant>
+      <id>https://www.vuzix.com/products/7996098740390</id>
+      <title>Default Title</title>
+      <s:price currency="USD">0.00</s:price>
+      <s:sku></s:sku>
+      <s:grams>0</s:grams>
+    </s:variant>
+  </entry>
+  <entry>
+    <id>https://www.vuzix.com/products/7932160376998</id>
+    <published>2024-02-14T09:47:48-06:00</published>
+    <updated>2024-02-14T09:47:48-06:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.vuzix.com/products/z100-usb-a-to-magnetic-charging-cable-3"/>
+    <title>Vuzix Z100® USB-A to Magnetic Charging Cable, 3’</title>
+    <s:type>Accessories</s:type>
+    <s:vendor>Vuzix</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0581/1208/2086/files/Cable3.jpg?v=1707925670"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Vendor: </strong>Vuzix<br>
+        <strong>Type: </strong>Accessories<br>
+        <strong>Price: </strong>
+            29.99
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><p><span data-mce-fragment="1">USB-A to Magnetic Charging Cable is a 3 feet cable designed specifically for the Vuzix Z100® (not included).</span></p></td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:tag>Affiliate</s:tag>
+    <s:tag>Cables &amp; Cords</s:tag>
+    <s:tag>match-z100</s:tag>
+    <s:tag>Z100</s:tag>
+    <s:variant>
+      <id>https://www.vuzix.com/products/7932160376998</id>
+      <title>Default Title</title>
+      <s:price currency="USD">29.99</s:price>
+      <s:sku>515T0A002</s:sku>
+      <s:grams>28</s:grams>
+    </s:variant>
+  </entry>
+  <entry>
+    <id>https://www.vuzix.com/products/7886159937702</id>
+    <published>2024-01-25T11:19:03-06:00</published>
+    <updated>2024-01-25T11:19:03-06:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.vuzix.com/products/z100-smart-glasses-prescription-inserts"/>
+    <title>Vuzix Z100® Smart Glasses Prescription Inserts</title>
+    <s:type>Prescription</s:type>
+    <s:vendor>Vuzix</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0581/1208/2086/files/Z100-Untinted-Press_Release_46ce391b-b5df-4ef7-949f-f2ce8da3c4c1.png?v=1706203126"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Vendor: </strong>Vuzix<br>
+        <strong>Type: </strong>Prescription<br>
+        <strong>Price: </strong>
+            149.99
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><div data-region="main" data-shogun-variant-id="645b9e9dd273e1011bc673f9" data-shogun-platform-type="shopify" data-shogun-page-version-id="645b9e9dd273e1011bc673f2" data-shogun-page-id="637cf5e89da50f00d067b8c6" data-shogun-site-id="85aa81c4-d7e3-4cf8-be8d-146bd5bdf5ab" data-shogun-id="637cf5e89da50f00d067b8c6" class="shogun-root"><div class="shg-c" id="s-b29ffd64-2af4-4839-8f0f-9299291a103e"><div class="shg-rich-text shg-theme-text-content">
+<p>Do it yourself kit to change the lenses on your Vuzix Z100 smart glasses. Comes with manufactured lenses made from your prescription.</p>
+<p>* Prescription Kit does not come with Vuzix Z100 smart glasses. Vuzix Z100 smart glasses will need to be added separately.</p>
+<p style="font-size: 12px; margin-bottom: 30px;">* The Prescription Kit will be shipped within 4-6 weeks of your order date. The Vuzix Z100 smart glasses and Prescription Kit Inserts will be shipped to you in 2 separate shipments.</p>
+<p data-mce-fragment="1"><a data-mce-fragment="1" href="/pages/prescription-measurement-guide" title="Prescription Lens Installation Guide"><span data-mce-fragment="1">Find Out How To Enter Your Prescription</span></a></p>
+</div></div></div></td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:tag>match-z100</s:tag>
+    <s:tag>Non-Affiliate</s:tag>
+    <s:tag>Z100</s:tag>
+    <s:variant>
+      <id>https://www.vuzix.com/products/7886159937702</id>
+      <title>Default Title</title>
+      <s:price currency="USD">149.99</s:price>
+      <s:sku>515T0A001</s:sku>
+      <s:grams>300</s:grams>
+    </s:variant>
+  </entry>
+  <entry>
+    <id>https://www.vuzix.com/products/7865631342758</id>
+    <published>2023-11-29T08:36:13-06:00</published>
+    <updated>2023-11-29T08:36:13-06:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.vuzix.com/products/xanderglasses-vuzix-shield-prescription-inserts"/>
+    <title>XanderGlasses Vuzix Shield® Prescription Inserts</title>
+    <s:type>Prescription</s:type>
+    <s:vendor>Vuzix</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0581/1208/2086/files/ShieldBlack_310afb63-44d2-4b27-be5b-6b1fe1283a9c.png?v=1701269982"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Vendor: </strong>Vuzix<br>
+        <strong>Type: </strong>Prescription<br>
+        <strong>Price: </strong>
+            149.99
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><div data-region="main" data-shogun-variant-id="645b9e9dd273e1011bc673f9" data-shogun-platform-type="shopify" data-shogun-page-version-id="645b9e9dd273e1011bc673f2" data-shogun-page-id="637cf5e89da50f00d067b8c6" data-shogun-site-id="85aa81c4-d7e3-4cf8-be8d-146bd5bdf5ab" data-shogun-id="637cf5e89da50f00d067b8c6" class="shogun-root">
+<div class="shg-c" id="s-b29ffd64-2af4-4839-8f0f-9299291a103e">
+<div class="shg-rich-text shg-theme-text-content">
+<p><meta charset="utf-8"><strong>Single-Vision Prescriptions Only</strong></p>
+<p>Do it yourself kit to change the lenses on your Vuzix Shield smart glasses. Comes with manufactured lenses made from your prescription.</p>
+<p><meta charset="utf-8"><meta charset="utf-8"><strong>After you purchase your lenses, please fill out <a rel="noopener" href="https://EyehubSolutions.formstack.com/forms/prescription" target="_blank">this form</a> with your prescription information. </strong>Once we receive your prescription information, we will fulfill your order. If you have any questions, please contact us <a href="mailto:christian_powell-byars@vuzix.com">here</a>. <br></p>
+<p>To learn how to install your new prescription lenses on your Shield, view our installation guide on the Vuzix Shield<span><a title="Vuzix Shield Prescription Installation Guide" href="/pages/shield-prescription-lens-installation-guide"> Prescription Installation Guide</a><a href="/pages/vuzix-shield-prescription-lens-installation-guide" title="Vuzix Shield Prescription Installation Guide"></a></span> page.</p>
+<p style="font-size: 12px; margin-bottom: 10px;">* Prescription Kit does not come with Vuzix Shield smart glasses. Vuzix Shield smart glasses will need to be added separately.</p>
+<p style="font-size: 12px; margin-bottom: 30px;">* The Prescription Kit will be shipped within 4-6 weeks of your order date. The Vuzix Shield smart glasses and Prescription Kit Inserts will be shipped to you in 2 separate shipments.</p>
+<p><a href="/pages/prescription-measurement-guide" title="Prescription Lens Installation Guide"><span>Find Out How To Enter Your Prescription</span></a></p>
+</div>
+</div>
+</div></td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:tag>Non-Affiliate</s:tag>
+    <s:tag>Prescription Inserts</s:tag>
+    <s:tag>Shield</s:tag>
+    <s:tag>Shield Prescription</s:tag>
+    <s:variant>
+      <id>https://www.vuzix.com/products/7865631342758</id>
+      <title>Default Title</title>
+      <s:price currency="USD">149.99</s:price>
+      <s:sku>492T0A001</s:sku>
+      <s:grams>300</s:grams>
+    </s:variant>
+  </entry>
+  <entry>
+    <id>https://www.vuzix.com/products/7455388958886</id>
+    <published>2022-11-14T13:04:50-06:00</published>
+    <updated>2022-11-14T13:04:50-06:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.vuzix.com/products/m-series-elastic-headband-accessory-standard"/>
+    <title>M-Series Comfort Headband</title>
+    <s:type>Accessories Country</s:type>
+    <s:vendor>Vuzix</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0581/1208/2086/files/Pro-CaptureOne2175-grey.png?v=1724436104"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Vendor: </strong>Vuzix<br>
+        <strong>Type: </strong>Accessories Country<br>
+        <strong>Price: </strong>
+            49.99
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><p>Designed for all-day wear in situations not requiring alternative head protection, the Vuzix Comfort Headband is adjustable for a variety of head sizes and positions. Complete with rail mounts for easy attachment of the Vuzix M-Series glasses and any compatible head-mounted battery on either side, this cushioned headband keeps your smart glasses perfectly balanced and stable.</p></td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:tag>Affiliate</s:tag>
+    <s:tag>M-Series</s:tag>
+    <s:tag>match-m4000</s:tag>
+    <s:tag>Mounting</s:tag>
+    <s:variant>
+      <id>https://www.vuzix.com/products/7455388958886</id>
+      <title>Standard</title>
+      <s:price currency="USD">49.99</s:price>
+      <s:sku>472T0A015</s:sku>
+      <s:grams>7</s:grams>
+    </s:variant>
+  </entry>
+  <entry>
+    <id>https://www.vuzix.com/products/7586881241254</id>
+    <published>2022-11-03T14:12:05-05:00</published>
+    <updated>2022-11-03T14:12:05-05:00</updated>
+    <link rel="alternate" type="text/html" href="https://www.vuzix.com/products/4800mah-extended-use-power-bank"/>
+    <title>4800 mAh Extended Use Power Bank</title>
+    <s:type>Accessories</s:type>
+    <s:vendor>Vuzix</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0581/1208/2086/products/DSC_2026-Edit.jpg?v=1666652061"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Vendor: </strong>Vuzix<br>
+        <strong>Type: </strong>Accessories<br>
+        <strong>Price: </strong>
+            29.99
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><p>The 4800mAh Extended Use Power Bank is designed for all-day shifts and assignments where a backup isn’t an option. Compatible with all M-Series products, it features the easy-to-use rail mounting design that supports Vuzix’ unique hot-swap capabilities, meaning you never need to interrupt your work when changing out the battery. With operating temperatures ranging from 0C/32F to 45C/114F, this battery is excellent for use in the freezer or on the line.<meta charset="utf-8"></p></td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:tag>Affiliate</s:tag>
+    <s:tag>M-Series</s:tag>
+    <s:tag>Power</s:tag>
+    <s:variant>
+      <id>https://www.vuzix.com/products/7586881241254</id>
+      <title>Default Title</title>
+      <s:price currency="USD">29.99</s:price>
+      <s:sku>472T0A009</s:sku>
+      <s:grams>454</s:grams>
+    </s:variant>
+  </entry>
+</feed>
