@@ -314,3 +314,17 @@ function vuzix_get_main_content( $original_filename ) {
 
 	return $main_content;
 }
+
+/**
+ * Khai báo hỗ trợ WooCommerce cho theme
+ */
+function vuzix_woocommerce_support() {
+	add_theme_support( 'woocommerce' );
+	
+	// Hỗ trợ zoom ảnh sản phẩm, lightbox và slideshow trong trang chi tiết
+	add_theme_support( 'wc-product-gallery-zoom' );
+	add_theme_support( 'wc-product-gallery-lightbox' );
+	add_theme_support( 'wc-product-gallery-slider' );
+}
+add_action( 'after_setup_theme', 'vuzix_woocommerce_support' );
+
