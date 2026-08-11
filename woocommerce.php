@@ -11,6 +11,8 @@ if ( is_shop() || is_product_taxonomy() ) :
 	wc_get_template( 'archive-product.php' );
 elseif ( is_cart() ) :
 	wc_get_template( 'cart/cart.php' );
+elseif ( is_product() ) :
+	wc_get_template( 'single-product.php' );
 else :
 	?>
 	<main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">

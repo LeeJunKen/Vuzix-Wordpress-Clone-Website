@@ -280,6 +280,21 @@ function vuzix_enqueue_cart_assets() {
 add_action( 'wp_enqueue_scripts', 'vuzix_enqueue_cart_assets' );
 
 /**
+ * Whether the current request is the legacy Shopify-compatible collection URL.
+ * The route is supplied by a custom rewrite, so checking its URL is more
+ * reliable than relying solely on WordPress conditional tags/query vars.
+ */
+function vuzix_is_collections_all_request() {
+	if ( get_query_var( 'vuzix_collections_all' ) ) {
+		return true;
+	}
+
+	$request_uri = isset( $_SERVER['REQUEST_URI'] ) ? wp_unslash( $_SERVER['REQUEST_URI'] ) : '';
+	$request_path = trim( (string) wp_parse_url( $request_uri, PHP_URL_PATH ), '/' );
+	return $request_path === 'collections/all' || strpos( $request_path, 'collections/all/page/' ) === 0;
+}
+
+/**
  * In CSS cho trang danh sách sản phẩm (Shop / danh mục sản phẩm) theo đúng
  * giao diện gốc trong original-collections/all.html: banner "vzx-hero" +
  * khối "vuzix-collection__header/actions/sort" + lưới "vuzix-collection__grid"
@@ -288,7 +303,7 @@ add_action( 'wp_enqueue_scripts', 'vuzix_enqueue_cart_assets' );
  * woocommerce/content-product.php tạo ra.
  */
 function vuzix_shop_grid_styles() {
-	$is_collections_all = (bool) get_query_var( 'vuzix_collections_all' );
+	$is_collections_all = vuzix_is_collections_all_request();
 
 	if ( ! function_exists( 'is_shop' ) || ! ( is_shop() || is_product_taxonomy() || $is_collections_all ) ) {
 		return;
@@ -380,8 +395,10 @@ function vuzix_shop_grid_styles() {
 
 		.vuzix-collection { background: #fff; padding-top: 36px; padding-bottom: 36px; }
 		.vuzix-collection__header { display: flex; justify-content: space-between; align-items: center; gap: 24px; margin-bottom: 34px; }
-		.vuzix-collection__actions { display: flex; align-items: center; gap: 18px; }
-		.vuzix-collection__sort { display: flex; align-items: center; gap: 10px; }
+		.vuzix-collection__actions { display: flex; align-items: center; gap: 18px; margin-left: auto !important; }
+		.vuzix-collection__actions > facet-filters-form { display: block; width: fit-content; margin-left: auto !important; }
+		.vuzix-collection__actions .woocommerce-ordering { margin: 0 !important; }
+		.vuzix-collection__sort { display: flex; align-items: center; gap: 10px; margin-left: auto !important; }
 		.vuzix-collection__sort label { color: #666; font-size: 14px; }
 		.vuzix-collection__sort-select { min-width: 160px; height: 48px; padding: 0 42px 0 16px; border: 1.5px solid #333; border-radius: 6px; background: #fff; color: #111; font-size: 14px; font-weight: 700; }
 
@@ -401,9 +418,9 @@ function vuzix_shop_grid_styles() {
 		}
 		@media screen and (max-width: 749px) {
 			.vuzix-collection { padding-top: 25px; padding-bottom: 25px; }
-			.vuzix-collection__header { flex-direction: column; align-items: flex-start; gap: 18px; }
-			.vuzix-collection__actions { width: 100%; flex-direction: column; align-items: stretch; }
-			.vuzix-collection__sort { width: 100%; justify-content: space-between; }
+			.vuzix-collection__header { flex-direction: column; align-items: flex-end; gap: 18px; }
+			.vuzix-collection__actions { width: auto; flex-direction: column; align-items: flex-end; margin-left: auto !important; }
+			.vuzix-collection__sort { width: auto; justify-content: flex-end; margin-left: auto !important; }
 			.vuzix-collection__sort-select { width: 180px; }
 			.vuzix-collection__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
 			.vuzix-product-card__content h2 { font-size: 20px; }
@@ -528,7 +545,10 @@ add_action( 'wp', 'vuzix_remove_default_empty_cart_message' );
  * Thêm Rewrite Rule cho đường dẫn chuẩn gốc: /collections/all
  */
 function vuzix_register_collections_all_rewrite_rule() {
+	add_rewrite_rule( '^collections/all/page/([0-9]+)/?$', 'index.php?vuzix_collections_all=1&paged=$matches[1]', 'top' );
 	add_rewrite_rule( '^collections/all/?$', 'index.php?vuzix_collections_all=1', 'top' );
+	add_rewrite_rule( '^all/page/([0-9]+)/?$', 'index.php?vuzix_collections_all=1&paged=$matches[1]', 'top' );
+	add_rewrite_rule( '^all/?$', 'index.php?vuzix_collections_all=1', 'top' );
 }
 add_action( 'init', 'vuzix_register_collections_all_rewrite_rule' );
 
@@ -542,11 +562,19 @@ function vuzix_collections_all_template_include( $template ) {
 	if ( get_query_var( 'vuzix_collections_all' ) ) {
 		global $wp_query;
 		$orderby = isset( $_GET['orderby'] ) ? sanitize_text_field( $_GET['orderby'] ) : 'menu_order';
+		$current_page = max(
+			1,
+			(int) get_query_var( 'paged' ),
+			isset( $_GET['collection_page'] ) ? (int) $_GET['collection_page'] : 1,
+			isset( $_GET['paged'] ) ? (int) $_GET['paged'] : 1
+		);
 
 		$args = array(
 			'post_type'      => 'product',
 			'post_status'    => 'publish',
+			// Hiển thị tất cả sản phẩm không giới hạn trên 1 trang
 			'posts_per_page' => -1,
+			'paged'          => $current_page,
 		);
 
 		switch ( $orderby ) {
@@ -598,7 +626,8 @@ function vuzix_collections_all_template_include( $template ) {
 		if ( function_exists( 'wc_set_loop_prop' ) ) {
 			wc_set_loop_prop( 'total', $wp_query->found_posts );
 			wc_set_loop_prop( 'per_page', -1 );
-			wc_set_loop_prop( 'current_page', 1 );
+			wc_set_loop_prop( 'current_page', $current_page );
+			wc_set_loop_prop( 'total_pages', $wp_query->max_num_pages );
 		}
 
 		return get_theme_file_path( 'woocommerce/archive-product.php' );
@@ -607,12 +636,312 @@ function vuzix_collections_all_template_include( $template ) {
 }
 add_action( 'template_include', 'vuzix_collections_all_template_include' );
 
+/**
+ * The custom collection is not a native WordPress archive, so use an explicit
+ * query parameter for pagination instead of WordPress's /page/N/ permalink.
+ */
+function vuzix_collections_all_pagination_args( $args ) {
+	if ( ! vuzix_is_collections_all_request() ) {
+		return $args;
+	}
+
+	$args['base']   = add_query_arg( 'collection_page', '%#%', home_url( '/collections/all/' ) );
+	$args['format'] = '';
+	return $args;
+}
+add_filter( 'woocommerce_pagination_args', 'vuzix_collections_all_pagination_args' );
+
+/**
+ * Pagination for /collections/all/. This route is a custom query rather than
+ * a native archive, so its links must retain the custom page parameter.
+ */
+function vuzix_render_collections_all_pagination() {
+	if ( ! vuzix_is_collections_all_request() ) {
+		return;
+	}
+
+	global $wp_query;
+	$total_pages = (int) $wp_query->max_num_pages;
+	if ( $total_pages < 2 ) {
+		return;
+	}
+
+	$current_page = max(
+		1,
+		(int) get_query_var( 'paged' ),
+		isset( $_GET['collection_page'] ) ? (int) $_GET['collection_page'] : 1
+	);
+	$query_args = array( 'collection_page' => '%#%' );
+	if ( isset( $_GET['orderby'] ) ) {
+		$query_args['orderby'] = sanitize_text_field( wp_unslash( $_GET['orderby'] ) );
+	}
+
+	$links = paginate_links(
+		array(
+			'base'      => add_query_arg( $query_args, home_url( '/collections/all/' ) ),
+			'format'    => '',
+			'current'   => $current_page,
+			'total'     => $total_pages,
+			'type'      => 'list',
+			'prev_text' => '&larr;',
+			'next_text' => '&rarr;',
+		)
+	);
+
+	if ( $links ) {
+		echo '<nav class="woocommerce-pagination" aria-label="' . esc_attr__( 'Product Pagination', 'vuzix-practice' ) . '">' . wp_kses_post( $links ) . '</nav>';
+	}
+}
+
 function vuzix_flush_collections_all_rules() {
 	$rules = get_option( 'rewrite_rules' );
-	if ( ! isset( $rules['^collections/all/?$'] ) ) {
+	if ( ! isset( $rules['^collections/all/?$'] ) || ! isset( $rules['^collections/all/page/([0-9]+)/?$'] ) ) {
 		global $wp_rewrite;
 		$wp_rewrite->flush_rules();
 	}
 }
 add_action( 'wp_loaded', 'vuzix_flush_collections_all_rules' );
+
+/**
+ * Nạp CSS đặc thù cho trang chi tiết sản phẩm.
+ */
+function vuzix_product_single_assets() {
+	if ( ! function_exists( 'is_product' ) || ! is_product() ) {
+		return;
+	}
+
+	$theme_uri = get_template_directory_uri();
+	$base      = $theme_uri . '/cdn/shop/t/85/assets/';
+
+	wp_enqueue_style( 'vuzix-section-main-product', $base . 'section-main-product.css%253Fv=133628908596903377571783695641.css', array(), null );
+	wp_enqueue_style( 'vuzix-component-accordion', $base . 'component-accordion.css%253Fv=7971072480289620591783695641.css', array(), null );
+	wp_enqueue_style( 'vuzix-component-price', $base . 'component-price.css%253Fv=47596247576480123001783695641.css', array(), null );
+	wp_enqueue_style( 'vuzix-component-slider', $base . 'component-slider.css%253Fv=14039311878856620671783695641.css', array(), null );
+	wp_enqueue_style( 'vuzix-component-rating', $base . 'component-rating.css%253Fv=179577762467860590411783695641.css', array(), null );
+	wp_enqueue_style( 'vuzix-component-deferred-media', $base . 'component-deferred-media.css%253Fv=14096082462203297471783695641.css', array(), null );
+}
+add_action( 'wp_enqueue_scripts', 'vuzix_product_single_assets' );
+
+/**
+ * Thêm mã CSS tùy chỉnh để làm đẹp các form và input của WooCommerce trong trang chi tiết.
+ */
+function vuzix_product_single_styles() {
+	if ( ! function_exists( 'is_product' ) || ! is_product() ) {
+		return;
+	}
+	?>
+	<style>
+		.vuzix-wc-add-to-cart-wrapper {
+			margin: 24px 0;
+			font-family: "Inter", sans-serif !important;
+		}
+		.vuzix-wc-add-to-cart-wrapper form.cart {
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+		}
+		/* Số lượng Shopify-style */
+		.vuzix-wc-add-to-cart-wrapper form.cart quantity-input.quantity {
+			display: inline-flex;
+			align-items: center;
+			border: 1.5px solid #333;
+			border-radius: 6px;
+			height: 48px;
+			background-color: #fff;
+			width: 142px;
+			overflow: hidden;
+			justify-content: space-between;
+		}
+		.vuzix-wc-add-to-cart-wrapper form.cart quantity-input.quantity .quantity__button {
+			width: 45px;
+			height: 100%;
+			border: 0;
+			background: transparent;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: #333;
+			padding: 0;
+			outline: none;
+			transition: background-color 0.1s ease;
+		}
+		.vuzix-wc-add-to-cart-wrapper form.cart quantity-input.quantity .quantity__button:hover {
+			background-color: #f5f5f5;
+		}
+		.vuzix-wc-add-to-cart-wrapper form.cart quantity-input.quantity .quantity__button svg {
+			width: 10px;
+			height: 10px;
+			display: block;
+			color: #333;
+		}
+		.vuzix-wc-add-to-cart-wrapper form.cart quantity-input.quantity input.qty {
+			width: 50px;
+			height: 100%;
+			border: 0;
+			text-align: center;
+			font-size: 16px;
+			font-weight: 700;
+			color: #111;
+			padding: 0;
+			background: transparent;
+			outline: none;
+			-moz-appearance: textfield;
+		}
+		.vuzix-wc-add-to-cart-wrapper form.cart quantity-input.quantity input.qty::-webkit-outer-spin-button,
+		.vuzix-wc-add-to-cart-wrapper form.cart quantity-input.quantity input.qty::-webkit-inner-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
+		}
+		/* Nút Add to Cart (White background, black border) */
+		.vuzix-wc-add-to-cart-wrapper form.cart .single_add_to_cart_button {
+			display: inline-flex;
+			justify-content: center;
+			align-items: center;
+			border: 1.5px solid #000 !important;
+			padding: 0 30px;
+			cursor: pointer;
+			font-family: "Inter", sans-serif !important;
+			font-size: 15px;
+			text-decoration: none;
+			color: #000 !important;
+			background-color: #fff !important;
+			transition: all .2s ease;
+			height: 48px;
+			width: 100%;
+			text-transform: uppercase;
+			font-weight: 700;
+			border-radius: 6px;
+			letter-spacing: .1em;
+		}
+		.vuzix-wc-add-to-cart-wrapper form.cart .single_add_to_cart_button:hover {
+			background-color: #000 !important;
+			color: #fff !important;
+		}
+		/* Nút Buy it now (Solid black background) */
+		.vuzix-wc-add-to-cart-wrapper form.cart .vuzix_buy_it_now_button {
+			display: inline-flex;
+			justify-content: center;
+			align-items: center;
+			border: 1.5px solid #000 !important;
+			padding: 0 30px;
+			cursor: pointer;
+			font-family: "Inter", sans-serif !important;
+			font-size: 15px;
+			text-decoration: none;
+			color: #fff !important;
+			background-color: #000 !important;
+			transition: all .2s ease;
+			height: 48px;
+			width: 100%;
+			text-transform: uppercase;
+			font-weight: 700;
+			border-radius: 6px;
+			letter-spacing: .1em;
+			margin-top: -8px; /* Close spacing beneath Add to cart */
+		}
+		.vuzix-wc-add-to-cart-wrapper form.cart .vuzix_buy_it_now_button:hover {
+			background-color: #fff !important;
+			color: #000 !important;
+			border-color: #000 !important;
+		}
+		/* Dropdown Biến thể (Variants) */
+		.vuzix-wc-add-to-cart-wrapper form.cart .variations {
+			width: 100%;
+			border-collapse: collapse;
+		}
+		.vuzix-wc-add-to-cart-wrapper form.cart .variations td {
+			padding: 6px 0;
+			display: block;
+		}
+		.vuzix-wc-add-to-cart-wrapper form.cart .variations td.label {
+			padding-bottom: 6px;
+		}
+		.vuzix-wc-add-to-cart-wrapper form.cart .variations label {
+			font-weight: 700;
+			font-size: 13px;
+			color: #111;
+			text-transform: uppercase;
+			letter-spacing: .08em;
+		}
+		.vuzix-wc-add-to-cart-wrapper form.cart .variations select {
+			width: 100%;
+			height: 48px;
+			padding: 0 16px;
+			border: 1.5px solid #333;
+			border-radius: 6px;
+			background-color: #fff;
+			font-size: 14px;
+			color: #111;
+			font-weight: 700;
+			outline: none;
+		}
+	</style>
+	<?php
+}
+add_action( 'wp_head', 'vuzix_product_single_styles' );
+
+/**
+ * Thêm nút "Buy it now" trong form chi tiết sản phẩm.
+ */
+function vuzix_add_buy_it_now_button() {
+	global $product;
+	if ( ! $product || ! $product->is_purchasable() ) {
+		return;
+	}
+	?>
+	<button type="submit" name="add-to-cart" value="<?php echo esc_attr( $product->get_id() ); ?>" class="vuzix_buy_it_now_button button">
+		Buy it now
+	</button>
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			var form = document.querySelector('form.cart');
+			if (form) {
+				var buyItNowBtn = form.querySelector('.vuzix_buy_it_now_button');
+				if (buyItNowBtn) {
+					buyItNowBtn.addEventListener('click', function(e) {
+						var input = document.createElement('input');
+						input.type = 'hidden';
+						input.name = 'vuzix_buy_it_now_redirect';
+						input.value = '1';
+						form.appendChild(input);
+					});
+				}
+			}
+		});
+	</script>
+	<?php
+}
+add_action( 'woocommerce_after_add_to_cart_button', 'vuzix_add_buy_it_now_button' );
+
+/**
+ * Chuyển hướng thẳng tới trang Checkout (Thanh toán) sau khi nhấn Buy it now.
+ */
+function vuzix_buy_it_now_redirect( $url ) {
+	if ( isset( $_REQUEST['vuzix_buy_it_now_redirect'] ) && function_exists( 'wc_get_checkout_url' ) ) {
+		return wc_get_checkout_url();
+	}
+	return $url;
+}
+add_filter( 'woocommerce_add_to_cart_redirect', 'vuzix_buy_it_now_redirect' );
+
+/**
+ * Thêm hậu tố " USD" vào sau hiển thị giá nếu cửa hàng đang dùng đơn vị USD (nhằm khớp $49.99 USD của Shopify).
+ */
+function vuzix_custom_price_suffix( $price, $product ) {
+	if ( function_exists( 'get_woocommerce_currency' ) && get_woocommerce_currency() === 'USD' ) {
+		return $price . ' USD';
+	}
+	return $price;
+}
+add_filter( 'woocommerce_get_price_html', 'vuzix_custom_price_suffix', 10, 2 );
+
+/**
+ * Đặt số lượng sản phẩm hiển thị trên một trang lưu trữ (Shop / collections) là -1 (hiển thị tất cả, không phân trang).
+ */
+function vuzix_loop_shop_per_page( $cols ) {
+	return -1;
+}
+add_filter( 'loop_shop_per_page', 'vuzix_loop_shop_per_page', 9999 );
+
 
