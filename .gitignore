@@ -30,3 +30,4 @@ dist/
 
 # Data export/import files (không đẩy lên GitHub)
 *.csv
+*.xml
