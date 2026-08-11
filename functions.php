@@ -822,11 +822,8 @@ function vuzix_render_shop_archive() {
  * để lỗi tồn kho/validation của WooCommerce vẫn hiển thị bình thường.
  */
 function vuzix_hide_shop_add_to_cart_message( $message, $products ) {
-	if ( ( function_exists( 'is_shop' ) && ( is_shop() || is_product_taxonomy() ) ) || vuzix_is_collections_all_request() ) {
-		return '';
-	}
-
-	return $message;
+	// This site uses direct checkout, so an "added to cart" banner is never useful.
+	return '';
 }
 add_filter( 'wc_add_to_cart_message_html', 'vuzix_hide_shop_add_to_cart_message', 10, 2 );
 
@@ -1239,6 +1236,24 @@ add_action( 'woocommerce_after_add_to_cart_button', 'vuzix_add_buy_it_now_button
  */
 function vuzix_buy_it_now_redirect( $url ) {
 	if ( isset( $_REQUEST['vuzix_buy_it_now_redirect'] ) && function_exists( 'wc_get_checkout_url' ) ) {
+		/*
+		 * Direct purchase must contain only the item just selected. This prevents
+		 * earlier clicks from accumulating in the cart and changing the order total.
+		 */
+		if ( function_exists( 'WC' ) && WC()->cart ) {
+			$product_id = isset( $_REQUEST['add-to-cart'] ) ? absint( wp_unslash( $_REQUEST['add-to-cart'] ) ) : 0;
+			$kept_item  = false;
+			foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
+				if ( ! $kept_item && $product_id && absint( $cart_item['product_id'] ) === $product_id ) {
+					WC()->cart->set_quantity( $cart_item_key, 1, false );
+					$kept_item = true;
+				} else {
+					WC()->cart->remove_cart_item( $cart_item_key );
+				}
+			}
+			WC()->cart->calculate_totals();
+		}
+
 		return wc_get_checkout_url();
 	}
 	return $url;
@@ -1254,6 +1269,133 @@ function vuzix_single_item_purchase_only( $sold_individually, $product ) {
 	return ( function_exists( 'is_product' ) && is_product() ) ? true : $sold_individually;
 }
 add_filter( 'woocommerce_is_sold_individually', 'vuzix_single_item_purchase_only', 10, 2 );
+
+/**
+ * Checkout tối giản: chỉ lấy họ tên, địa chỉ và số điện thoại. WooCommerce vẫn
+ * dùng các field này để lưu dữ liệu billing/shipping vào order như bình thường.
+ */
+function vuzix_minimal_checkout_fields( $fields ) {
+	$fields['billing'] = array(
+		'billing_first_name' => array(
+			'label'       => __( 'Họ', 'vuzix-practice' ),
+			'required'    => true,
+			'class'       => array( 'form-row-first' ),
+			'priority'    => 10,
+			'autocomplete'=> 'given-name',
+		),
+		'billing_last_name'  => array(
+			'label'       => __( 'Tên', 'vuzix-practice' ),
+			'required'    => true,
+			'class'       => array( 'form-row-last' ),
+			'priority'    => 20,
+			'autocomplete'=> 'family-name',
+		),
+		'billing_address_1'  => array(
+			'label'       => __( 'Địa chỉ', 'vuzix-practice' ),
+			'required'    => false,
+			'class'       => array( 'form-row-wide' ),
+			'priority'    => 30,
+			'autocomplete'=> 'street-address',
+		),
+		'billing_phone'      => array(
+			'label'       => __( 'Số điện thoại', 'vuzix-practice' ),
+			'required'    => true,
+			'class'       => array( 'form-row-wide' ),
+			'priority'    => 40,
+			'type'        => 'tel',
+			'autocomplete'=> 'tel',
+		),
+	);
+
+	return $fields;
+}
+add_filter( 'woocommerce_checkout_fields', 'vuzix_minimal_checkout_fields', 20 );
+
+add_filter( 'woocommerce_enable_order_notes_field', '__return_false' );
+add_filter( 'woocommerce_enable_checkout_login_reminder', '__return_false' );
+add_filter( 'woocommerce_enable_coupon_form', '__return_false' );
+add_filter( 'woocommerce_coupons_enabled', '__return_false' );
+add_filter( 'woocommerce_order_button_text', function () {
+	return __( 'Gửi đơn hàng', 'vuzix-practice' );
+} );
+
+/** Phone is required server-side too, so it cannot be bypassed in the browser. */
+function vuzix_validate_checkout_phone( $data, $errors ) {
+	if ( empty( $data['billing_phone'] ) ) {
+		$errors->add( 'billing_phone_required', __( 'Vui lòng nhập số điện thoại.', 'vuzix-practice' ) );
+	}
+}
+add_action( 'woocommerce_after_checkout_validation', 'vuzix_validate_checkout_phone', 10, 2 );
+
+/**
+ * Phương thức đặt hàng nội bộ. Nó không thu tiền online; khi submit, WooCommerce
+ * tạo một order thật ở trạng thái on-hold để quản trị viên tiếp nhận xử lý.
+ */
+function vuzix_register_manual_order_gateway() {
+	if ( class_exists( 'Vuzix_Manual_Order_Gateway' ) || ! class_exists( 'WC_Payment_Gateway' ) ) {
+		return;
+	}
+
+	class Vuzix_Manual_Order_Gateway extends WC_Payment_Gateway {
+		public function __construct() {
+			$this->id                 = 'vuzix_manual_order';
+			$this->method_title       = __( 'Đặt hàng thủ công', 'vuzix-practice' );
+			$this->method_description = __( 'Tạo đơn hàng để cửa hàng liên hệ xác nhận.', 'vuzix-practice' );
+			$this->title              = __( 'Đặt hàng', 'vuzix-practice' );
+			$this->description        = __( 'Cửa hàng sẽ liên hệ để xác nhận đơn hàng của bạn.', 'vuzix-practice' );
+			$this->has_fields         = false;
+			$this->enabled            = 'yes';
+		}
+
+		public function process_payment( $order_id ) {
+			$order = wc_get_order( $order_id );
+			$order->update_status( 'on-hold', __( 'Đơn hàng được tạo từ checkout.', 'vuzix-practice' ) );
+			WC()->cart->empty_cart();
+
+			return array(
+				'result'   => 'success',
+				'redirect' => add_query_arg(
+					'key',
+					$order->get_order_key(),
+					wc_get_endpoint_url( 'order-received', $order->get_id(), wc_get_checkout_url() )
+				),
+			);
+		}
+	}
+}
+// Theme functions load after plugins_loaded, so register once WooCommerce is initialized.
+add_action( 'woocommerce_init', 'vuzix_register_manual_order_gateway', 20 );
+
+function vuzix_add_manual_order_gateway( $gateways ) {
+	$gateways[] = 'Vuzix_Manual_Order_Gateway';
+	return $gateways;
+}
+add_filter( 'woocommerce_payment_gateways', 'vuzix_add_manual_order_gateway' );
+
+/** Only show the internal ordering option on this streamlined checkout. */
+function vuzix_only_manual_checkout_gateway( $gateways ) {
+	return isset( $gateways['vuzix_manual_order'] )
+		? array( 'vuzix_manual_order' => $gateways['vuzix_manual_order'] )
+		: $gateways;
+}
+add_filter( 'woocommerce_available_payment_gateways', 'vuzix_only_manual_checkout_gateway' );
+
+/**
+ * The existing Checkout page uses the WooCommerce Blocks checkout, which does
+ * not load PHP template overrides. Route only the active checkout screen to
+ * our native WooCommerce template; keep the normal order-received endpoint.
+ */
+function vuzix_checkout_template_include( $template ) {
+	if ( function_exists( 'is_checkout' ) && is_checkout() ) {
+		$checkout_template = get_theme_file_path( 'page-checkout.php' );
+		if ( file_exists( $checkout_template ) ) {
+			return $checkout_template;
+		}
+	}
+
+	return $template;
+}
+add_filter( 'template_include', 'vuzix_checkout_template_include', 99 );
 
 /**
  * Thêm hậu tố " USD" vào sau hiển thị giá nếu cửa hàng đang dùng đơn vị USD (nhằm khớp $49.99 USD của Shopify).
