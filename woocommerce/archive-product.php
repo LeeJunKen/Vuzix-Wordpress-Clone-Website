@@ -11,6 +11,8 @@ defined( 'ABSPATH' ) || exit;
 
 get_header( 'shop' );
 
+$archive_title = is_product_category() ? single_term_title( '', false ) : __( 'Products', 'vuzix-practice' );
+
 // Tùy chỉnh các action mặc định của WC để khớp với giao diện gốc
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
@@ -27,7 +29,7 @@ if ( vuzix_is_collections_all_request() ) {
 		<div class="page-width vzx-hero__inner">
 			<div class="vzx-hero__content">
 				<p class="vzx-hero__eyebrow"><?php esc_html_e( 'Products', 'vuzix-practice' ); ?></p>
-				<h1 style="font-size: 3em; color: #fff; margin: 0;"><?php esc_html_e( 'Products', 'vuzix-practice' ); ?></h1>
+				<h1 style="font-size: 3em; color: #fff; margin: 0;"><?php echo esc_html( $archive_title ); ?></h1>
 			</div>
 		</div>
 	</section>

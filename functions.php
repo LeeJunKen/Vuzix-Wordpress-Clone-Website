@@ -329,8 +329,19 @@ function vuzix_convert_internal_links( $html ) {
 		$path_info = pathinfo( $clean_url );
 		$slug = isset( $path_info['filename'] ) ? $path_info['filename'] : '';
 
+		$collection_category_slugs = array(
+			'accessories' => 'accessories',
+			'merchandise' => 'merchandise',
+		);
+		$is_collection_category = isset( $collection_category_slugs[ $slug ] ) &&
+			( strpos( $clean_url, 'collections/' ) !== false || in_array( $clean_url, array( 'accessories.html', 'merchandise.html' ), true ) );
+
 		if ( strpos( $clean_url, 'collections/all' ) !== false ) {
 			$new_url = home_url( '/collections/all/' );
+		} elseif ( $is_collection_category && taxonomy_exists( 'product_cat' ) ) {
+			$term = get_term_by( 'slug', $collection_category_slugs[ $slug ], 'product_cat' );
+			$term_link = $term && ! is_wp_error( $term ) ? get_term_link( $term ) : '';
+			$new_url = $term_link && ! is_wp_error( $term_link ) ? $term_link : home_url( '/product-category/' . $collection_category_slugs[ $slug ] . '/' );
 		} elseif ( empty( $slug ) || $slug === 'index' || $slug === 'original-index' ) {
 			$new_url = home_url( '/' );
 		} else {
@@ -865,6 +876,45 @@ function vuzix_collections_all_query_vars( $vars ) {
 }
 add_filter( 'query_vars', 'vuzix_collections_all_query_vars' );
 
+/**
+ * Redirect legacy Shopify collection URLs to the live WooCommerce categories.
+ * This prevents accessories/merchandise from falling back to exported HTML.
+ */
+function vuzix_redirect_legacy_product_collections() {
+	$request_uri  = isset( $_SERVER['REQUEST_URI'] ) ? wp_unslash( $_SERVER['REQUEST_URI'] ) : '';
+	$request_path = trim( (string) wp_parse_url( $request_uri, PHP_URL_PATH ), '/' );
+	$legacy_map   = array(
+		'accessories'             => 'accessories',
+		'collections/accessories' => 'accessories',
+		'merchandise'             => 'merchandise',
+		'collections/merchandise' => 'merchandise',
+		'collections/smart-glasses' => 'smart-glasses',
+	);
+
+	if ( ! isset( $legacy_map[ $request_path ] ) || ! taxonomy_exists( 'product_cat' ) ) {
+		return;
+	}
+
+	$term = get_term_by( 'slug', $legacy_map[ $request_path ], 'product_cat' );
+	if ( ! $term || is_wp_error( $term ) ) {
+		return;
+	}
+
+	$target = get_term_link( $term );
+	if ( is_wp_error( $target ) ) {
+		return;
+	}
+
+	$query_string = (string) wp_parse_url( $request_uri, PHP_URL_QUERY );
+	if ( $query_string !== '' ) {
+		$target .= '?' . $query_string;
+	}
+
+	wp_safe_redirect( $target, 301 );
+	exit;
+}
+add_action( 'template_redirect', 'vuzix_redirect_legacy_product_collections', 1 );
+
 function vuzix_collections_all_template_include( $template ) {
 	if ( get_query_var( 'vuzix_collections_all' ) ) {
 		global $wp_query;
@@ -1396,6 +1446,109 @@ function vuzix_checkout_template_include( $template ) {
 	return $template;
 }
 add_filter( 'template_include', 'vuzix_checkout_template_include', 99 );
+
+/**
+ * Dynamic WordPress blog route. All posts use one archive template and one
+ * single-post template; no exported HTML file is required for new articles.
+ */
+function vuzix_register_blog_routes() {
+	add_rewrite_rule( '^vuzix-blog/page/([0-9]+)/?$', 'index.php?vuzix_blog_archive=1&paged=$matches[1]', 'top' );
+	add_rewrite_rule( '^vuzix-blog/?$', 'index.php?vuzix_blog_archive=1', 'top' );
+}
+add_action( 'init', 'vuzix_register_blog_routes' );
+
+function vuzix_blog_query_vars( $vars ) {
+	$vars[] = 'vuzix_blog_archive';
+	return $vars;
+}
+add_filter( 'query_vars', 'vuzix_blog_query_vars' );
+
+function vuzix_blog_template_include( $template ) {
+	if ( get_query_var( 'vuzix_blog_archive' ) ) {
+		return get_theme_file_path( 'blog.php' );
+	}
+	return $template;
+}
+add_filter( 'template_include', 'vuzix_blog_template_include', 98 );
+
+/** Keep every native WordPress blog archive at 18 posts per page. */
+function vuzix_blog_posts_per_page( $query ) {
+	if ( is_admin() || ! $query->is_main_query() ) {
+		return;
+	}
+
+	if ( $query->is_home() || $query->is_category() || $query->is_tag() || $query->is_date() || $query->is_author() ) {
+		$query->set( 'posts_per_page', 18 );
+	}
+}
+add_action( 'pre_get_posts', 'vuzix_blog_posts_per_page' );
+
+/** Flush the new blog rewrite once, rather than on every request. */
+function vuzix_maybe_flush_blog_routes() {
+	if ( get_option( 'vuzix_blog_routes_version' ) !== '1' ) {
+		flush_rewrite_rules( false );
+		update_option( 'vuzix_blog_routes_version', '1' );
+	}
+}
+add_action( 'init', 'vuzix_maybe_flush_blog_routes', 30 );
+
+function vuzix_render_blog_hero( $title, $eyebrow = 'Resources', $height = 420 ) {
+	?>
+	<section class="vzx-hero vzx-hero--transparent-header vuzix-blog-hero" style="--hero-height: <?php echo absint( $height ); ?>px;">
+		<div class="page-width vzx-hero__inner">
+			<div class="vzx-hero__content">
+				<p class="vzx-hero__eyebrow"><?php echo esc_html( $eyebrow ); ?></p>
+				<h1><?php echo esc_html( $title ); ?></h1>
+			</div>
+		</div>
+	</section>
+	<script>document.documentElement.classList.add('vzx-transparent-header-active');</script>
+	<?php
+}
+
+function vuzix_render_blog_styles() {
+	?>
+	<style id="vuzix-wordpress-blog-styles">
+		.vuzix-blog-hero { position:relative; min-height:var(--hero-height); overflow:hidden; color:#fff; background:linear-gradient(90deg,#050505 0%,#111827 38%,#5f636c 100%); }
+		.vuzix-blog-hero::before { content:''; position:absolute; inset:0; z-index:1; background:linear-gradient(90deg,rgba(0,0,0,.82),rgba(0,0,0,.42) 52%,rgba(0,0,0,.04)); }
+		.vuzix-blog-hero .vzx-hero__inner { position:relative; z-index:2; box-sizing:border-box; display:flex; align-items:center; width:100%; max-width:1280px; min-height:var(--hero-height); margin:0 auto; padding:150px 40px 72px; }
+		.vuzix-blog-hero .vzx-hero__eyebrow { margin:0 0 18px; color:#45c3e8; font-size:18px; font-weight:500; line-height:1; letter-spacing:.14em; text-transform:uppercase; }
+		.vuzix-blog-hero h1 { max-width:1000px; margin:0; color:#fff; font-family:Inter,sans-serif; font-size:3em; font-weight:500; line-height:.96; letter-spacing:-.035em; }
+		.vuzix-blog-main { max-width:1280px; margin:0 auto; padding:52px 40px 80px; font-family:Inter,sans-serif; }
+		.vuzix-blog-toolbar { display:flex; justify-content:flex-end; align-items:center; gap:12px; margin-bottom:32px; }
+		.vuzix-blog-toolbar label { color:#666; font-size:14px; }
+		.vuzix-blog-toolbar select { min-width:190px; height:48px; padding:0 42px 0 16px; border:1px solid #555; border-radius:6px; background:#fff; color:#111; font:600 14px Inter,sans-serif; }
+		.vuzix-blog-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; margin:0; padding:0; list-style:none; }
+		.vuzix-blog-card { height:100%; border:1px solid #ddd; border-radius:8px; overflow:hidden; background:#fff; }
+		.vuzix-blog-card__link { display:flex; flex-direction:column; height:100%; color:inherit; text-decoration:none; }
+		.vuzix-blog-card__image-wrap { position:relative; aspect-ratio:3/2; overflow:hidden; background:#eee; }
+		.vuzix-blog-card__image { display:block; width:100%; height:100%; object-fit:cover; transition:transform .35s ease; }
+		.vuzix-blog-card__link:hover .vuzix-blog-card__image { transform:scale(1.035); }
+		.vuzix-blog-card__placeholder { display:flex; align-items:center; justify-content:center; width:100%; height:100%; color:#777; background:linear-gradient(135deg,#eee,#d8d8d8); font-weight:600; }
+		.vuzix-blog-card__tag { position:absolute; top:14px; left:14px; z-index:1; padding:7px 11px; border-radius:4px; background:#e5724b; color:#fff; font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
+		.vuzix-blog-card__content { padding:22px; }
+		.vuzix-blog-card__title { margin:0 0 20px; color:#111; font-size:22px; font-weight:650; line-height:1.15; letter-spacing:-.025em; }
+		.vuzix-blog-card__date { color:#929292; font-size:14px; }
+		.vuzix-blog-pagination { margin-top:48px; text-align:center; }
+		.vuzix-blog-pagination .page-numbers { display:inline-flex; align-items:center; justify-content:center; min-width:42px; height:42px; margin:3px; border:1px solid #bbb; color:#111; text-decoration:none; }
+		.vuzix-blog-pagination .current { border-color:#111; background:#111; color:#fff; }
+		.vuzix-article-header { max-width:1200px; margin:0 auto; padding:50px 50px 0; }
+		.vuzix-article-title { margin:0 0 20px; max-width:1100px; color:#111; font-size:2.5em; font-weight:700; line-height:1.05; letter-spacing:-.035em; }
+		.vuzix-article-meta { display:flex; align-items:center; gap:24px; }
+		.vuzix-article-tag { padding:7px 12px; border-radius:4px; background:#e5724b; color:#fff; font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
+		.vuzix-article-date { color:#929292; font-size:16px; }
+		.vuzix-article-featured { display:block; width:min(1100px,calc(100% - 80px)); max-height:680px; margin:42px auto 10px; object-fit:cover; border-radius:8px; }
+		.vuzix-article-content { max-width:1080px; margin:0 auto; padding:38px 60px 60px; color:#1b1b1b; font-size:18px; line-height:1.55; }
+		.vuzix-article-content p { margin:0 0 20px; }
+		.vuzix-article-content h2 { margin:60px 0 22px; color:#222; font-size:42px; line-height:1.15; }
+		.vuzix-article-content h3 { margin:44px 0 18px; color:#222; font-size:32px; line-height:1.2; }
+		.vuzix-article-content img { max-width:100%; height:auto; margin:34px 0; border-radius:8px; }
+		.vuzix-blog-back { display:block; max-width:300px; margin:8px auto 50px; padding:18px 28px; border:2px solid #111; border-radius:8px; color:#111; text-align:center; text-decoration:none; }
+		@media(max-width:989px){ .vuzix-blog-grid{grid-template-columns:repeat(2,minmax(0,1fr));} }
+		@media(max-width:749px){ .vuzix-blog-hero .vzx-hero__inner{padding:120px 20px 50px;} .vuzix-blog-hero h1{font-size:42px;} .vuzix-blog-main{padding:36px 20px 60px;} .vuzix-blog-grid{grid-template-columns:1fr;} .vuzix-article-header{padding:38px 20px 0;} .vuzix-article-title{font-size:34px;} .vuzix-article-featured{width:calc(100% - 40px);margin-top:30px;} .vuzix-article-content{padding:30px 20px 50px;} }
+	</style>
+	<?php
+}
 
 /**
  * Thêm hậu tố " USD" vào sau hiển thị giá nếu cửa hàng đang dùng đơn vị USD (nhằm khớp $49.99 USD của Shopify).
