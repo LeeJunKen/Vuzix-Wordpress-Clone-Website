@@ -16,6 +16,26 @@ if ( file_exists( $index_path ) ) {
 	$header_html = vuzix_convert_internal_links( $header_html );
 	$header_html = vuzix_replace_asset_paths( $header_html, $theme_uri );
 
+	/*
+	 * Store UI is currently disabled. Keep the original account/cart markup in
+	 * the rendered source as HTML comments so it can be restored by removing
+	 * this block later.
+	 */
+	$header_html = preg_replace_callback(
+		'#<a\b[^>]*class=["\'][^"\']*header__icon--account[^"\']*["\'][^>]*>.*?</a>#si',
+		function ( $matches ) {
+			return "<!-- VUZIX: account/login icon disabled\n" . $matches[0] . "\n-->";
+		},
+		$header_html
+	);
+	$header_html = preg_replace_callback(
+		'#<a\b[^>]*class=["\'][^"\']*header__icon--cart[^"\']*["\'][^>]*>.*?</a>#si',
+		function ( $matches ) {
+			return "<!-- VUZIX: cart icon disabled\n" . $matches[0] . "\n-->";
+		},
+		$header_html
+	);
+
 	$head_parts = explode( '</head>', $header_html );
 	if ( count( $head_parts ) > 1 ) {
 		echo $head_parts[0];

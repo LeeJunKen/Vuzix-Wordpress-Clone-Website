@@ -82,6 +82,139 @@ function vuzix_find_original_file( $slug ) {
 }
 
 /**
+ * Một số tên file Shopify không trùng slug WooCommerce được sinh từ tên sản
+ * phẩm lúc import. Dùng alias để các sản phẩm đó vẫn mở đúng trang chi tiết
+ * HTML gốc thay vì rơi vào layout fallback.
+ */
+function vuzix_find_original_product_file( $product ) {
+	if ( ! is_a( $product, 'WC_Product' ) ) {
+		return '';
+	}
+
+	$slug = $product->get_slug();
+	$file = vuzix_find_original_file( $slug );
+	if ( $file !== '' ) {
+		return $file;
+	}
+
+	$aliases = array(
+		'4800-mah-extended-use-power-bank'                  => '4800mah-extended-use-power-bank',
+		'ball-cap-human-2-0'                                => 'baseball-hat-human-2-0',
+		'lx1-bump-cap'                                       => 'bump-cap',
+		'm-series-hat-mount'                                 => 'hat-mount',
+		'lx1-charger-kit'                                    => 'lx1-4-bank-charger-cradle',
+		'lx1-long-shift-power-bank'                          => 'lx1-7ah-battery-pack',
+		'm-series-ear-hooks-for-lens-less-frames'            => 'm-series-ear-hooks',
+		'm-series-comfort-headband'                          => 'm-series-elastic-headband-accessory-standard',
+		'm-series-lensless-frames'                           => 'm-series-lens-less-frames',
+		'm-series-safety-frame-mounting-clips-l-r'           => 'm-series-safety-frame-mounting-clips',
+		'm-series-safety-helmet-mounts-l-r'                  => 'm-series-safety-helmet-mounts',
+		'vuzix-m400-smart-glasses'                           => 'm400-smart-glasses',
+		'vuzix-m400-usb-a-to-usb-c-charging-cable-1-meter'   => 'm400-usb-a-to-usb-ccharging-cable-1-meter',
+		'vuzix-m400-usb-c-to-usb-c-viewer-cable-16'          => 'm400-usb-c-to-usb-c-viewer-cable-16-inch',
+		'men-s-polo'                                         => 'mens-premium-polo-1',
+		'remote-assist-kit-m400'                             => 'remote-assist-kit',
+		'snapback-hat-augmented-human'                       => 'snapback-hat-3',
+		'snapback-hat-human-2-0'                             => 'snapback-hat-4',
+		'unisex-tee'                                         => 'unisex-t-shirt-1',
+		'warranty-product'                                   => 'warranty-product-1',
+		'vuzix-z100-smart-glasses-prescription-inserts'      => 'z100-smart-glasses-prescription-inserts',
+		'vuzix-z100-usb-a-to-magnetic-charging-cable-3'      => 'z100-usb-a-to-magnetic-charging-cable-3',
+	);
+
+	if ( ! isset( $aliases[ $slug ] ) ) {
+		return '';
+	}
+
+	$candidate = 'original-products/' . $aliases[ $slug ] . '.html';
+	return file_exists( get_theme_file_path( $candidate ) ) ? $candidate : '';
+}
+
+/**
+ * Gallery/product lightbox dùng ảnh media của WooCommerce, không dùng URL ảnh
+ * Shopify còn nằm trong file HTML export.
+ */
+function vuzix_get_wc_product_gallery_markup( $product ) {
+	if ( ! is_a( $product, 'WC_Product' ) ) {
+		return '';
+	}
+
+	$image_ids = array_filter( array_merge( array( $product->get_image_id() ), $product->get_gallery_image_ids() ) );
+	$image_ids = array_values( array_unique( array_map( 'absint', $image_ids ) ) );
+	$gallery_id = 'vuzix-wc-gallery-' . absint( $product->get_id() );
+
+	if ( empty( $image_ids ) ) {
+		return '<div class="vuzix-wc-product-gallery vuzix-wc-product-gallery--empty"><img src="' . esc_url( wc_placeholder_img_src( 'woocommerce_single' ) ) . '" alt="' . esc_attr( $product->get_name() ) . '"></div>';
+	}
+
+	$first_id  = $image_ids[0];
+	$first_src = wp_get_attachment_image_url( $first_id, 'woocommerce_single' );
+	$first_alt = get_post_meta( $first_id, '_wp_attachment_image_alt', true );
+	$first_alt = $first_alt ? $first_alt : $product->get_name();
+
+	ob_start();
+	?>
+	<div id="<?php echo esc_attr( $gallery_id ); ?>" class="vuzix-wc-product-gallery">
+		<button class="vuzix-wc-product-gallery__main" type="button" aria-label="<?php esc_attr_e( 'Open product image', 'vuzix-practice' ); ?>">
+			<img src="<?php echo esc_url( $first_src ); ?>" alt="<?php echo esc_attr( $first_alt ); ?>">
+		</button>
+		<?php if ( count( $image_ids ) > 1 ) : ?>
+			<div class="vuzix-wc-product-gallery__thumbs" aria-label="<?php esc_attr_e( 'Product images', 'vuzix-practice' ); ?>">
+				<?php foreach ( $image_ids as $index => $image_id ) :
+					$thumb = wp_get_attachment_image_url( $image_id, 'woocommerce_thumbnail' );
+					$full  = wp_get_attachment_image_url( $image_id, 'full' );
+					$large = wp_get_attachment_image_url( $image_id, 'woocommerce_single' );
+					$alt   = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
+					$alt   = $alt ? $alt : $product->get_name();
+					?>
+					<button class="vuzix-wc-product-gallery__thumb<?php echo $index === 0 ? ' is-active' : ''; ?>" type="button" data-large="<?php echo esc_url( $large ); ?>" data-full="<?php echo esc_url( $full ); ?>" data-alt="<?php echo esc_attr( $alt ); ?>">
+						<img src="<?php echo esc_url( $thumb ); ?>" alt="">
+					</button>
+				<?php endforeach; ?>
+			</div>
+		<?php endif; ?>
+		<div class="vuzix-wc-product-gallery__modal" hidden role="dialog" aria-modal="true" aria-label="<?php esc_attr_e( 'Product image', 'vuzix-practice' ); ?>">
+			<button class="vuzix-wc-product-gallery__close" type="button" aria-label="<?php esc_attr_e( 'Close', 'vuzix-practice' ); ?>">&times;</button>
+			<img src="<?php echo esc_url( wp_get_attachment_image_url( $first_id, 'full' ) ); ?>" alt="<?php echo esc_attr( $first_alt ); ?>">
+		</div>
+	</div>
+	<style>
+		.vuzix-wc-product-gallery__main { display:block; width:100%; padding:0; border:0; background:#f7f7f7; cursor:zoom-in; }
+		.vuzix-wc-product-gallery__main img { display:block; width:100%; height:auto; max-height:760px; object-fit:contain; }
+		.vuzix-wc-product-gallery__thumbs { display:flex; flex-wrap:wrap; gap:10px; margin-top:14px; }
+		.vuzix-wc-product-gallery__thumb { width:74px; height:74px; padding:0; border:1px solid transparent; background:#f7f7f7; cursor:pointer; }
+		.vuzix-wc-product-gallery__thumb.is-active { border-color:#111; }
+		.vuzix-wc-product-gallery__thumb img { display:block; width:100%; height:100%; object-fit:cover; }
+		.vuzix-wc-product-gallery__modal { position:fixed; inset:0; z-index:10000; display:flex; align-items:center; justify-content:center; padding:42px; background:rgba(255,255,255,.96); }
+		.vuzix-wc-product-gallery__modal[hidden] { display:none; }
+		.vuzix-wc-product-gallery__modal img { max-width:100%; max-height:100%; object-fit:contain; }
+		.vuzix-wc-product-gallery__close { position:absolute; top:20px; right:24px; width:46px; height:46px; border:1px solid #ddd; border-radius:50%; background:#fff; color:#111; font-size:34px; line-height:1; cursor:pointer; }
+	</style>
+	<script>
+	(function () {
+		var gallery = document.getElementById(<?php echo wp_json_encode( $gallery_id ); ?>);
+		if (!gallery) return;
+		var main = gallery.querySelector('.vuzix-wc-product-gallery__main img');
+		var modal = gallery.querySelector('.vuzix-wc-product-gallery__modal');
+		var modalImage = modal.querySelector('img');
+		gallery.querySelectorAll('.vuzix-wc-product-gallery__thumb').forEach(function (button) {
+			button.addEventListener('click', function () {
+				main.src = button.dataset.large; main.alt = button.dataset.alt;
+				modalImage.src = button.dataset.full; modalImage.alt = button.dataset.alt;
+				gallery.querySelectorAll('.vuzix-wc-product-gallery__thumb').forEach(function (item) { item.classList.remove('is-active'); });
+				button.classList.add('is-active');
+			});
+		});
+		gallery.querySelector('.vuzix-wc-product-gallery__main').addEventListener('click', function () { modal.hidden = false; });
+		gallery.querySelector('.vuzix-wc-product-gallery__close').addEventListener('click', function () { modal.hidden = true; });
+		modal.addEventListener('click', function (event) { if (event.target === modal) modal.hidden = true; });
+	}());
+	</script>
+	<?php
+	return ob_get_clean();
+}
+
+/**
  * Nhiều trang tĩnh (sản phẩm, blog, tool, policy...) chưa được tạo thành
  * Page/Post thật trong WordPress nên WordPress trả về 404 trước khi
  * page.php kịp chạy. Hook này bắt các 404 đó, kiểm tra xem slug được yêu
@@ -136,6 +269,15 @@ function vuzix_replace_asset_paths( $content, $theme_uri ) {
 	$content = str_replace( "='apps/", "='" . $theme_uri . '/apps/', $content );
 	$content = str_replace( 'srcset="apps/', 'srcset="' . $theme_uri . '/apps/', $content );
 	$content = str_replace( ', apps/', ', ' . $theme_uri . '/apps/', $content );
+
+	// Shopify export stores query-like parts in literal asset filenames.
+	$content = preg_replace_callback(
+		'#(?:' . preg_quote( $theme_uri, '#' ) . '/)?(?:cdn|apps)/[^\s"\'<>]*%253F[^\s"\'<>]*#',
+		function ( $matches ) {
+			return str_replace( array( '=', '&' ), array( '%3D', '%26' ), $matches[0] );
+		},
+		$content
+	);
 
 	// Khắc phục lỗi unicode escape (\u0026 -> &)
 	$content = str_replace( '\\u0026', '&', $content );
@@ -333,6 +475,58 @@ function vuzix_header_overlay_safety_styles() {
 }
 add_action( 'wp_footer', 'vuzix_header_overlay_safety_styles', 1 );
 
+/**
+ * The universal product template relies on the original Vuzix hero. Some
+ * exported section styles override it later in the document, so restore its
+ * base dimensions and contrast after all product markup/styles have loaded.
+ */
+function vuzix_universal_product_hero_styles() {
+	if ( ! function_exists( 'is_product' ) || ! is_product() ) {
+		return;
+	}
+	?>
+	<style id="vuzix-universal-product-hero">
+		.single-product .vzx-hero.vzx-hero--transparent-header {
+			position: relative !important;
+			display: block !important;
+			min-height: 420px !important;
+			overflow: hidden !important;
+			background: linear-gradient(90deg, #050505 0%, #111827 38%, #5f636c 100%) !important;
+		}
+		.single-product .vzx-hero.vzx-hero--transparent-header::before {
+			content: '' !important;
+			position: absolute !important;
+			inset: 0 !important;
+			z-index: 1 !important;
+			background: linear-gradient(90deg, rgba(0,0,0,.82), rgba(0,0,0,.42) 52%, rgba(0,0,0,.04)) !important;
+		}
+		.single-product .vzx-hero.vzx-hero--transparent-header .vzx-hero__inner {
+			position: relative !important;
+			z-index: 2 !important;
+			display: flex !important;
+			align-items: center !important;
+			box-sizing: border-box !important;
+			min-height: 420px !important;
+			max-width: 1280px !important;
+			margin: 0 auto !important;
+			padding: 150px 40px 72px !important;
+		}
+		.single-product .vzx-hero.vzx-hero--transparent-header .vzx-hero__content { max-width: 960px !important; }
+		.single-product .vzx-hero.vzx-hero--transparent-header h1 { margin: 0 !important; color: #fff !important; font-family: Inter, sans-serif !important; font-size: 3em !important; font-weight: 500 !important; line-height: .96 !important; letter-spacing: -.035em !important; }
+		@media screen and (max-width: 749px) {
+			.single-product .vzx-hero.vzx-hero--transparent-header, .single-product .vzx-hero.vzx-hero--transparent-header .vzx-hero__inner { min-height: 360px !important; }
+			.single-product .vzx-hero.vzx-hero--transparent-header .vzx-hero__inner { padding: 120px 20px 48px !important; }
+			.single-product .vzx-hero.vzx-hero--transparent-header h1 { font-size: 42px !important; }
+		}
+	</style>
+	<?php
+}
+add_action( 'wp_footer', 'vuzix_universal_product_hero_styles', 20 );
+
+/**
+ * HTML product export dùng logo/menu trắng. Trang chi tiết không overlay header
+ * lên hero, nên cần nền header tối cố định để các control này luôn nhìn thấy.
+ */
 /**
  * In icon thùng rác (remove) dùng cho nút xoá sản phẩm trong giỏ hàng, đặt trong
  * <cart-remove-button> để ăn đúng CSS .cart-item cart-remove-button/.icon-remove
@@ -621,6 +815,20 @@ function vuzix_render_shop_archive() {
 	</main>
 	<?php
 }
+
+/**
+ * Giao diện Shopify gốc không có banner "has been added to your cart / View
+ * cart" giữa hero và lưới. Chỉ ẩn thông báo thêm giỏ hàng thành công ở archive
+ * để lỗi tồn kho/validation của WooCommerce vẫn hiển thị bình thường.
+ */
+function vuzix_hide_shop_add_to_cart_message( $message, $products ) {
+	if ( ( function_exists( 'is_shop' ) && ( is_shop() || is_product_taxonomy() ) ) || vuzix_is_collections_all_request() ) {
+		return '';
+	}
+
+	return $message;
+}
+add_filter( 'wc_add_to_cart_message_html', 'vuzix_hide_shop_add_to_cart_message', 10, 2 );
 
 /**
  * Bỏ thông báo "Your cart is currently empty." mặc định của WooCommerce
@@ -920,6 +1128,16 @@ function vuzix_product_single_styles() {
 			background-color: #000 !important;
 			color: #fff !important;
 		}
+		/*
+		 * Only direct purchase is shown on product pages. Remove this rule later
+		 * to bring the standard "Add to cart" button back.
+		 */
+		.vuzix-wc-add-to-cart-wrapper form.cart .single_add_to_cart_button:not(.vuzix_buy_it_now_button) {
+			display: none !important;
+		}
+		.vuzix-wc-add-to-cart-wrapper form.cart:has(.vuzix_buy_it_now_button) {
+			gap: 0;
+		}
 		/* Nút Buy it now (Solid black background) */
 		.vuzix-wc-add-to-cart-wrapper form.cart .vuzix_buy_it_now_button {
 			display: inline-flex;
@@ -1026,6 +1244,16 @@ function vuzix_buy_it_now_redirect( $url ) {
 	return $url;
 }
 add_filter( 'woocommerce_add_to_cart_redirect', 'vuzix_buy_it_now_redirect' );
+
+/**
+ * Website does not offer quantity selection. WooCommerce still receives a
+ * valid quantity of one for every purchase. Remove this filter to restore the
+ * quantity field in the future.
+ */
+function vuzix_single_item_purchase_only( $sold_individually, $product ) {
+	return ( function_exists( 'is_product' ) && is_product() ) ? true : $sold_individually;
+}
+add_filter( 'woocommerce_is_sold_individually', 'vuzix_single_item_purchase_only', 10, 2 );
 
 /**
  * Thêm hậu tố " USD" vào sau hiển thị giá nếu cửa hàng đang dùng đơn vị USD (nhằm khớp $49.99 USD của Shopify).
