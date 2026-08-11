@@ -20,6 +20,12 @@ while ( have_posts() ) :
 		$main_content = vuzix_get_main_content( $original_file );
 
 		if ( ! empty( $main_content ) ) {
+			// Loại bỏ phần banner đăng nhập ẩn (Easylockdown) nếu có
+			$main_content = preg_replace(
+				'/<div class=[\'"]easylockdown-content[\'"] style=[\'"]display:none;[\'"]>.*?(?=<section id="shopify-section-template--[a-zA-Z0-9_-]+__main")/s',
+				'',
+				$main_content
+			);
 			// 2. Thay thế tiêu đề tĩnh bằng tiêu đề động từ WooCommerce
 			$main_content = preg_replace(
 				'/<div class="product__title"\s*[^>]*>.*?<\/div>/s',

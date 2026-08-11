@@ -26,7 +26,9 @@ function vuzix_get_search_dirs() {
 		'original-collections/',
 		'original-policies/',
 		'original-blogs/',
+		'original-blogs/case-studies/',
 		'original-blogs/release-notes/',
+		'original-blogs/vuzix-blog/',
 		'original-blogs/vuzix-white-papers-and-case-studies-across-industries/',
 		'original-blogs/white-papers/',
 		'original-tools/',
@@ -43,6 +45,18 @@ function vuzix_get_search_dirs() {
 function vuzix_find_original_file( $slug ) {
 	if ( empty( $slug ) ) {
 		return '';
+	}
+
+	// Các trang phân trang blog export từ Shopify được lưu dưới dạng
+	// "blog-name%3Fpage=N.html". Ưu tiên đúng file tương ứng query page.
+	$page_number = isset( $_GET['page'] ) ? absint( wp_unslash( $_GET['page'] ) ) : 0;
+	if ( $page_number > 0 ) {
+		foreach ( vuzix_get_search_dirs() as $dir ) {
+			$paginated_candidate = $dir . $slug . '%3Fpage=' . $page_number . '.html';
+			if ( file_exists( get_theme_file_path( $paginated_candidate ) ) ) {
+				return $paginated_candidate;
+			}
+		}
 	}
 
 	foreach ( vuzix_get_search_dirs() as $dir ) {
@@ -140,6 +154,11 @@ function vuzix_convert_internal_links( $html ) {
 		$quote = $matches[2];
 		$url  = $matches[3];
 
+		// Shopify export encode dấu ? trong tên file pagination thành %253F.
+		// Chuyển lại thành query string trước khi xác định slug WordPress.
+		$url = str_ireplace( array( '%253f', '%3f' ), '?', $url );
+		$url = preg_replace( '/([?&]page=\d+)\.html(?=(&|#|$))/i', '$1', $url );
+
 		$is_external = false;
 		if ( preg_match( '/^(https?:)?\/\//i', $url ) ) {
 			if ( ! preg_match( '/vuzix\.com/i', $url ) ) {
@@ -228,8 +247,91 @@ function vuzix_get_main_content( $original_filename ) {
 	$main_content = vuzix_convert_internal_links( $main_content );
 	$main_content = vuzix_replace_asset_paths( $main_content, $theme_uri );
 
+	// Các file Shopify export thường gắn class header trong suốt ngay cả khi
+	// nội dung không có hero. Khi đó menu bị đổi sang màu trắng trên nền sáng.
+	// Chỉ giữ hành vi này cho trang thực sự có hero.
+	if ( strpos( $main_content, 'vzx-hero' ) === false ) {
+		$main_content = preg_replace(
+			'#<script\b[^>]*>\s*document\.documentElement\.classList\.add\(\s*[\'\"]vzx-transparent-header-active[\'\"]\s*\)\s*;?\s*</script>#i',
+			'',
+			$main_content
+		);
+	}
+
 	return $main_content;
 }
+
+/**
+ * Giữ announcement bar và menu header ở hai lớp riêng biệt khi trang dùng
+ * hero trong suốt. Markup export dùng class .section-header (không phải
+ * .shopify-section-header), nên các CSS cũ đã đặt cả hai khối absolute và
+ * khiến một trong hai khối bị che.
+ */
+function vuzix_header_overlay_safety_styles() {
+	?>
+	<style id="vuzix-header-overlay-safety">
+		/* Đồng bộ nguyên tắc xếp lớp từ original-index.html. */
+		.vzx-transparent-header-active .shopify-section-group-header-group {
+			position: absolute !important;
+			top: 0 !important;
+			left: 0 !important;
+			right: 0 !important;
+			width: 100% !important;
+			z-index: 100 !important;
+			background: transparent !important;
+		}
+		.vzx-transparent-header-active .announcement-bar-section {
+			position: relative !important;
+			top: auto !important;
+			z-index: 102 !important;
+			width: 100% !important;
+			pointer-events: auto !important;
+		}
+		.vzx-transparent-header-active sticky-header {
+			position: relative !important;
+			top: auto !important;
+			left: auto !important;
+			right: auto !important;
+			width: 100% !important;
+			z-index: 101 !important;
+			background: transparent !important;
+		}
+		.vzx-transparent-header-active .header-wrapper,
+		.vzx-transparent-header-active sticky-header,
+		.vzx-transparent-header-active header.header,
+		.vzx-transparent-header-active .header {
+			background: transparent !important;
+			border: 0 !important;
+			box-shadow: none !important;
+		}
+		.vzx-transparent-header-active .header {
+			margin-top: 18px !important;
+			padding-top: 22px !important;
+			padding-bottom: 22px !important;
+		}
+		.vzx-transparent-header-active .announcement-bar-section,
+		.vzx-transparent-header-active .announcement-bar-section a,
+		.vzx-transparent-header-active .section-header,
+		.vzx-transparent-header-active .section-header a,
+		.vzx-transparent-header-active .section-header button,
+		.vzx-transparent-header-active .section-header summary,
+		.vzx-transparent-header-active .section-header details {
+			pointer-events: auto !important;
+		}
+		@media screen and (min-width: 990px) {
+			.vzx-mega-menu__content {
+				position: fixed !important;
+				top: 120px !important;
+				left: 0 !important;
+				right: 0 !important;
+				width: 100vw !important;
+				z-index: 9999 !important;
+			}
+		}
+	</style>
+	<?php
+}
+add_action( 'wp_footer', 'vuzix_header_overlay_safety_styles', 1 );
 
 /**
  * In icon thùng rác (remove) dùng cho nút xoá sản phẩm trong giỏ hàng, đặt trong
@@ -943,5 +1045,3 @@ function vuzix_loop_shop_per_page( $cols ) {
 	return -1;
 }
 add_filter( 'loop_shop_per_page', 'vuzix_loop_shop_per_page', 9999 );
-
-
