@@ -10,11 +10,12 @@ $index_path = get_theme_file_path( 'original-index.html' );
 if ( file_exists( $index_path ) ) {
 	$html = file_get_contents( $index_path );
 	$parts = explode( '<main id="MainContent"', $html );
-	$header_html = $parts[0];
+	$header_html = vuzix_strip_shopify_runtime_assets( $parts[0] );
 
 	$header_html = str_replace( '\\u0026', '&', $header_html );
 	$header_html = vuzix_convert_internal_links( $header_html );
 	$header_html = vuzix_replace_asset_paths( $header_html, $theme_uri );
+	$header_html = vuzix_translate_static_ui( $header_html );
 
 	/*
 	 * Store UI is currently disabled. Keep the original account/cart markup in

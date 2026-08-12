@@ -28,7 +28,7 @@ if ( ! function_exists( 'vuzix_render_fallback_product_page' ) ) {
 			<section class="vuzix-dynamic-product-hero">
 				<?php if ( $hero_image ) : ?><img class="vuzix-dynamic-product-hero__image" src="<?php echo esc_url( $hero_image ); ?>" alt=""><?php endif; ?>
 				<div class="vuzix-dynamic-product-hero__content">
-					<p class="vuzix-dynamic-product-hero__eyebrow"><?php esc_html_e( 'Products', 'vuzix-practice' ); ?></p>
+					<p class="vuzix-dynamic-product-hero__eyebrow"><?php esc_html_e( 'Sản phẩm', 'vuzix-practice' ); ?></p>
 					<h1><?php echo esc_html( $product->get_name() ); ?></h1>
 				</div>
 			</section>

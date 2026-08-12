@@ -7,7 +7,7 @@ get_header();
 		$categories   = get_the_category();
 		$category     = $categories ? $categories[0] : null;
 		$archive_link = home_url( '/vuzix-blog/' );
-		vuzix_render_blog_hero( get_the_title(), __( 'Resources', 'vuzix-practice' ), 320 );
+		vuzix_render_blog_hero( get_the_title(), __( 'Tài nguyên', 'vuzix-practice' ), 320 );
 		vuzix_render_blog_styles();
 		?>
 		<article <?php post_class( 'article-custom' ); ?>>
@@ -20,7 +20,7 @@ get_header();
 			</header>
 			<?php if ( has_post_thumbnail() ) : the_post_thumbnail( 'full', array( 'class' => 'vuzix-article-featured' ) ); endif; ?>
 			<div class="vuzix-article-content rte"><?php the_content(); ?></div>
-			<a class="vuzix-blog-back" href="<?php echo esc_url( $archive_link ); ?>"><?php esc_html_e( 'Back to Vuzix Blog', 'vuzix-practice' ); ?></a>
+			<a class="vuzix-blog-back" href="<?php echo esc_url( $archive_link ); ?>"><?php esc_html_e( 'Quay lại Blog Vuzix', 'vuzix-practice' ); ?></a>
 		</article>
 	<?php endwhile; ?>
 </main>

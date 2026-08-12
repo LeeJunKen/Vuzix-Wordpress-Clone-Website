@@ -286,6 +286,323 @@ function vuzix_replace_asset_paths( $content, $theme_uri ) {
 }
 
 /**
+ * Translate recurring text labels inherited from the exported Shopify HTML.
+ * Only text nodes are replaced; URLs, handles, classes and script data remain intact.
+ */
+function vuzix_translate_static_ui( $html ) {
+	if ( ! is_string( $html ) || $html === '' ) {
+		return $html;
+	}
+
+	$labels = array(
+		// Uppercase headers/links
+		'FIND YOUR MATCH' => 'TÌM SẢN PHẨM PHÙ HỢP',
+		'WAVEGUIDES'      => 'ỐNG DẪN SÓNG',
+		'OEM SERVICES'    => 'DỊCH VỤ OEM',
+		'SMART GLASSES'   => 'KÍNH THÔNG MINH',
+		'RESOURCES'       => 'TÀI NGUYÊN',
+		'COMPANY'         => 'CÔNG TY',
+		'CONTACT'         => 'LIÊN HỆ',
+		'SUPPORT'         => 'HỖ TRỢ',
+		'PRODUCTS'        => 'SẢN PHẨM',
+		'STAY IN THE LOOP' => 'ĐĂNG KÝ NHẬN TIN',
+		'LEGAL'           => 'PHÁP LÝ',
+
+		// Title case / Mixed case headers/links
+		'Smart Glasses'   => 'Kính thông minh',
+		'Waveguides'      => 'Ống dẫn sóng',
+		'OEM Services'    => 'Dịch vụ OEM',
+		'Resources'       => 'Tài nguyên',
+		'Company'         => 'Công ty',
+		'Contact'         => 'Liên hệ',
+		'Support'         => 'Hỗ trợ',
+		'Products'        => 'Sản phẩm',
+		'Search'          => 'Tìm kiếm',
+		'About Us'        => 'Về chúng tôi',
+		'News & Events'   => 'Tin tức & Sự kiện',
+		'Investors'       => 'Nhà đầu tư',
+		'Careers'         => 'Tuyển dụng',
+		'Developer Center' => 'Trung tâm Phát triển',
+		'FAQ'             => 'Câu hỏi thường gặp',
+		'Subscribe'       => 'Đăng ký',
+		'Cart'            => 'Giỏ hàng',
+		'Close'           => 'Đóng',
+		'Overview'        => 'Tổng quan',
+		'Waveguide Configurations' => 'Cấu hình ống dẫn sóng',
+		'US-Based Manufacturing' => 'Sản xuất tại Mỹ',
+		'About Vuzix'     => 'Giới thiệu Vuzix',
+		'Partners'        => 'Đối tác',
+		'Events'          => 'Sự kiện',
+		'Developers'      => 'Nhà phát triển',
+		'Contact Vuzix OEM' => 'Liên hệ Vuzix OEM',
+		'Contact Sales'   => 'Liên hệ bộ phận bán hàng',
+		'Contact Technical Support' => 'Liên hệ hỗ trợ kỹ thuật',
+		'Contact Investor Relations' => 'Liên hệ quan hệ nhà đầu tư',
+		'Contact Business Development' => 'Liên hệ hợp tác phát triển kinh doanh',
+		'Contact Media Relations' => 'Liên hệ quan hệ truyền thông',
+		'Contact Vuzix Enterprise Solutions' => 'Liên hệ giải pháp doanh nghiệp Vuzix',
+		'Privacy Policy'  => 'Chính sách bảo mật',
+		'Privacy policy'  => 'Chính sách bảo mật',
+		'Terms & Conditions' => 'Điều khoản & Điều kiện',
+		'Terms and Conditions' => 'Điều khoản & Điều kiện',
+		'EULA'            => 'Thỏa thuận cấp phép người dùng cuối (EULA)',
+		'Open Source License' => 'Giấy phép nguồn mở',
+		'Content Policy'  => 'Chính sách nội dung',
+		'OEM Solutions'   => 'Giải pháp OEM',
+		'OEM Programs'    => 'Chương trình OEM',
+		'Custom Solutions' => 'Giải pháp tùy chỉnh',
+		'Advanced Manufacturing' => 'Sản xuất tiên tiến',
+		'Learn More'      => 'Tìm hiểu thêm',
+		'Learn more'      => 'Tìm hiểu thêm',
+		'Find Your Match' => 'Tìm sản phẩm phù hợp',
+		'Find your match' => 'Tìm sản phẩm phù hợp',
+		'Compare Smart Glasses' => 'So sánh kính thông minh',
+		'Solution Bundles' => 'Gói giải pháp',
+		'Solutions Bundles' => 'Gói giải pháp',
+		'Sales'           => 'Bán hàng',
+		'Partnerships'    => 'Quan hệ đối tác',
+		'Investor Relations' => 'Quan hệ nhà đầu tư',
+		'Business Development' => 'Phát triển kinh doanh',
+		'Media Relations' => 'Quan hệ truyền thông',
+		'Enterprise Solutions' => 'Giải pháp doanh nghiệp',
+		'Technical Support' => 'Hỗ trợ kỹ thuật',
+		'Media Inquiries' => 'Yêu cầu truyền thông',
+		'History'         => 'Lịch sử',
+		'Press Releases'  => 'Thông cáo báo chí',
+		'Use Cases'       => 'Tình huống sử dụng',
+		'Remote Mentor'   => 'Cố vấn từ xa',
+		'Mobile Device Management' => 'Quản lý thiết bị di động',
+		'Use Case Overview' => 'Tổng quan tình huống sử dụng',
+		'Prescription Lenses' => 'Thấu kính theo toa',
+		'Remote Assist Kit' => 'Bộ hỗ trợ từ xa',
+		'Pick and Pack Kit' => 'Bộ Pick and Pack',
+		'Pick & Pack Kit' => 'Bộ Pick & Pack',
+		'Engineering Services' => 'Dịch vụ kỹ thuật',
+		'Vuzix Ultralite OEM Platform' => 'Nền tảng OEM Vuzix Ultralite',
+		'OEM Readiness'   => 'Độ sẵn sàng OEM',
+		'Press Release'   => 'Thông cáo báo chí',
+		'Recent News'     => 'Tin tức gần đây',
+		'Patents & patents pending' => 'Bằng sáng chế & Bằng sáng chế đang chờ xử lý',
+		'Years of industry expertise' => 'Năm kinh nghiệm trong ngành',
+		'To commercialize waveguides' => 'Thương mại hóa ống dẫn sóng',
+		'U.S. based facilities' => 'Cơ sở sản xuất tại Mỹ',
+		'What Vuzix Does' => 'Vuzix Làm Gì',
+		'With 30 years in wearable technology, Vuzix develops waveguide optics for device makers and builds smart glasses for enterprise use.' => 'Với 30 năm kinh nghiệm trong công nghệ thiết bị đeo, Vuzix phát triển thấu kính ống dẫn sóng cho các nhà sản xuất thiết bị và xây dựng kính thông minh cho mục đích doanh nghiệp.',
+		'OEM & Waveguide Technology' => 'Công nghệ OEM & Ống dẫn sóng',
+		'Optical platforms for device makers' => 'Nền tảng quang học cho các nhà sản xuất thiết bị',
+		'Vuzix designs and manufactures waveguide optics, display systems, and OEM platforms for companies building or white-labeling smart glasses.' => 'Vuzix thiết kế và sản xuất thấu kính ống dẫn sóng, hệ thống hiển thị và nền tảng OEM cho các công ty tự xây dựng hoặc gắn nhãn thương hiệu kính thông minh.',
+		'Waveguide optics' => 'Thấu kính ống dẫn sóng',
+		'OEM platforms & reference designs' => 'Nền tảng OEM & Thiết kế tham chiếu',
+		'Engineering services' => 'Dịch vụ kỹ thuật',
+		'Defense programs' => 'Chương trình quốc phòng',
+		'Enterprise Smart Glasses' => 'Kính thông minh doanh nghiệp',
+		'Smart glasses for frontline operations' => 'Kính thông minh cho hoạt động thực địa',
+		'Vuzix designs and manufactures enterprise smart glasses, delivering hardware, software, and support for fast, scalable deployment.' => 'Vuzix thiết kế và sản xuất kính thông minh doanh nghiệp, cung cấp phần cứng, phần mềm và hỗ trợ triển khai nhanh chóng, dễ dàng mở rộng.',
+		'Smart glasses'   => 'Kính thông minh',
+		'Pick & Pack Validation Program' => 'Chương trình xác thực Pick & Pack',
+		'Use cases by industry' => 'Tình huống sử dụng theo ngành nghề',
+		'Vuzix Shield®'   => 'Vuzix Shield®',
+		'Revolutionary binocular smart glasses built for the enterprise. Optical waveguides and miniature microLED projectors.' => 'Kính thông minh hai mắt mang tính cách mạng được chế tạo cho doanh nghiệp. Ống dẫn sóng quang học và máy chiếu microLED siêu nhỏ.',
+		'Vuzix M400™'     => 'Vuzix M400™',
+		'The enterprise workhorse. High-performance, lightweight smart glasses built for all-day frontline operations.' => 'Trụ cột hiệu năng doanh nghiệp. Kính thông minh hiệu năng cao, trọng lượng nhẹ được chế tạo cho các hoạt động thực địa cả ngày.',
+		'Vuzix M400 Solutions Kit' => 'Bộ giải pháp Vuzix M400',
+		'Everything you need to deploy. Solution kits include M400 smart glasses, custom accessories, and software validation.' => 'Mọi thứ bạn cần để triển khai. Các bộ giải pháp bao gồm kính thông minh M400, phụ kiện tùy chỉnh và chương trình xác thực phần mềm.',
+		'Vuzix M400C™'    => 'Vuzix M400C™',
+		'Type-C connected enterprise smart glasses. High-resolution display and camera, lightweight all-day comfort.' => 'Kính thông minh doanh nghiệp kết nối Type-C. Màn hình và camera độ phân giải cao, thoải mái nhẹ nhàng suốt cả ngày.',
+		'Shop now'        => 'Mua ngay',
+		'Vuzix Announces Preliminary Second Quarter 2026 Revenues' => 'Vuzix công bố doanh thu sơ bộ quý II năm 2026',
+		'Vuzix Receives Additional Optics Development Milestone Payment from a Major Defense Contractor' => 'Vuzix nhận thêm khoản thanh toán cột mốc phát triển quang học từ một nhà thầu quốc phòng lớn',
+		'Vuzix Smart Glasses Integration with TeamViewer Frontline Boosts Operations for Major UK Logistics Provider' => 'Tích hợp kính thông minh Vuzix với TeamViewer Frontline thúc đẩy hoạt động cho nhà cung cấp dịch vụ logistics lớn của Anh',
+		'August 06, 2026' => 'Ngày 06 tháng 8 năm 2026',
+		'July 22, 2026'   => 'Ngày 22 tháng 7 năm 2026',
+		'July 15, 2026'   => 'Ngày 15 tháng 7 năm 2026',
+		'Waveguide optics and display engines' => 'Ống dẫn sóng quang học và động cơ hiển thị',
+		'Standard & custom optical waveguides. Projectors and display systems. High-volume manufacturing capability.' => 'Ống dẫn sóng quang học tiêu chuẩn & tùy chỉnh. Máy chiếu và hệ thống hiển thị. Khả năng sản xuất quy mô lớn.',
+		'Custom waveguides and smart glasses solutions. High-volume manufacturing capability. Engineering design services.' => 'Giải pháp kính thông minh và ống dẫn sóng tùy chỉnh. Khả năng sản xuất quy mô lớn. Dịch vụ thiết kế kỹ thuật.',
+		'Custom optical waveguide and smart glasses design. Integration services for display engine, electronics, and software.' => 'Thiết kế kính thông minh và ống dẫn sóng quang học tùy chỉnh. Dịch vụ tích hợp cho động cơ hiển thị, điện tử và phần mềm.',
+		'A turnkey reference design for smart glasses. Accelerate your product development and time-to-market.' => 'Thiết kế tham chiếu trọn gói cho kính thông minh. Đẩy nhanh quá trình phát triển sản phẩm và thời gian đưa ra thị trường.',
+		'A structured program to assess your product requirements. Determine feasibility, timeline, and budget.' => 'Một chương trình có cấu trúc để đánh giá các yêu cầu sản phẩm của bạn. Xác định tính khả thi, tiến độ và ngân sách.',
+
+		// Mega menu descriptions & items
+		'Revolutionary Binocular Smart Glasses' => 'Kính thông minh hai mắt mang tính cách mạng',
+		'The Workhorse of Smart Glasses' => 'Trụ cột hiệu năng kính thông minh',
+		'Type-C Connected Enterprise Smart Glasses' => 'Kính thông minh doanh nghiệp kết nối Type-C',
+		'M400 Power Bank' => 'Sạc dự phòng M400',
+		'Keep Your Smart Glasses Charged' => 'Giữ kính thông minh của bạn luôn đầy pin',
+		'All Smart Glasses' => 'Tất cả kính thông minh',
+		'Accessories'     => 'Phụ kiện',
+		'Merchandise'     => 'Hàng lưu niệm',
+		'About OEM Services' => 'Giới thiệu dịch vụ OEM',
+		'Custom Waveguide Solutions' => 'Giải pháp ống dẫn sóng tùy chỉnh',
+		'Waveguide Technology' => 'Công nghệ ống dẫn sóng',
+		'Optics of the Future' => 'Quang học của tương lai',
+		'Vuzix Custom Solutions' => 'Giải pháp tùy chỉnh Vuzix',
+		'Design & Integration Services' => 'Dịch vụ thiết kế & tích hợp',
+		'High-Volume Production' => 'Sản xuất quy mô lớn',
+		'Vuzix Blog'      => 'Blog Vuzix',
+		'Latest News & Insights' => 'Tin tức & thông tin chi tiết mới nhất',
+		'White Papers'    => 'Sách trắng',
+		'In-Depth Technical Insights' => 'Thông tin kỹ thuật chuyên sâu',
+		'Case Studies'    => 'Nghiên cứu điển hình',
+		'Real-World Applications' => 'Ứng dụng trong thực tế',
+		'App Store'       => 'Cửa hàng ứng dụng',
+		'Browse Apps for Vuzix Glasses' => 'Duyệt ứng dụng cho kính Vuzix',
+		'Build for Vuzix Smart Glasses' => 'Xây dựng ứng dụng cho kính thông minh Vuzix',
+		'Frequently Asked Questions' => 'Các câu hỏi thường gặp',
+		'Our Mission & Leadership' => 'Sứ mệnh & Đội ngũ lãnh đạo',
+		'Press Releases & Media' => 'Thông cáo báo chí & Truyền thông',
+		'Financials & Stock Info' => 'Thông tin tài chính & Cổ phiếu',
+		'Join the Vuzix Team' => 'Gia nhập đội ngũ Vuzix',
+		'Get in Touch with Us' => 'Liên hệ với chúng tôi',
+		'Product Support & Returns' => 'Hỗ trợ sản phẩm & Đổi trả',
+		'Sign up for the latest news, product releases, and more...' => 'Đăng ký để nhận tin tức mới nhất, sản phẩm mới và nhiều hơn nữa...',
+
+		// Homepage body content details
+		'Waveguide optics and enterprise smart glasses' => 'Thấu kính ống dẫn sóng và kính thông minh doanh nghiệp',
+		'Vuzix is a leading manufacturer of Smart Glasses and Waveguide optics for the consumer and enterprise markets. Learn more about how we are shaping the future of optics.' => 'Vuzix là nhà sản xuất hàng đầu về Kính thông minh và công nghệ ống dẫn sóng cho thị trường tiêu dùng và doanh nghiệp. Tìm hiểu thêm về cách chúng tôi định hình tương lai của quang học.',
+		'Vuzix technology in real-world applications' => 'Công nghệ Vuzix trong các ứng dụng thực tế',
+		'Enterprise-ready devices and solutions. Custom waveguides. High-volume manufacturing. Learn more about OEM Services.' => 'Các thiết bị và giải pháp sẵn sàng cho doanh nghiệp. Ống dẫn sóng tùy chỉnh. Sản xuất quy mô lớn. Tìm hiểu thêm về Dịch vụ OEM.',
+		'A developer-ready Android OS. A dedicated developer community. Flexible, feature-rich tools and documentation. Learn more about building for Vuzix Smart Glasses.' => 'Hệ điều hành Android sẵn sàng cho nhà phát triển. Cộng đồng nhà phát triển chuyên dụng. Các công cụ và tài liệu linh hoạt, phong phú tính năng. Tìm hiểu thêm về phát triển ứng dụng cho Kính thông minh Vuzix.',
+		'Industry insights' => 'Thông tin chi tiết về ngành',
+		'Where do you want to start?' => 'Bạn muốn bắt đầu từ đâu?',
+		'Subscribe to our emails' => 'Đăng ký nhận email của chúng tôi',
+		'Enterprise-ready devices and solutions' => 'Các thiết bị và giải pháp sẵn sàng cho doanh nghiệp',
+		'A portfolio of enterprise AI smart glasses and solutions for warehouse, field service, healthcare, and industrial use cases.' => 'Danh mục các kính thông minh AI và giải pháp cho doanh nghiệp trong nhà kho, dịch vụ thực địa, y tế và các tình huống sử dụng công nghiệp.',
+	);
+
+	foreach ( $labels as $english => $vietnamese ) {
+		$pattern = '#>(\s*)' . preg_quote( $english, '#' ) . '(\s*)<#';
+		$html = preg_replace_callback(
+			$pattern,
+			static function ( $matches ) use ( $vietnamese ) {
+				return '>' . $matches[1] . $vietnamese . $matches[2] . '<';
+			},
+			$html
+		);
+	}
+
+	return $html;
+}
+
+/**
+ * Remove Shopify storefront runtime left in exported HTML.
+ *
+ * The theme only reuses the exported visual markup. Checkout preload, Shop Pay,
+ * analytics and Shopify app embeds are not used by WordPress/WooCommerce and
+ * otherwise create dozens of failed/external requests on every page.
+ */
+function vuzix_strip_shopify_runtime_assets( $html ) {
+	if ( ! is_string( $html ) || $html === '' ) {
+		return $html;
+	}
+
+	$blocked_script_sources = array(
+		'checkouts/internal/preloads.js',
+		'cdn.shopify.com/extensions/',
+		'cdn.shopify.com/shopifycloud/',
+		'cdn.shopify.com/storefront/',
+		'cdn.shopify.com/s/files/',
+		'cdn.gtranslate.net/',
+		'enormapps.com/',
+		'plausible.io/',
+		'monorail-edge.shopifysvc.com/',
+		'consentmo.com/',
+		'gtranslate.io/',
+		'na.shgcdn3.com/',
+		'ma.zoho.com/',
+		'cloudfront.net/apps/',
+		'apps-sp.webkul.com/',
+		's3.eu-west-1.amazonaws.com/',
+		'cdn/shopifycloud/shop-js/',
+		'cdn/shopifycloud/storefront/',
+		'cdn/shopifycloud/perf-kit/',
+	);
+
+	$html = preg_replace_callback(
+		'#<script\b[^>]*\bsrc\s*=\s*(["\'])(.*?)\1[^>]*>.*?</script\s*>#is',
+		function ( $matches ) use ( $blocked_script_sources ) {
+			$source = strtolower( html_entity_decode( $matches[2], ENT_QUOTES ) );
+			foreach ( $blocked_script_sources as $blocked_source ) {
+				if ( strpos( $source, strtolower( $blocked_source ) ) !== false ) {
+					return '<!-- VUZIX: removed unused Shopify/external script -->';
+				}
+			}
+			return $matches[0];
+		},
+		$html
+	);
+
+	$blocked_inline_markers = array(
+		'Shopify.SignInWithShop',
+		'Shopify.featureAssets',
+		'ShopifyAnalytics',
+		'ShopifyPaypalV4VisibilityTracking',
+		'Shopify.PaymentButton',
+		'webPixelsManager',
+		'__TREKKIE_SHIM_QUEUE',
+		'Trekkie.load',
+		'monorail-edge.shopifysvc.com',
+		'window.Globo.FormBuilder',
+		'consentmo_cookie_consent',
+		'window.custloIsCustomer',
+		'cdSelector',
+		'window.ooTaxExemptionConfig',
+		'window.shopUrl',
+		'updateAndOpenDawnCart',
+		'window.ga = function ga',
+		'geopro_inline_location_response',
+		'vuzix-shop.myshopify.com',
+		'shopify-digital-wallet',
+		'shop-js-analytics',
+		'shopify-features',
+		'shopify-origin-trials',
+	);
+
+	$html = preg_replace_callback(
+		'#<script\b(?![^>]*\bsrc\s*=)[^>]*>.*?</script\s*>#is',
+		function ( $matches ) use ( $blocked_inline_markers ) {
+			foreach ( $blocked_inline_markers as $marker ) {
+				if ( stripos( $matches[0], $marker ) !== false ) {
+					return '<!-- VUZIX: removed unused Shopify inline runtime -->';
+				}
+			}
+			return $matches[0];
+		},
+		$html
+	);
+
+	$blocked_link_markers = array(
+		'cdn.shopify.com/extensions/',
+		'monorail-edge.shopifysvc.com',
+		'consentmo.com',
+		'workers.consentmo.com',
+		'storage.consentmo.com',
+	);
+	$html = preg_replace_callback(
+		'#<link\b[^>]*>#is',
+		function ( $matches ) use ( $blocked_link_markers ) {
+			foreach ( $blocked_link_markers as $marker ) {
+				if ( stripos( $matches[0], $marker ) !== false ) {
+					return '<!-- VUZIX: removed unused Shopify/external link -->';
+				}
+			}
+			return $matches[0];
+		},
+		$html
+	);
+
+	// Shopify wallet metadata has no purpose in WooCommerce and points to a
+	// Shopify-only endpoint.
+	$html = preg_replace( '#<meta\b[^>]*(?:id|name)=["\']shopify-digital-wallet["\'][^>]*>#i', '', $html );
+
+	// Remove Recommenda Quiz Builder app block and its styles
+	$html = preg_replace( '#<div[^>]*shopify-block-AY2E2bmk5c2dKUnB5a__5733569959556273306[^>]*>.*?</div>\s*</div>#si', '', $html );
+	$html = preg_replace( '#\.recommenda-quiz-link\s*\{\s*display:\s*block\s*!important;\s*\}#i', '', $html );
+
+	return $html;
+}
+
+/**
  * Chuyển các liên kết tĩnh sang liên kết động WordPress.
  */
 function vuzix_convert_internal_links( $html ) {
@@ -313,7 +630,7 @@ function vuzix_convert_internal_links( $html ) {
 			strpos( $url, 'mailto:' ) === 0 ||
 			strpos( $url, 'tel:' ) === 0 ||
 			strpos( $url, 'javascript:' ) === 0 ||
-			preg_match( '/\.(jpg|jpeg|png|gif|svg|webp|css|js|mp4|webm|ogv|pdf|zip|json|atom)(\?.*)?$/i', $url ) ) {
+			preg_match( '/\.(jpg|jpeg|png|gif|svg|webp|css|js|mp4|webm|ogv|pdf|zip|json|atom|woff|woff2|ttf|otf|eot)(\?.*)?$/i', $url ) ) {
 			return $matches[0];
 		}
 
@@ -410,6 +727,8 @@ function vuzix_get_main_content( $original_filename ) {
 			$main_content
 		);
 	}
+
+	$main_content = vuzix_translate_static_ui( $main_content );
 
 	return $main_content;
 }
