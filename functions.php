@@ -1966,7 +1966,7 @@ function vuzix_translate_static_ui( $html ) {
 		'Website Privacy Policy' => 'Chính sách Bảo mật Trang web',
 		'Vuzix SDK Kit License and Confidentiality Agreement' => 'Thỏa thuận Cấp phép và Bảo mật Bộ SDK của Vuzix',
 		'Publisher Distribution Agreement' => 'Thỏa thuận Phân phối Nhà phát hành',
-		'Safety &amp;amp; Warranty' => 'An toàn &amp;amp; Bảo hành',
+		'Safety &amp; Warranty' => 'An toàn &amp; Bảo hành',
 		'Vuzix Smart Glasses and Near-Eye Displays' => 'Kính Thông minh Vuzix và Màn hình Gần Mắt',
 		'LX1, Safety and Warranty Guide, English' => 'LX1, Hướng dẫn An toàn và Bảo hành, Tiếng Anh',
 		'M4000 Compliance ' => 'Tuân thủ M4000',
@@ -1978,7 +1978,7 @@ function vuzix_translate_static_ui( $html ) {
 		'Safety Certifications for Vuzix batteries' => 'Chứng nhận An toàn cho Pin Vuzix',
 		'UK PSTI Statement of Compliance' => 'Tuyên bố Tuân thủ PSTI Vương quốc Anh',
 		'Country availability for Vuzix devices' => 'Khả năng cung cấp theo quốc gia cho thiết bị Vuzix',
-		'Federal &amp;amp; NYS Labor Law Posters' => 'Áp phích Luật Lao động Liên bang &amp;amp; Tiểu bang New York',
+		'Federal &amp; NYS Labor Law Posters' => 'Áp phích Luật Lao động Liên bang &amp; Tiểu bang New York',
 		'English' => 'Tiếng Anh',
 		'Spanish' => 'Tiếng Tây Ban Nha',
 
@@ -1987,6 +1987,114 @@ function vuzix_translate_static_ui( $html ) {
 		'Shipping Policy' => 'Chính sách vận chuyển',
 		'Return Policy'   => 'Chính sách đổi trả',
 		'Terms &amp; Conditions' => 'Điều khoản & Điều kiện',
+
+		// Header menu (OEM Services / Smart Glasses submenu items still missing)
+		'Defense'         => 'Quốc phòng',
+		'Smart Eyewear'   => 'Kính mắt thông minh',
+		'Vuzix LX1™'      => 'Vuzix LX1™',
+		'MDM'             => 'MDM',
+		'AI-Assist'       => 'Trợ lý AI',
+		'Remote Support'  => 'Hỗ trợ từ xa',
+
+		// Header chrome / cart drawer / accessibility strings shared across pages
+		'Skip to content'   => 'Bỏ qua đến nội dung chính',
+		'Partner Login'     => 'Đăng nhập Đối tác',
+		'Log in'            => 'Đăng nhập',
+		'Country/region'    => 'Quốc gia/Khu vực',
+		'Item added to your cart' => 'Đã thêm sản phẩm vào giỏ hàng',
+		'View cart'         => 'Xem giỏ hàng',
+		'Check out'         => 'Thanh toán',
+		'Continue shopping' => 'Tiếp tục mua sắm',
+		'Choosing a selection results in a full page refresh.' => 'Việc chọn một lựa chọn sẽ làm tải lại toàn bộ trang.',
+		'Opens in a new window.' => 'Mở trong cửa sổ mới.',
+		'Invalid password'  => 'Mật khẩu không hợp lệ',
+		'Enter'             => 'Nhập',
+
+		// Homepage hero (vzx-hero__content / vzx-hero__cards)
+		'The Optical Foundation for AI Smart Glasses' => 'Nền tảng Quang học cho Kính thông minh AI',
+		'Waveguide optics and OEM solutions for the next generation of enterprise, defense, and consumer eyewear' => 'Quang học ống dẫn sóng và các giải pháp OEM cho thế hệ tiếp theo của kính mắt doanh nghiệp, quốc phòng và tiêu dùng',
+		'Explore waveguides & OEM services →' => 'Khám phá ống dẫn sóng & dịch vụ OEM →',
+		'Deploy with Vuzix' => 'Triển khai cùng Vuzix',
+		'Explore enterprise smart glasses →' => 'Khám phá kính thông minh doanh nghiệp →',
+
+		// Homepage: stats / news / product cards / footer CTA
+		'~30 years' => '~30 năm',
+		'Programs and partnerships across defense, enterprise, consumer, and medical markets built on Vuzix waveguide optics.' => 'Các chương trình và quan hệ đối tác trải rộng trên các thị trường quốc phòng, doanh nghiệp, tiêu dùng và y tế, được xây dựng trên nền quang học ống dẫn sóng của Vuzix.',
+		'Tier-1 Waveguide Display Program' => 'Chương trình Màn hình Ống dẫn sóng Tier-1',
+		'Vuzix receives customer-funded development order from leading Tier-1 defense supplier for next-generation waveguide display program.' => 'Vuzix nhận đơn đặt hàng phát triển do khách hàng tài trợ từ một nhà cung cấp quốc phòng Tier-1 hàng đầu cho chương trình màn hình ống dẫn sóng thế hệ tiếp theo.',
+		'Waveguide-based Ultralite Pro OEM Deployment' => 'Triển khai OEM Ultralite Pro dựa trên Ống dẫn sóng',
+		'Leading global online retailer expands Vuzix smart glasses deployment with Ultralite Pro OEM program orders to enable AI business cases.' => 'Nhà bán lẻ trực tuyến toàn cầu hàng đầu mở rộng triển khai kính thông minh Vuzix với các đơn hàng chương trình OEM Ultralite Pro nhằm hiện thực hóa các ứng dụng kinh doanh AI.',
+		'Avegant and Vuzix Announce New Binocular Reference Design' => 'Avegant và Vuzix Công bố Thiết kế Tham chiếu Hai mắt Mới',
+		"Design features Avegant's AG-30L3 light engine and Vuzix waveguide optics, to be co-designed and manufactured by Quanta Computer." => 'Thiết kế sử dụng bộ engine ánh sáng AG-30L3 của Avegant và quang học ống dẫn sóng của Vuzix, được đồng thiết kế và sản xuất bởi Quanta Computer.',
+		'10-hour battery. Freezer-rated. Rugged workhorse.' => 'Pin 10 giờ. Chịu được nhiệt độ đông lạnh. Bền bỉ vượt trội.',
+		'Industrial'       => 'Công nghiệp',
+		'Hot-swappable battery. All-purpose device.' => 'Pin có thể thay nóng. Thiết bị đa năng.',
+		'Inspections'      => 'Kiểm tra',
+		'Real-time expert guidance with MS Teams & Zoom.' => 'Hướng dẫn chuyên gia theo thời gian thực với MS Teams & Zoom.',
+		'Remote Expert'    => 'Chuyên gia từ xa',
+		'Assisted evaluation for warehouse operations.' => 'Đánh giá có hỗ trợ cho hoạt động kho hàng.',
+		'Warehouse'        => 'Kho hàng',
+		'Logistics'        => 'Hậu cần',
+		'Insights, events, & research' => 'Thông tin chuyên sâu, sự kiện & nghiên cứu',
+		'Events & Live Experiences' => 'Sự kiện & Trải nghiệm trực tiếp',
+		'JUNE 28, 2026' => '28 Tháng 6, 2026',
+		'JUNE 09, 2026' => '09 Tháng 6, 2026',
+		'JULY 14, 2026' => '14 Tháng 7, 2026',
+		'MAY 01, 2026'  => '01 Tháng 5, 2026',
+		'Vuzix Smart Glasses' => 'Kính thông minh Vuzix',
+		"Whether you're developing smart glasses or deploying them at scale, your journey starts here." => 'Dù bạn đang phát triển kính thông minh hay triển khai chúng ở quy mô lớn, hành trình của bạn bắt đầu từ đây.',
+
+		// Waveguide configurations page (literal & variant of an already-translated heading)
+		'Vuzix Core™ Waveguides Configuration & Specifications' => 'Cấu hình & Thông số kỹ thuật Ống dẫn sóng Vuzix Core™',
+
+		// Literal '&' variants of already-translated headings (source HTML mixes raw & and &amp;)
+		'Explore Configurations & Specs →' => 'Khám phá Cấu hình &amp; Thông số kỹ thuật →',
+		'Backed by one of the industry’s most extensive optics IP portfolios—with over 500 patents and patents pending—Vuzix has developed core innovations across waveguide geometry, display coupling, optical manufacturing, and system integration. Nearly 30 years of continuous R&D in wearable optics underpins every waveguide we design.' => 'Được hậu thuẫn bởi một trong những danh mục sở hữu trí tuệ (IP) quang học rộng lớn nhất trong ngành—với hơn 500 bằng sáng chế đã được cấp và đang chờ cấp—Vuzix đã phát triển các đổi mới cốt lõi trên nhiều lĩnh vực như hình học waveguide, ghép nối hiển thị, sản xuất quang học và tích hợp hệ thống. Gần 30 năm nghiên cứu và phát triển (R&amp;D) liên tục trong lĩnh vực quang học đeo được là nền tảng cho mọi waveguide mà chúng tôi thiết kế.',
+		'Design & manufacturing' => 'Thiết kế &amp; sản xuất',
+		'PICK & PACK' => 'LẤY HÀNG &amp; ĐÓNG GÓI',
+		'Vuzix smart glasses support warehouse workflows including hands-free pick-pack-sort operations, inventory management, putaway and replenishment, cycle counting, and quality inspection. Workers see digital instructions, item details, bin locations, and quantity confirmations directly in their field of view while both hands remain free for product handling. This has been proven to improve picking accuracy, increase throughput compared to handheld scanner or paper-based workflows, and reduce training time for new hires. Vuzix offers a structured Pick & Pack Validation Program for organizations evaluating smart glasses for warehouse use.' => 'Kính thông minh Vuzix hỗ trợ các quy trình vận hành kho hàng bao gồm lấy hàng-đóng gói-phân loại rảnh tay, quản lý hàng tồn kho, xếp hàng và bổ sung hàng, kiểm kê theo chu kỳ, và kiểm tra chất lượng. Người lao động có thể xem hướng dẫn số, thông tin chi tiết sản phẩm, vị trí ngăn hàng, và xác nhận số lượng trực tiếp trong trường nhìn của họ, trong khi cả hai tay vẫn được tự do để xử lý sản phẩm. Điều này đã được chứng minh giúp cải thiện độ chính xác khi lấy hàng, tăng lưu lượng xử lý so với các quy trình dùng máy quét cầm tay hoặc dựa trên giấy tờ, và giảm thời gian đào tạo cho nhân viên mới. Vuzix cung cấp Chương trình Đánh giá Pick &amp; Pack (Pick &amp; Pack Validation Program) có cấu trúc cho các tổ chức đang đánh giá việc sử dụng kính thông minh trong kho vận.',
+		'What is the Vuzix Pick & Pack Validation Program?' => 'Chương trình Đánh giá Pick &amp; Pack của Vuzix là gì?',
+		'The Vuzix Pick & Pack Validation Program is a structured evaluation specifically designed for warehouse operations considering smart glasses for picking, packing, and sorting workflows. It provides guided device evaluation, configuration support, and workflow validation before broader deployment. This helps operations teams confirm that smart glasses will deliver expected accuracy and throughput improvements for their specific environment. The program launched at MODEX 2026 and is offered to qualified warehouse operations.' => 'Chương trình Đánh giá Pick &amp; Pack của Vuzix là một quy trình đánh giá có cấu trúc, được thiết kế riêng cho các hoạt động kho vận đang xem xét sử dụng kính thông minh cho các quy trình lấy hàng, đóng gói và phân loại. Chương trình cung cấp đánh giá thiết bị có hướng dẫn, hỗ trợ cấu hình, và xác thực quy trình vận hành trước khi triển khai rộng rãi. Điều này giúp các nhóm vận hành xác nhận rằng kính thông minh sẽ mang lại độ chính xác và cải thiện lưu lượng xử lý như mong đợi cho môi trường cụ thể của họ. Chương trình được ra mắt tại MODEX 2026 và được cung cấp cho các đơn vị kho vận đủ điều kiện.',
+		'Manufacturing / Healthcare / Deaf & hearing impaired' => 'Sản xuất / Y tế / Người khiếm thính',
+		'Vuzix Solutions Kits (Pick & Pack, Remote Assist)' => 'Bộ Giải pháp Vuzix (Pick &amp; Pack, Remote Assist)',
+		'Defense & government' => 'Quốc phòng &amp; chính phủ',
+		'Q&A: Vuzix CEO Paul Travers On Smart Glasses, Frontline Work And Enterprise Rollouts' => 'Hỏi &amp; Đáp: CEO Vuzix Paul Travers Nói về Kính Thông minh, Công việc Tuyến đầu và Triển khai Doanh nghiệp',
+		'Warehouse & Logistics' => 'Kho vận &amp; Logistics',
+		'Manufacturing & Assembly' => 'Sản xuất &amp; Lắp ráp',
+		'Field Service & Maintenance' => 'Dịch vụ hiện trường &amp; Bảo trì',
+		'Match the device to environment: the LX1 fits warehouse and industrial workflows with a 10-hour battery, freezer-rated design, and rugged construction; the M400 fits varied workflows (field service, manufacturing, inspections, healthcare) with hot-swappable batteries and all-purpose capabilities; the Remote Assist Kit best fits any workflow needing live remote expert guidance through Microsoft Teams or Zoom. The Pick & Pack Validation Program offers a structured evaluation specifically for warehouse pick-pack-sort operations before broader deployment.' => 'Hãy chọn thiết bị phù hợp với môi trường: LX1 phù hợp với quy trình kho vận và công nghiệp nhờ pin dùng được 10 giờ, thiết kế chịu được nhiệt độ đông lạnh và cấu tạo bền chắc; M400 phù hợp với nhiều quy trình khác nhau (dịch vụ hiện trường, sản xuất, kiểm tra, y tế) nhờ pin có thể thay nóng và khả năng đa dụng; Remote Assist Kit phù hợp nhất với bất kỳ quy trình nào cần hướng dẫn từ chuyên gia trực tiếp qua Microsoft Teams hoặc Zoom. Chương trình Đánh giá Pick &amp; Pack cung cấp một quy trình đánh giá có cấu trúc dành riêng cho hoạt động lấy-đóng gói-phân loại tại kho trước khi triển khai rộng hơn.',
+		'Training & Readiness' => 'Đào tạo &amp; Sẵn sàng triển khai',
+		'Explore Pick & Pack Kit →' => 'Khám phá Pick &amp; Pack Kit →',
+		'Design & engineering' => 'Thiết kế &amp; kỹ thuật',
+		'Rapid prototyping & validation' => 'Tạo mẫu nhanh &amp; xác nhận',
+		'Production & lifecycle support' => 'Sản xuất &amp; hỗ trợ vòng đời sản phẩm',
+		'Navigation & Contextual Awareness' => 'Điều hướng &amp; Nhận biết ngữ cảnh',
+		'Media & Content Interaction' => 'Tương tác Media &amp; Nội dung',
+		'Communication & Notifications' => 'Giao tiếp &amp; Thông báo',
+		'FORM FACTOR & DESIGN CONSIDERATIONS' => 'KIỂU DÁNG &amp; CÁC YẾU TỐ THIẾT KẾ',
+		'Electronic Regulatory Labels: Settings &gt; System &gt; About Glasses &gt; Regulatory labels' => 'Nhãn quy định điện tử: Settings &gt; System &gt; About Glasses &gt; Regulatory labels',
+		'Each kit comes pre-configured to work with Zoom & Microsoft Teams' => 'Mỗi bộ kit đều được cấu hình sẵn để hoạt động với Zoom &amp; Microsoft Teams',
+		'Receive a pre-configured Pick & Pack Starter Kit loaded with five warehouse workflows.' => 'Nhận bộ kit khởi đầu Pick &amp; Pack đã được cấu hình sẵn với năm quy trình làm việc trong kho hàng.',
+		'4. Review & Next Steps' => '4. Đánh giá &amp; Các bước tiếp theo',
+		'The Pick & Pack Validation Program is available through consultation with our logistics team.' => 'Chương trình Thử nghiệm Pick &amp; Pack được cung cấp thông qua tư vấn với đội ngũ logistics của chúng tôi.',
+		'Detect & Resolve Issues in Real Time' => 'Phát hiện &amp; Giải quyết sự cố theo thời gian thực',
+		'With our Pick & Pack Validation program, see how hands-free smart glasses can improve picking accuracy, packing speed, receiving efficiency, and inventory confidence, before you commit to deployment.' => 'Với chương trình Thử nghiệm Pick &amp; Pack của chúng tôi, hãy xem cách kính thông minh rảnh tay có thể cải thiện độ chính xác khi lấy hàng, tốc độ đóng gói, hiệu quả nhận hàng và độ tin cậy trong kiểm kê, trước khi bạn quyết định triển khai.',
+		'Defense, Security, & First Responders' => 'Quốc phòng, An ninh &amp; Lực lượng Ứng cứu Đầu tiên',
+		'Integration into defense & first responder systems' => 'Tích hợp vào hệ thống quốc phòng &amp; ứng cứu khẩn cấp',
+		'Training & Simulation' => 'Đào tạo &amp; Mô phỏng',
+		'Maintenance & Logistics' => 'Bảo trì &amp; Hậu cần',
+		'Navigation & Field Operations' => 'Điều hướng &amp; Hoạt động Hiện trường',
+		'Medical & Emergency Response' => 'Y tế &amp; Ứng cứu Khẩn cấp',
+		'M300XL & M300 Compliance' => 'Tuân thủ M300XL &amp; M300',
+		'Electronic Regulatory Labels: Settings &gt; About Smart Glasses &gt; Regulatory information' => 'Nhãn quy định điện tử: Settings &gt; About Smart Glasses &gt; Regulatory information',
+
+		// Product detail page hero eyebrow (shared across all original-products/*.html)
+		'PRODUCT' => 'SẢN PHẨM',
+
+		// Smart glasses page
+		'Security & device management' => 'Bảo mật & quản lý thiết bị',
+		'• Rugged IP 4 Certification & Freezer rated operating temperatures' => '• Chứng nhận chống chịu IP 4 & nhiệt độ hoạt động chịu được đông lạnh',
+		'Match the device to the operating environment. The Vuzix LX1 is purpose-built for warehouse and industrial environments — 10-hour battery, freezer-rated, ruggedized for cold-storage and high-impact use. The Vuzix M400 is an all-purpose device with hot-swappable batteries, suited to varied workflows including field service, manufacturing, inspections, and healthcare. The Remote Assist Kit pairs Vuzix smart glasses with Microsoft Teams and Zoom integration for live remote expert workflows. For warehouse pick-pack-sort specifically, the Pick & Pack Validation Program provides a structured evaluation before broader deployment.' => 'Lựa chọn thiết bị phù hợp với môi trường vận hành. Vuzix LX1 được thiết kế riêng cho môi trường kho hàng và công nghiệp — pin 10 giờ, chịu được nhiệt độ đông lạnh, cấu tạo chắc chắn cho kho lạnh và va đập mạnh. Vuzix M400 là thiết bị đa năng với pin có thể thay nóng, phù hợp với nhiều quy trình làm việc như dịch vụ hiện trường, sản xuất, kiểm tra và y tế. Remote Assist Kit kết hợp kính thông minh Vuzix với Microsoft Teams và Zoom để hỗ trợ chuyên gia từ xa theo thời gian thực. Riêng với quy trình lấy-đóng gói-phân loại trong kho hàng, Pick & Pack Validation Program cung cấp một đánh giá có cấu trúc trước khi triển khai rộng rãi.',
 	);
 
 	foreach ( $labels as $english => $vietnamese ) {
@@ -2226,6 +2334,35 @@ function vuzix_resolve_original_href( $original_href ) {
 }
 
 /**
+ * Cache kết quả của các bước xử lý tốn kém (link/asset rewrite + dịch qua hàng
+ * nghìn mục trong $labels) cho một vùng HTML tĩnh (header/footer/main content
+ * của 1 trang). Nếu không cache, pipeline này chạy lại từ đầu trên MỌI lượt
+ * truy cập, kể cả với khách không đăng nhập — với số lượng $labels hiện tại,
+ * đây là nguyên nhân chính khiến Performance score rất thấp.
+ *
+ * Cache key gắn với thời gian sửa đổi (mtime) của các file nguồn liên quan,
+ * nên tự động làm mới khi original-*.html hoặc functions.php (nơi khai báo
+ * $labels) thay đổi — không cần xóa cache thủ công.
+ */
+function vuzix_cached_html_pipeline( $cache_key, $source_paths, $callback ) {
+	$version = '';
+	foreach ( $source_paths as $path ) {
+		$version .= '|' . ( file_exists( $path ) ? filemtime( $path ) : '0' );
+	}
+
+	$transient_key = 'vuzix_html_' . md5( $cache_key . $version );
+	$cached        = get_transient( $transient_key );
+	if ( false !== $cached ) {
+		return $cached;
+	}
+
+	$output = call_user_func( $callback );
+	set_transient( $transient_key, $output, WEEK_IN_SECONDS );
+
+	return $output;
+}
+
+/**
  * Trích xuất phần thân <main> của tệp HTML tĩnh.
  */
 function vuzix_get_main_content( $original_filename ) {
@@ -2236,32 +2373,38 @@ function vuzix_get_main_content( $original_filename ) {
 		return '';
 	}
 
-	$html = file_get_contents( $index_path );
-	$parts = explode( '<main id="MainContent"', $html );
-	if ( count( $parts ) < 2 ) {
-		return '';
-	}
-	$sub_parts = explode( '</main>', $parts[1] );
-	$main_content = $sub_parts[0];
-	$main_content = substr( $main_content, strpos( $main_content, '>' ) + 1 );
+	return vuzix_cached_html_pipeline(
+		'main:' . $original_filename,
+		array( $index_path, get_theme_file_path( 'functions.php' ) ),
+		function () use ( $index_path, $theme_uri ) {
+			$html = file_get_contents( $index_path );
+			$parts = explode( '<main id="MainContent"', $html );
+			if ( count( $parts ) < 2 ) {
+				return '';
+			}
+			$sub_parts = explode( '</main>', $parts[1] );
+			$main_content = $sub_parts[0];
+			$main_content = substr( $main_content, strpos( $main_content, '>' ) + 1 );
 
-	$main_content = vuzix_convert_internal_links( $main_content );
-	$main_content = vuzix_replace_asset_paths( $main_content, $theme_uri );
+			$main_content = vuzix_convert_internal_links( $main_content );
+			$main_content = vuzix_replace_asset_paths( $main_content, $theme_uri );
 
-	// Các file Shopify export thường gắn class header trong suốt ngay cả khi
-	// nội dung không có hero. Khi đó menu bị đổi sang màu trắng trên nền sáng.
-	// Chỉ giữ hành vi này cho trang thực sự có hero.
-	if ( strpos( $main_content, 'vzx-hero' ) === false ) {
-		$main_content = preg_replace(
-			'#<script\b[^>]*>\s*document\.documentElement\.classList\.add\(\s*[\'\"]vzx-transparent-header-active[\'\"]\s*\)\s*;?\s*</script>#i',
-			'',
-			$main_content
-		);
-	}
+			// Các file Shopify export thường gắn class header trong suốt ngay cả khi
+			// nội dung không có hero. Khi đó menu bị đổi sang màu trắng trên nền sáng.
+			// Chỉ giữ hành vi này cho trang thực sự có hero.
+			if ( strpos( $main_content, 'vzx-hero' ) === false ) {
+				$main_content = preg_replace(
+					'#<script\b[^>]*>\s*document\.documentElement\.classList\.add\(\s*[\'\"]vzx-transparent-header-active[\'\"]\s*\)\s*;?\s*</script>#i',
+					'',
+					$main_content
+				);
+			}
 
-	$main_content = vuzix_translate_static_ui( $main_content );
+			$main_content = vuzix_translate_static_ui( $main_content );
 
-	return $main_content;
+			return $main_content;
+		}
+	);
 }
 
 /**
@@ -3108,7 +3251,7 @@ function vuzix_add_buy_it_now_button() {
 	}
 	?>
 	<button type="submit" name="add-to-cart" value="<?php echo esc_attr( $product->get_id() ); ?>" class="vuzix_buy_it_now_button button">
-		Buy it now
+		Mua ngay
 	</button>
 	<script>
 		document.addEventListener('DOMContentLoaded', function() {
@@ -3176,34 +3319,42 @@ add_filter( 'woocommerce_is_sold_individually', 'vuzix_single_item_purchase_only
  */
 function vuzix_minimal_checkout_fields( $fields ) {
 	$fields['billing'] = array(
+		'billing_phone'      => array(
+			'label'       => __( 'Số điện thoại', 'vuzix-practice' ),
+			'required'    => true,
+			'class'       => array( 'form-row-wide' ),
+			'priority'    => 10,
+			'type'        => 'tel',
+			'autocomplete'=> 'tel',
+		),
+		'billing_email'      => array(
+			'label'       => __( 'Email', 'vuzix-practice' ),
+			'required'    => false,
+			'class'       => array( 'form-row-wide' ),
+			'priority'    => 20,
+			'type'        => 'email',
+			'autocomplete'=> 'email',
+		),
 		'billing_first_name' => array(
 			'label'       => __( 'Họ', 'vuzix-practice' ),
-			'required'    => true,
+			'required'    => false,
 			'class'       => array( 'form-row-first' ),
-			'priority'    => 10,
+			'priority'    => 30,
 			'autocomplete'=> 'given-name',
 		),
 		'billing_last_name'  => array(
 			'label'       => __( 'Tên', 'vuzix-practice' ),
-			'required'    => true,
+			'required'    => false,
 			'class'       => array( 'form-row-last' ),
-			'priority'    => 20,
+			'priority'    => 40,
 			'autocomplete'=> 'family-name',
 		),
 		'billing_address_1'  => array(
 			'label'       => __( 'Địa chỉ', 'vuzix-practice' ),
 			'required'    => false,
 			'class'       => array( 'form-row-wide' ),
-			'priority'    => 30,
+			'priority'    => 50,
 			'autocomplete'=> 'street-address',
-		),
-		'billing_phone'      => array(
-			'label'       => __( 'Số điện thoại', 'vuzix-practice' ),
-			'required'    => true,
-			'class'       => array( 'form-row-wide' ),
-			'priority'    => 40,
-			'type'        => 'tel',
-			'autocomplete'=> 'tel',
 		),
 	);
 
@@ -3279,6 +3430,87 @@ function vuzix_only_manual_checkout_gateway( $gateways ) {
 		: $gateways;
 }
 add_filter( 'woocommerce_available_payment_gateways', 'vuzix_only_manual_checkout_gateway' );
+
+/**
+ * By default WooCommerce sends the "New order" and "On-hold order" emails
+ * synchronously, inline, while the checkout AJAX request is still running —
+ * the browser only shows the "Order received" page after the SMTP round-trip
+ * finishes, which is why checkout felt slow. WooCommerce already ships a
+ * built-in deferred-email queue (via Action Scheduler); this just turns it on
+ * so emails are dispatched right after the response is sent instead of
+ * blocking it.
+ */
+add_filter( 'woocommerce_defer_transactional_emails', '__return_true' );
+
+/**
+ * Tùy biến nội dung email của WooCommerce cho luồng đặt hàng nội bộ (on-hold):
+ * - "customer_on_hold_order": mail cảm ơn gửi cho khách hàng. WooCommerce chỉ gửi
+ *   mail này nếu đơn hàng có billing_email hợp lệ, nên tự động đáp ứng yêu cầu
+ *   "chỉ gửi khi khách có nhập email".
+ * - "new_order": mail thông báo đơn hàng mới, gửi tới email đã cấu hình trong
+ *   WooCommerce > Cài đặt > Email > Đơn hàng mới (Recipient(s)) — tận dụng đúng
+ *   phần cấu hình SMTP/email cho sales đã được thiết lập sẵn.
+ */
+function vuzix_email_subject_customer_on_hold_order( $subject, $order ) {
+	return sprintf(
+		__( 'Vuzix đã nhận đơn hàng #%s của bạn', 'vuzix-practice' ),
+		$order ? $order->get_order_number() : ''
+	);
+}
+add_filter( 'woocommerce_email_subject_customer_on_hold_order', 'vuzix_email_subject_customer_on_hold_order', 10, 2 );
+
+function vuzix_email_heading_customer_on_hold_order( $heading, $order ) {
+	return __( 'Cảm ơn bạn đã đặt hàng!', 'vuzix-practice' );
+}
+add_filter( 'woocommerce_email_heading_customer_on_hold_order', 'vuzix_email_heading_customer_on_hold_order', 10, 2 );
+
+function vuzix_email_subject_new_order( $subject, $order ) {
+	$name = $order ? trim( $order->get_formatted_billing_full_name() ) : '';
+	return sprintf(
+		__( '[Đơn hàng mới] Khách hàng %s vừa chốt đơn #%s', 'vuzix-practice' ),
+		$name !== '' ? $name : __( '(chưa rõ tên)', 'vuzix-practice' ),
+		$order ? $order->get_order_number() : ''
+	);
+}
+add_filter( 'woocommerce_email_subject_new_order', 'vuzix_email_subject_new_order', 10, 2 );
+
+function vuzix_email_heading_new_order( $heading, $order ) {
+	return __( 'Khách hàng vừa chốt đơn hàng mới', 'vuzix-practice' );
+}
+add_filter( 'woocommerce_email_heading_new_order', 'vuzix_email_heading_new_order', 10, 2 );
+
+/**
+ * Định dạng ngày kiểu Việt Nam ("12 Tháng 8, 2026") cho các mẫu email đặt hàng.
+ * Không dùng date()/date_i18n() với chuỗi định dạng chứa "Tháng" vì các ký tự
+ * T/h/n/g trùng với ký tự định dạng ngày-giờ của PHP, dễ gây lỗi escape.
+ */
+function vuzix_format_order_date( $wc_datetime ) {
+	if ( ! $wc_datetime ) {
+		return '';
+	}
+	return sprintf(
+		'%d Tháng %d, %s',
+		(int) $wc_datetime->date( 'j' ),
+		(int) $wc_datetime->date( 'n' ),
+		$wc_datetime->date( 'Y' )
+	);
+}
+
+/**
+ * Dựng các hàng <tr> của bảng sản phẩm dùng chung cho cả 2 mẫu email đặt hàng
+ * (khách hàng và sales), tránh lặp lại logic ở 2 file template.
+ */
+function vuzix_email_order_item_rows( $order ) {
+	$rows = '';
+	foreach ( $order->get_items() as $item ) {
+		$rows .= '<tr>';
+		$rows .= '<td><strong>' . esc_html( $item->get_name() ) . '</strong></td>';
+		$rows .= '<td style="text-align: center;">' . esc_html( $item->get_quantity() ) . '</td>';
+		$rows .= '<td class="price">' . wp_kses_post( $order->get_formatted_line_subtotal( $item ) ) . '</td>';
+		$rows .= '</tr>';
+	}
+	return $rows;
+}
 
 /**
  * The existing Checkout page uses the WooCommerce Blocks checkout, which does

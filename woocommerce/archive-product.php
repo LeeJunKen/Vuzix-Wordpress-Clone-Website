@@ -13,6 +13,18 @@ get_header( 'shop' );
 
 $archive_title = is_product_category() ? single_term_title( '', false ) : __( 'Sản phẩm', 'vuzix-practice' );
 
+if ( is_product_category() ) {
+	$vuzix_category_title_translations = array(
+		'Accessories'   => 'Phụ kiện',
+		'Merchandise'   => 'Hàng lưu niệm',
+		'Smart Glasses' => 'Kính thông minh',
+		'Uncategorized' => 'Chưa phân loại',
+	);
+	if ( isset( $vuzix_category_title_translations[ $archive_title ] ) ) {
+		$archive_title = $vuzix_category_title_translations[ $archive_title ];
+	}
+}
+
 // Tùy chỉnh các action mặc định của WC để khớp với giao diện gốc
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
