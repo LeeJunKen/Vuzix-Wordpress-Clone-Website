@@ -27,3 +27,7 @@ yarn-error.log*
 # Node dependencies (if used in future)
 node_modules/
 dist/
+
+# Data export/import files (không đẩy lên GitHub)
+*.csv
+*.xml
