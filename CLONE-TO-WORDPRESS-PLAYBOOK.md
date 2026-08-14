@@ -224,7 +224,62 @@ bất đồng bộ có sẵn của WooCommerce (không cần tự viết queue):
 add_filter( 'woocommerce_defer_transactional_emails', '__return_true' );
 ```
 
-## 9. Checklist hoàn thiện cuối cùng
+## 9. Kiểm tra giao diện mobile — bắt buộc, đừng chỉ test desktop
+
+Site clone từ Shopify/Dawn theme luôn có 2 bộ layout header khác nhau (mega
+menu desktop vs. menu trượt/hamburger mobile), điều khiển bằng CSS
+`@media` + custom element (`header-drawer`, `menu-drawer`...). Rất dễ chỉ
+test trên desktop rồi tưởng xong, trong khi mobile mới là nơi lộ lỗi:
+
+- Luôn bật chế độ responsive/mobile (DevTools device toolbar, hoặc test trên
+  điện thoại thật) và tự tay bấm mở menu — không chỉ nhìn ảnh chụp.
+- Nếu có custom CSS đè lên hành vi transparent-header/overlay (ví dụ inject
+  qua `wp_footer`), kiểm tra kỹ nó không **ghi đè nhầm** lên đúng những rule
+  responsive (`@media max-width: ...`) mà bản gốc đã viết sẵn cho mobile —
+  2 khối CSS cùng chọn 1 selector với `!important`, khối xuất hiện SAU trong
+  tài liệu HTML (thường là khối inject ở `wp_footer`) sẽ thắng ở cấp thuộc
+  tính, có thể vô tình phá layout mobile dù không đụng tới nó trực tiếp.
+
+**Cách xác minh lỗi UI thật sự, tránh đoán mò/sửa sai:**
+
+1. **Đừng vội tin ảnh chụp màn hình là hiện trạng mới nhất.** Vì có cache
+   (mục 7), một ảnh chụp có thể phản ánh bản HTML/CSS cũ trước lần sửa gần
+   nhất — luôn hard-refresh (Ctrl+Shift+R) trước khi kết luận lỗi còn tồn
+   tại, và nhắc người test làm tương tự trước khi báo lỗi.
+2. **Dùng trình duyệt headless thật để kiểm chứng, đừng chỉ đọc code rồi
+   suy luận.** Đọc HTML/CSS tĩnh dễ đoán sai (đã từng đoán nhầm 1 lỗi
+   encode `%253F` là nguyên nhân, sửa xong mới phát hiện qua `curl` là bản
+   gốc mới đúng, phải revert). Dựng nhanh 1 script Playwright để lấy
+   screenshot + computed style + console error thật là cách xác minh đáng
+   tin cậy nhất trước khi sửa bất kỳ CSS/JS nghi ngờ nào:
+
+   ```bash
+   npm install playwright
+   npx playwright install chromium
+   ```
+
+   ```js
+   const { chromium } = require('playwright');
+   (async () => {
+     const browser = await chromium.launch();
+     const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
+     const errors = [];
+     page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
+     page.on('pageerror', (e) => errors.push(e.message));
+     await page.goto('http://your-site.local/', { waitUntil: 'networkidle' });
+     await page.screenshot({ path: 'mobile.png' });
+     await page.click('.header__icon--menu'); // hoặc selector nút hamburger thật
+     await page.waitForTimeout(500);
+     await page.screenshot({ path: 'mobile-opened.png' });
+     console.log(errors);
+     await browser.close();
+   })();
+   ```
+
+3. Chỉ sửa code khi bằng chứng (screenshot/computed style/console error) đã
+   xác nhận đúng vị trí lỗi — không sửa theo phỏng đoán rồi hy vọng đúng.
+
+## 10. Checklist hoàn thiện cuối cùng
 
 - [ ] Tất cả link nội bộ trỏ đúng URL WordPress (không còn link `.html` kiểu
       site gốc).
@@ -244,8 +299,12 @@ add_filter( 'woocommerce_defer_transactional_emails', '__return_true' );
       hai giá trị này thường KHÁC NHAU, đừng nhầm).
 - [ ] Chạy Lighthouse (Performance/Accessibility/SEO) kiểm tra lại sau khi
       cache đã "ấm" (load thử 1 lần trước khi đo).
+- [ ] Test giao diện mobile thật (không chỉ desktop): mở được menu hamburger,
+      menu trượt hiển thị đúng nội dung đã dịch, không lỗi console — xác
+      minh bằng hard-refresh hoặc script Playwright (mục 9), không chỉ dựa
+      vào ảnh chụp có thể đã bị cache.
 
-## 10. Cách dùng file này cho dự án mới
+## 11. Cách dùng file này cho dự án mới
 
 1. Copy file này vào gốc theme/dự án WordPress mới.
 2. Đưa cho AI kèm yêu cầu: "Làm theo đúng playbook trong file này để biến
